@@ -1,4 +1,4 @@
-<form id="conferenceForm" method="post" action="URL_DO_GOOGLE_APPS_SCRIPT">
+<form id="conferenceForm" method="post" action="https://script.google.com/macros/s/AKfycby4n-_-lafjTvxkGm8kWv26linWZeRQPTgd4dcclrozKNeJWvVX-29fWLV8Elwa2svG/exec">
     <div class="form-group">
         <label for="pv">PV (Valor numérico):</label>
         <input type="number" id="pv" name="pv" required>
