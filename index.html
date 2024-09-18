@@ -57,7 +57,7 @@
 <body>
     <div class="container">
         <h2>Formulário de Conferência</h2>
-        <form id="conferenceForm" method="post" action="https://script.google.com/macros/s/AKfycby4n-_-lafjTvxkGm8kWv26linWZeRQPTgd4dcclrozKNeJWvVX-29fWLV8Elwa2svG/exec">
+        <form id="conferenceForm" method="post" action="https://script.google.com/macros/s/AKfycbzFcOka651xZLWCxpwQ8x6GP03uE5lRoBncHH7P6K2eexEOFYIZXhVwJTVWuFUsN_FR/exec">
             <div class="form-group">
                 <label for="pv">PV (Valor numérico):</label>
                 <input type="number" id="pv" name="pv" required>
@@ -94,7 +94,7 @@
             formData.append('temConferencia', temConferencia);
 
             // Envia os dados via POST para o Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycby4n-_-lafjTvxkGm8kWv26linWZeRQPTgd4dcclrozKNeJWvVX-29fWLV8Elwa2svG/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbzFcOka651xZLWCxpwQ8x6GP03uE5lRoBncHH7P6K2eexEOFYIZXhVwJTVWuFUsN_FR/exec', {
                 method: 'POST',
                 body: formData
             }).then(response => {
