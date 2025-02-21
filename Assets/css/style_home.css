@@ -22,7 +22,7 @@
     padding: 50vh 0 0 0;
 }
 .home {
-    background-image: url(.Assets/img/Base.png);
+    background-image: url(https://github.com/ejuanoli/Acompanhamento/blob/main/Assets/img/Base.png);
     background-size:contain;
     background-position: center;
     height:100vh;
