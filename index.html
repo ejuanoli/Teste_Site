@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PE Tech</title>
-    <link rel="stylesheet" href="Assets/css/style_navbar.css">
-    <link rel="stylesheet" href="Assets/css/style_home.css">
-    <script defer src="Assets/js/app.js"></script>
+    <link rel="stylesheet" href="/Assets/css/style_navbar.css">
+    <link rel="stylesheet" href="/Assets/css/style_home.css">
+    <script defer src="/Assets/js/app.js"></script>
 </head>
     <body>
-        <header class="header">
+        <header id="header" class="header">
+            <div class="flex">
             <nav class="nav">
-                <a href="/" class="logo"> <img src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true" alt="DHL"></a>
-                <button class="hamburguer"></button>
+                <a href="/" class="logo"> <img src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true" alt="DHL"></a>      
                 <ul class="nav-list">
                     <li class="text-home"><a href="./index.html">Home</a></li>
                     <li><a href="./projects.html">Projetos</a></li>
                     <li><a href="./rpa.html">RPA</a></li>
                     <li><a href="./pp.html">Power Platform</a></li>
-                    <li><a href="./contact.html">Contato</a></li>
+                    <li class="contato-list"><a href="./contact.html">Contato</a></li>
+                </ul>
             </nav>
+            <button class="contato"><a href="./contact.html">Contato</a></button>
+            <button class="hamburguer"></button>
+            </div>
         </header>
-        <main class="hero"></main>
+        <div class="div-1"></div>
+   
+        <main class="background"></main>
+        
+        <section class="index"></section>
     </body>
 </html>
