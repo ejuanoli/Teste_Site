@@ -8,20 +8,77 @@ a {
   text-decoration: none;
 }
 
+#header.scroll {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#header {
+  transition: 0.5s;
+}
 .header {
   background: #FFCC00;
   padding-inline: 16px;
+  width: 100%;
+  position: fixed;
+  margin: 0;
 }
 
-.nav {
+.div-1 {
+  padding: 40px;
+}
+
+.background {
+  height: calc(100vh);
+  background: center / cover no-repeat url('https://github.com/ejuanoli/Acompanhamento/blob/main/Assets/img/Base.png?raw=true');
+}
+
+.index {
+  display: block;
+  margin: 100vh;
+}
+
+.flex {
   max-width: 1280px;
-  height: 70px;
+  height: 80px;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.contato a {
+  color: #fff;
+}
+
+.contato {
+  margin: 4%;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1f1f1f, #000);
+  font-size: 16px;
+  font-family: Tahoma, sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
+}
+
+.contato:hover {
+  background: linear-gradient(135deg, #333, #111);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
 
 .logo {
   display: flex;
@@ -38,7 +95,6 @@ a {
   font-size: 18px;
   color: #fff;
   padding-block: 16px;
-  
 }
 
 .hamburguer {
@@ -61,10 +117,21 @@ a {
   transition: 0.3s;
 }
 
+@media (min-width: 751px) {
+  .contato-list {
+    display: none;
+  }
+}
+
 @media (max-width: 750px) {
   .hamburguer {
     display: block;
     z-index: 1;
+    margin: 6%;
+  }
+
+  .contato-list {
+    display: all;
   }
 
   .nav-list {
@@ -74,8 +141,8 @@ a {
     width: 100vw;
     height: 100vh;
     background: #FFCC00;
-    clip-path: circle(100px at 90% -15%);
-    transition: 1s ease-out;
+    clip-path:circle(100px at 90% -15%);
+    transition: 0.5s ease-out;
 
     flex-direction: column;
     justify-content: space-around;
@@ -89,20 +156,6 @@ a {
     font-size: 24px;
     opacity: 0;
   }
-
-  .nav-list li:nth-child(1) a {
-    transition: 0.5s 0.2s;
-  }
-
-  .nav-list li:nth-child(2) a {
-    transition: 0.5s 0.4s;
-  }
-
-  .nav-list li:nth-child(3) a {
-    transition: 0.5s 0.6s;
-  }
-
-  /* Estilos ativos */
 
   .nav.active .nav-list {
     clip-path: circle(1500px at 90% -15%);
@@ -128,11 +181,18 @@ a {
     transform: rotate(-135deg);
     top: -7px;
   }
+
+  .contato {
+    display: none;
+  }
 }
 
-nav ul li a:hover{
-    color: #fff;
-    background-color:rgba(0, 0, 0, 0.02);
+.nav-list a:hover{
+    color: red;
+    border-radius: 8px;
+    padding: 2px;
+    background-color:rgba(0, 0, 0, 0.07);
     transform: scale(1.01);
     transition: 0.1s;
 }
+
