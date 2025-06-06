@@ -1,6 +1,6 @@
 .hero-image {
   height: calc(100vh); /* altura da tela menos a navbar */
-  background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Base1.png?raw=true');
+  background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Base1.png?raw=true');
   background-size: cover; /* para não dar zoom, mantém a proporção */
   background-position: center center;
   background-repeat: no-repeat;
