@@ -1,33 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PE Tech</title>
-    <link rel="stylesheet" href="Assets/css/style_navbar.css">
-    <script defer src="Assets/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PE Tech</title>
+  <link rel="stylesheet" href="assets/css/style_navbar.css" />
+  <link rel="stylesheet" href="assets/css/style_home.css">
+  <link rel="stylesheet" href="assets/css/style_portifolio.css">
+  <script defer src="assets/js/app.js"></script>
 </head>
-    <body>
-        <header id="header" class="header">
-            <div class="flex">
-            <nav class="nav">
-                <a href="/" class="logo"> <img src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true" alt="DHL"></a>      
-                <ul class="nav-list">
-                    <li class="text-home"><a href="./index.html">Home</a></li>
-                    <li><a href="./projects.html">Projetos</a></li>
-                    <li><a href="./rpa.html">RPA</a></li>
-                    <li><a href="./pp.html">Power Platform</a></li>
-                    <li class="contato-list"><a href="./contact.html">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="contato"><a href="./contact.html">Contato</a></button>
-            <button class="hamburguer"></button>
-            </div>
-        </header>
-        <div class="div-1"></div>
-   
-        <main class="background"></main>
-        
-        <section class="index"></section>
-    </body>
+<body>
+<header id="header" class="header">
+  <div class="flex">
+    <div class="logo-bar">
+      <div class="logo">
+        <a href="./index.html">
+        <img
+          src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true"
+          alt="Logo PE Tech"
+        />
+        </a>
+      </div>
+      <div class="separator"></div>
+      <div class="page-title" id="pageTitle">
+        Dashboard
+      </div>
+    </div>
+    <section class="background-section bg-light"></section>
+    <section class="background-section bg-dark"></section>
+
+
+      <!-- MENU CENTRAL -->
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li class="text-home"><a href="./index.html">Home</a></li>
+          <li><a href="./projects.html">Projetos</a></li>
+          <li><a href="./rpa.html">RPA</a></li>
+          <li><a href="./pp.html">Power Platform</a></li>
+          <li class="contato-list"><a href="./contact.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito: Contato e Hambúrguer -->
+      <div class="right-content">
+        <a href="./contact.html" class="contato">Contato</a>
+        <button class="hamburguer" aria-label="Abrir menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="div-1"></div>
+
+  <!-- Botão voltar ao topo -->
+  <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
+  <main role="main">
+    <section class="hero-image" id="background" aria-label="Imagem de capa da página"></section>
+    <!-- Seção Portfólio -->
+    <section id="portfolio" class="fade" aria-label="Seção portfólio">
+      <h2>Meu Portfólio</h2>
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <img
+            src="https://via.placeholder.com/400x225.png?text=Projeto+1"
+            alt="Imagem do projeto Automação Industrial"
+            loading="lazy"
+          />
+          <div class="portfolio-card-content">
+            <h3>Projeto Automação Industrial</h3>
+            <p>
+              Desenvolvimento de sistema para automação e monitoramento de linhas produtivas
+              com integração IoT.
+            </p>
+            <a
+              href="./projects.html#projeto-automacao"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver Detalhes</a
+            >
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img
+            src="https://via.placeholder.com/400x225.png?text=Projeto+2"
+            alt="Imagem do projeto Dashboard Power BI"
+            loading="lazy"
+          />
+          <div class="portfolio-card-content">
+            <h3>Dashboard Power BI</h3>
+            <p>
+              Criação de dashboards interativos para análise de performance de vendas
+              utilizando Power BI.
+            </p>
+            <a href="./pp.html" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img
+            src="https://via.placeholder.com/400x225.png?text=Projeto+3"
+            alt="Imagem do projeto Robotic Process Automation"
+            loading="lazy"
+          />
+          <div class="portfolio-card-content">
+            <h3>Robotic Process Automation (RPA)</h3>
+            <p>
+              Implementação de bots para automação de processos administrativos e redução
+              de erros manuais.
+            </p>
+            <a href="./rpa.html" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section class="index"></section>
+</body>
 </html>
