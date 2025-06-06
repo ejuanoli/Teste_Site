@@ -4,28 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PE Tech</title>
-    <link rel="stylesheet" href="Assets/css/style_navbar.css">
+  <link rel="stylesheet" href="Assets/css/style_navbar.css" />
     <script defer src="Assets/js/app.js"></script>
 </head>
 <body>
         <header id="header" class="header">
-            <div class="flex">
-            <nav class="nav">
-                <a href="/" class="logo"> <img src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true" alt="DHL"></a>      
-                <ul class="nav-list">
-                    <li class="text-home"><a href="./index.html">Home</a></li>
-                    <li><a href="./projects.html">Projetos</a></li>
-                    <li><a href="./rpa.html">RPA</a></li>
-                    <li><a href="./pp.html">Power Platform</a></li>
-                    <li class="contato-list"><a href="./contact.html">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="contato"><a href="./contact.html">Contato</a></button>
-            <button class="hamburguer"></button>
-            </div>
-        </header>
-        <div class="div-1"></div>
-        
-        <section class="index"></section>
+  <div class="flex">
+    <div class="logo-bar">
+      <div class="logo">
+        <a href="./index.html">
+        <img
+          src="https://github.com/ejuanoli/Teste_Site/blob/main/Assets/img/Camada%201.png?raw=true"
+          alt="Logo PE Tech"
+        />
+        </a>
+      </div>
+      <div class="separator"></div>
+      <div class="page-title" id="pageTitle">
+        Dashboard
+      </div>
+    </div>
+
+      <!-- MENU CENTRAL -->
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li class="text-home"><a href="./index.html">Home</a></li>
+          <li><a href="./projects.html">Projetos</a></li>
+          <li><a href="./rpa.html">RPA</a></li>
+          <li><a href="./pp.html">Power Platform</a></li>
+          <li class="contato-list"><a href="./contact.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Lado Direito: Contato e Hambúrguer -->
+      <div class="right-content">
+        <a href="./contact.html" class="contato">Contato</a>
+        <button class="hamburguer" aria-label="Abrir menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="div-1"></div>
+
+  <!-- Botão voltar ao topo -->
+  <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
     </body>
 </html>
