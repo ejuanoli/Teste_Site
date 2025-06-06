@@ -185,18 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const pageTitle = document.getElementById("pageTitle");
-  const path = window.location.pathname;
+  const filename = window.location.pathname.split("/").pop();
 
-  // Apenas o final do caminho do arquivo
   const pageNames = {
-    "/Teste_Site/index.html": "Home",
-    "/Teste_Site/projects.html": "Projetos",
-    "/Teste_Site/pp.html": "Power Platform",
-    "/Teste_Site/rpa.html": "RPA",
-    "/Teste_Site/contact.html": "Contato",
-    "/Teste_Site/": "Home" // fallback para root
+    "index.html": "Home",
+    "projects.html": "Projetos",
+    "pp.html": "Power Platform",
+    "rpa.html": "RPA",
+    "contact.html": "Contato",
+    "": "Home" // quando acessa diretamente /
   };
 
-  pageTitle.textContent = pageNames[path] || "Página";
+  pageTitle.textContent = pageNames[filename] || "Página";
 });
 
