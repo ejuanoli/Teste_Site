@@ -1,0 +1,120 @@
+/* Container do portfólio */
+#portfolio {
+    
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 1200px;
+  margin: 0 auto 3rem; /* negativo para subir um pouco e parecer ligado à imagem */
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+/* Classe para mostrar o portfólio */
+#portfolio.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Título */
+#portfolio h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 700;
+}
+
+/* Grid dos cards */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+}
+
+/* Cada card */
+.portfolio-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.portfolio-card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-card-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.portfolio-card-content p {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.portfolio-card-content a {
+  align-self: flex-start;
+  font-weight: 600;
+  color: #FFCC00;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.portfolio-card-content a:hover {
+  border-color: #FFCC00;
+}
+
+/* Animação Fade-in */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  #portfolio {
+    padding: 40px 10px;
+  }
+
+  #portfolio h2 {
+    font-size: 2rem;
+  }
+}
