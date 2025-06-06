@@ -181,20 +181,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(portfolio);
 });
-  document.addEventListener("DOMContentLoaded", function () {
-    const pageTitle = document.getElementById("pageTitle");
-    const path = window.location.pathname;
 
-    // Mapeia os caminhos para nomes legíveis
-    const pageNames = {
-      "https://github.com/ejuanoli/Teste_Site/blob/main/index.html": "Home",
-      "https://github.com/ejuanoli/Teste_Site/blob/main/projects.html": "Projetos",
-      "https://github.com/ejuanoli/Teste_Site/blob/main/pp.html": "Power Platform",
-      "https://github.com/ejuanoli/Teste_Site/blob/main/rpa.html": "RPA",
-      "https://github.com/ejuanoli/Teste_Site/blob/main/contact.html": "Contato",
-      "/": "Home" // fallback para root
-    };
 
-    // Usa o nome se existir no mapeamento
-    pageTitle.textContent = pageNames[path] || "Página";
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const pageTitle = document.getElementById("pageTitle");
+  const path = window.location.pathname;
+
+  // Apenas o final do caminho do arquivo
+  const pageNames = {
+    "/Teste_Site/index.html": "Home",
+    "/Teste_Site/projects.html": "Projetos",
+    "/Teste_Site/pp.html": "Power Platform",
+    "/Teste_Site/rpa.html": "RPA",
+    "/Teste_Site/contact.html": "Contato",
+    "/Teste_Site/": "Home" // fallback para root
+  };
+
+  pageTitle.textContent = pageNames[path] || "Página";
+});
+
