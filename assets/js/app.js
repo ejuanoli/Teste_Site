@@ -187,11 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mapeia os caminhos para nomes legíveis
     const pageNames = {
-      "/index.html": "Home",
-      "/projects.html": "Projetos",
-      "/rpa.html": "RPA",
-      "/pp.html": "Power Platform",
-      "/contact.html": "Contato",
+      "https://github.com/ejuanoli/Teste_Site/blob/main/index.html": "Home",
+      "https://github.com/ejuanoli/Teste_Site/blob/main/projects.html": "Projetos",
+      "https://github.com/ejuanoli/Teste_Site/blob/main/pp.html": "Power Platform",
+      "https://github.com/ejuanoli/Teste_Site/blob/main/rpa.html": "RPA",
+      "https://github.com/ejuanoli/Teste_Site/blob/main/contact.html": "Contato",
       "/": "Home" // fallback para root
     };
 
