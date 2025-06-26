@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PE Tech</title>
-    <link rel="stylesheet" href="assets/css/style_navbar.css">
-    <script defer src="assets/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projetos | PE Tech</title>
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/darkmode.css">
+  <link rel="stylesheet" href="./css/portfolio.css">
+  <link rel="stylesheet" href="./css/media.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
 </head>
 <body>
+
+<!-- Botão voltar ao topo -->
+<button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
 <header id="header" class="header">
   <div class="flex">
     <div class="logo-bar">
@@ -21,34 +29,597 @@
       </div>
       <div class="separator"></div>
       <div class="page-title" id="pageTitle">
-        Dashboard
+        Projetos
       </div>
     </div>
+    <!-- MENU CENTRAL -->
+    <nav class="nav" role="navigation" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li class="text-home"><a href="./index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home</a></li>
+        <li><a href="./projects.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projetos</a></li>
+        <li><a href="./rpa.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="9" r="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>RPA</a></li>
+        <li><a href="./pp.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Power Platform</a></li>
+      </ul>
+    </nav>
+    <!-- Lado Direito: Contato e Hambúrguer -->
+    <div class="right-content">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+      <!-- Botão Dark Mode Dinâmico -->
+      <button id="darkModeSophisticated" class="darkmode-navbar-btn" aria-label="Alternar modo escuro">
+        <div class="darkmode-icon"></div>
+        <div class="sky-scene">
+          <div class="sun"></div>
+          <div class="moon"></div>
+          <div class="clouds">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+          </div>
+          <div class="stars">
+            <div class="star star1"></div>
+            <div class="star star2"></div>
+            <div class="star star3"></div>
+            <div class="star star4"></div>
+            <div class="star star5"></div>
+          </div>
+        </div>
+      </button>
+      <button class="hamburguer" aria-label="Abrir menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Estrelas na navbar -->
+  <div style="position: absolute; top: 15px; left: 10%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.5s ease-in-out infinite; z-index: 1001; box-shadow: 0 0 8px #FFCC00;"></div>
+  <div style="position: absolute; top: 25px; right: 15%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.2s ease-in-out infinite 1s; z-index: 1001; box-shadow: 0 0 10px #fff;"></div>
+  <div style="position: absolute; top: 35px; left: 25%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.8s ease-in-out infinite 0.5s; z-index: 1001; box-shadow: 0 0 8px #28a745;"></div>
+  <div style="position: absolute; top: 20px; right: 25%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.1s ease-in-out infinite 1.5s; z-index: 1001; box-shadow: 0 0 8px #FFCC00;"></div>
+  <div style="position: absolute; top: 30px; left: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 3.6s ease-in-out infinite 0.8s; z-index: 1001; box-shadow: 0 0 10px #fff;"></div>
+</header>
 
-      <!-- MENU CENTRAL -->
-      <nav class="nav" role="navigation" aria-label="Menu principal">
-        <ul class="nav-list">
-          <li class="text-home"><a href="./index.html">Home</a></li>
-          <li><a href="./projects.html">Projetos</a></li>
-          <li><a href="./rpa.html">RPA</a></li>
-          <li><a href="./pp.html">Power Platform</a></li>
-          <li class="contato-list"><a href="./contact.html">Contato</a></li>
-        </ul>
-      </nav>
+<main role="main">
+  <section class="hero-image" id="background" aria-label="Imagem de capa da página" style="display: flex; align-items: center; justify-content: center; position: relative; min-height: 60vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <!-- Overlay com gradiente mais sutil -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(26,26,26,0.6) 0%, rgba(186,12,47,0.5) 30%, rgba(40,167,69,0.4) 70%, rgba(0,123,255,0.3) 100%); z-index: 1;"></div>
+    
+    <!-- Conteúdo principal -->
+    <div class="hero-content" style="position: relative; z-index: 2; text-align: center; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; max-width: 1200px; width: 100%;">
+      
+      <!-- Título principal com animação -->
+      <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <h1 style="font-size: 3.2rem; font-weight: 900; letter-spacing: 2px; line-height: 1.1; text-shadow: 0 6px 25px rgba(0,0,0,0.6); margin: 0; animation: fadeInUp 1s ease-out;">
+          <span style="background: linear-gradient(45deg, #FFCC00, #BA0C2F, #FFCC00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite;">Nossos</span> 
+          <span style="background: linear-gradient(45deg, #28a745, #FFCC00, #28a745); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite reverse;">Projetos</span>
+        </h1>
+      </div>
+      
+      <!-- Subtítulo com efeito de digitação -->
+      <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+        <p style="font-size: 1.3rem; color: #e1e1e1; font-weight: 300; line-height: 1.5; text-shadow: 0 3px 15px rgba(0,0,0,0.4); margin: 0; max-width: 800px; animation: fadeInUp 1s ease-out 0.3s both;">
+          Conheça alguns dos projetos que desenvolvemos para transformar negócios
+        </p>
+      </div>
+    </div>
+    
+    <!-- Estrelas animadas -->
+    <div style="position: absolute; top: 10%; left: 15%; width: 3px; height: 3px; background: #FFCC00; border-radius: 50%; animation: twinkle 4s ease-in-out infinite; z-index: 1; box-shadow: 0 0 10px #FFCC00;"></div>
+    <div style="position: absolute; top: 25%; right: 20%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3s ease-in-out infinite 1s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 40%; left: 25%; width: 4px; height: 4px; background: #28a745; border-radius: 50%; animation: twinkle 5s ease-in-out infinite 2s; z-index: 1; box-shadow: 0 0 12px #28a745;"></div>
+    <div style="position: absolute; top: 60%; right: 30%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.5s ease-in-out infinite 0.5s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 75%; left: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.5s ease-in-out infinite 1.5s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 85%; right: 25%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3s ease-in-out infinite 2.5s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+  </section>
 
-      <!-- Lado Direito: Contato e Hambúrguer -->
-      <div class="right-content">
-        <a href="./contact.html" class="contato">Contato</a>
-        <button class="hamburguer" aria-label="Abrir menu">
-          <span></span>
+ <!-- Seção Portfólio -->
+ <section id="portfolio" class="fade" aria-label="Seção portfólio">
+  <div class="portfolio-carousel">
+    <button class="carousel-arrow left premium-arrow" aria-label="Anterior" data-direction="left">
+      <div class="arrow-container">
+        <div class="arrow-background"></div>
+        <div class="arrow-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="11" stroke="#FFCC00" stroke-width="2.5" fill="#fff"/>
+            <polyline points="14 8 10 12 14 16"/>
+          </svg>
+        </div>
+        <div class="arrow-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+    </button>
+    <div class="carousel-track">
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80" alt="Portal Web Corporativo" loading="lazy" />
+        <div class="portfolio-card-content">
+          <h3>Portal Web Corporativo</h3>
+          <p>Portal moderno para integração de sistemas internos e comunicação corporativa. Redução de 40% no tempo de busca por informações.</p>
+          <div class="tech-badges">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Azure</span>
+            <span class="tech-badge">Node.js</span>
+          </div>
+          <a href="#projeto-portal" class="ver-detalhes">Ver Detalhes</a>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="App Mobile DHL" loading="lazy" />
+        <div class="portfolio-card-content">
+          <h3>App Mobile DHL</h3>
+          <p>Aplicativo para acompanhamento de entregas e notificações em tempo real. Redução de 40% no tempo de entrega.</p>
+          <div class="tech-badges">
+            <span class="tech-badge">React Native</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">AWS</span>
+          </div>
+          <a href="#projeto-app-dhl" class="ver-detalhes">Ver Detalhes</a>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Business Intelligence Nubank" loading="lazy" />
+        <div class="portfolio-card-content">
+          <h3>Business Intelligence Nubank</h3>
+          <p>Dashboards e relatórios para análise estratégica de dados. Redução de 60% em fraudes.</p>
+          <div class="tech-badges">
+            <span class="tech-badge">Power BI</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Machine Learning</span>
+          </div>
+          <a href="#projeto-bi-nubank" class="ver-detalhes">Ver Detalhes</a>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="RPA Vale" loading="lazy" />
+        <div class="portfolio-card-content">
+          <h3>Robotic Process Automation Vale</h3>
+          <p>Automação de processos financeiros com robôs RPA, gerando economia anual de R$ 1,5 milhão.</p>
+          <div class="tech-badges">
+            <span class="tech-badge">UiPath</span>
+            <span class="tech-badge">Power BI</span>
+            <span class="tech-badge">SAP</span>
+          </div>
+          <a href="#projeto-rpa-vale" class="ver-detalhes">Ver Detalhes</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-arrow right premium-arrow" aria-label="Próximo" data-direction="right">
+      <div class="arrow-container">
+        <div class="arrow-background"></div>
+        <div class="arrow-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="11" stroke="#FFCC00" stroke-width="2.5" fill="#fff"/>
+            <polyline points="10 8 14 12 10 16"/>
+          </svg>
+        </div>
+        <div class="arrow-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+    </button>
+    </div>
+  <div class="carousel-indicators"></div>
+  </section>
+  
+  <!-- Projeto 1: Portal Web Corporativo -->
+  <section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+    <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Portal Web Corporativo</h2>
+    
+    <!-- Carrossel de imagens -->
+    <div class="projeto-carousel" style="margin-bottom: 2.5rem;">
+      <div class="carousel-container" style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80" alt="Portal Web - Dashboard" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Portal Web - Interface" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Portal Web - Analytics" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('portal', -1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(186,12,47,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
         </button>
+        <button class="carousel-btn next" onclick="moveCarousel('portal', 1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(186,12,47,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-dots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+          <span class="dot active" onclick="goToSlide('portal', 0)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('portal', 1)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('portal', 2)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+        </div>
       </div>
     </div>
-  </header>
-  <div class="div-1"></div>
 
-  <!-- Botão voltar ao topo -->
-  <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+    <!-- Conteúdo detalhado -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Desenvolvimento de um portal corporativo completo para integração de sistemas internos, comunicação entre departamentos e gestão centralizada de informações empresariais.</p>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Sistemas legados não integrados</li>
+          <li>Comunicação ineficiente entre setores</li>
+          <li>Dificuldade de acesso a informações</li>
+          <li>Interface desatualizada e pouco responsiva</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Portal único com autenticação centralizada</li>
+          <li>Interface moderna e responsiva</li>
+          <li>Integração via APIs com sistemas existentes</li>
+          <li>Dashboards personalizáveis por usuário</li>
+          <li>Sistema de notificações em tempo real</li>
+        </ul>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">40%</div>
+            <div style="font-size: 0.9rem;">Redução no tempo de busca</div>
+          </div>
+          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">30%</div>
+            <div style="font-size: 0.9rem;">Aumento na colaboração</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </body>
-</html>
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">React</span>
+        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Azure</span>
+        <span style="background: #e9ecef; color: #333; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Node.js</span>
+        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">MongoDB</span>
+        <span style="background: #e9ecef; color: #FFCC00; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">TypeScript</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #BA0C2F; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "O novo portal transformou completamente nossa rotina diária. A comunicação entre departamentos melhorou significativamente e agora temos acesso rápido a todas as informações necessárias."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente de TI, Cliente PE Tech</span>
+    </blockquote>
+  </section>
+
+  <!-- Projeto 2: App Mobile DHL -->
+  <section id="projeto-app-dhl" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+    <h2 style="color: #28a745; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Aplicativo Mobile DHL</h2>
+    
+    <!-- Carrossel de imagens -->
+    <div class="projeto-carousel" style="margin-bottom: 2.5rem;">
+      <div class="carousel-container" style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="App Mobile - Tela Principal" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="App Mobile - Rastreamento" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=800&q=80" alt="App Mobile - Chat" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('dhl', -1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(40,167,69,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-btn next" onclick="moveCarousel('dhl', 1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(40,167,69,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-dots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+          <span class="dot active" onclick="goToSlide('dhl', 0)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('dhl', 1)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('dhl', 2)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo detalhado -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #28a745; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Aplicativo mobile completo para acompanhamento de entregas, notificações em tempo real e suporte ao cliente, desenvolvido para a DHL Express Brasil.</p>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Falta de transparência no rastreio</li>
+          <li>Comunicação lenta com clientes</li>
+          <li>Dificuldade de atualização de status</li>
+          <li>Interface não intuitiva</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="color: #28a745; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>App nativo para iOS e Android</li>
+          <li>Rastreamento em tempo real via GPS</li>
+          <li>Push notifications automáticas</li>
+          <li>Chat integrado com suporte</li>
+          <li>Interface intuitiva e acessível</li>
+        </ul>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">40%</div>
+            <div style="font-size: 0.9rem;">Redução no tempo de entrega</div>
+          </div>
+          <div style="background: linear-gradient(135deg, #FFCC00, #e6b800); color: #333; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">25%</div>
+            <div style="font-size: 0.9rem;">Aumento na satisfação</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #28a745; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">React Native</span>
+        <span style="background: #e9ecef; color: #333; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Node.js</span>
+        <span style="background: #e9ecef; color: #FFCC00; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">AWS</span>
+        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Firebase</span>
+        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">MongoDB</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #28a745; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "O app facilitou muito o acompanhamento das entregas e melhorou significativamente a comunicação com nossos clientes. A experiência do usuário ficou muito superior."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Coordenador de Operações, DHL Express Brasil</span>
+    </blockquote>
+  </section>
+
+  <!-- Projeto 3: Business Intelligence Nubank -->
+  <section id="projeto-bi-nubank" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+    <h2 style="color: #FFCC00; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Business Intelligence Nubank</h2>
+    
+    <!-- Carrossel de imagens -->
+    <div class="projeto-carousel" style="margin-bottom: 2.5rem;">
+      <div class="carousel-container" style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard - Principal" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard - Analytics" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="BI Dashboard - Relatórios" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('nubank', -1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,204,0,0.9); color: #333; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-btn next" onclick="moveCarousel('nubank', 1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,204,0,0.9); color: #333; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-dots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+          <span class="dot active" onclick="goToSlide('nubank', 0)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('nubank', 1)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('nubank', 2)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo detalhado -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #FFCC00; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Sistema de Business Intelligence para monitoramento de fraudes, análise de performance financeira e tomada de decisão estratégica baseada em dados.</p>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Dificuldade em identificar padrões de fraude</li>
+          <li>Análise manual de grandes volumes de dados</li>
+          <li>Decisões baseadas em intuição</li>
+          <li>Relatórios demorados e desatualizados</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="color: #FFCC00; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Dashboards interativos em tempo real</li>
+          <li>Algoritmos de machine learning para detecção de fraudes</li>
+          <li>Relatórios automatizados e personalizáveis</li>
+          <li>Integração com múltiplas fontes de dados</li>
+          <li>Alertas automáticos para anomalias</li>
+        </ul>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: linear-gradient(135deg, #FFCC00, #e6b800); color: #333; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">60%</div>
+            <div style="font-size: 0.9rem;">Redução em fraudes</div>
+          </div>
+          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">80%</div>
+            <div style="font-size: 0.9rem;">Decisões mais rápidas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #FFCC00; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #FFCC00; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power BI</span>
+        <span style="background: #e9ecef; color: #333; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Python</span>
+        <span style="background: #e9ecef; color: #8B0000; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Machine Learning</span>
+        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Azure ML</span>
+        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">SQL Server</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #FFCC00; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "Os dashboards trouxeram clareza e agilidade para o nosso time de análise. Conseguimos identificar padrões que antes passavam despercebidos."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Analista de Dados, Nubank</span>
+    </blockquote>
+  </section>
+
+  <!-- Projeto 4: RPA Vale -->
+  <section id="projeto-rpa-vale" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+    <h2 style="color: #007bff; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Robotic Process Automation Vale</h2>
+    
+    <!-- Carrossel de imagens -->
+    <div class="projeto-carousel" style="margin-bottom: 2.5rem;">
+      <div class="carousel-container" style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="RPA - Automação" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="RPA - Dashboard" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="RPA - Monitoramento" style="width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;">
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('vale', -1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,123,255,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-btn next" onclick="moveCarousel('vale', 1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,123,255,0.9); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-dots" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+          <span class="dot active" onclick="goToSlide('vale', 0)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('vale', 1)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+          <span class="dot" onclick="goToSlide('vale', 2)" style="width: 12px; height: 12px; background: #fff; border-radius: 50%; cursor: pointer; opacity: 0.8;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo detalhado -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #007bff; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Implementação de robôs RPA para automação de processos financeiros, reduzindo custos operacionais e eliminando erros manuais em grande escala.</p>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Processos manuais repetitivos</li>
+          <li>Alto índice de erros humanos</li>
+          <li>Custos operacionais elevados</li>
+          <li>Baixa produtividade</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="color: #007bff; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
+        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+          <li>Robôs UiPath para automação</li>
+          <li>Integração com SAP e Power BI</li>
+          <li>Monitoramento em tempo real</li>
+          <li>Relatórios automatizados</li>
+          <li>Escalabilidade para outros processos</li>
+        </ul>
+        
+        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">R$ 1,5M</div>
+            <div style="font-size: 0.9rem;">Economia anual</div>
+          </div>
+          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 1.8rem; font-weight: bold;">98%</div>
+            <div style="font-size: 0.9rem;">Precisão dos processos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #007bff; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #007bff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">UiPath</span>
+        <span style="background: #e9ecef; color: #FFCC00; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power BI</span>
+        <span style="background: #e9ecef; color: #333; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">SAP</span>
+        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Python</span>
+        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Azure</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #007bff; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "A automação trouxe agilidade e eliminou erros recorrentes no nosso financeiro. O ROI foi excepcional e superou todas as expectativas."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente Financeiro, Vale S.A.</span>
+    </blockquote>
+  </section>
+
+    <!-- Seção de Tecnologias Utilizadas -->
+    <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+      <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Tecnologias Utilizadas</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI" style="height:22px;">Power BI</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="height:22px;">Python</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="height:22px;">Azure</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #8B0000; color:#8B0000; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="height:22px;">React</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #28a745; color:#28a745; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" style="height:22px;">Node.js</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Automate" style="height:22px;">Power Automate</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Apps" style="height:22px;">Power Apps</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #333; color:#333; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height:22px;">GitHub</span>
+        <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uipath/uipath-original.svg" alt="UiPath" style="height:22px;">UiPath</span>
+      </div>
+    </section>
+</main>
+
+<footer style="background: #222; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 3rem; font-size: 1.05rem; letter-spacing: 1px;">
+  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem;">
+    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto João Silva" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
+      <div style="font-weight: bold; color: #FFCC00;">João Silva</div>
+      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">Desenvolvedor Full Stack</div>
+      <a href="mailto:joao@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">joao@petech.com</a>
+      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Maria Souza" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
+      <div style="font-weight: bold; color: #FFCC00;">Maria Souza</div>
+      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">UX/UI Designer</div>
+      <a href="mailto:maria@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">maria@petech.com</a>
+      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 0.5rem;">
+    &copy; 2024 PE Tech. Todos os direitos reservados.
+  </div>
+  <div style="font-size: 1.2rem;">
+    <a href="https://www.linkedin.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">LinkedIn</a> |
+    <a href="https://github.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">GitHub</a>
+  </div>
+</footer>
+
+<!-- Botão flutuante de contato no lado inferior esquerdo -->
+<div id="floating-contact" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
+  <a href="./contact.html" class="contato" style="display: flex; align-items: center; gap: 8px; background: #000; color: #fff; padding: 12px 16px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid #BA0C2F; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <span class="icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </span>
+    Contato
+  </a>
+</div>
+
+
+</body>
+</html> 
