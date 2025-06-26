@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PE Tech</title>
-  <link rel="stylesheet" href="assets/css/style_navbar.css" />
-  <link rel="stylesheet" href="assets/css/style_home.css">
-  <link rel="stylesheet" href="assets/css/style_portifolio.css">
-  <script defer src="assets/js/app.js"></script>
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/darkmode.css">
+  <link rel="stylesheet" href="./css/portfolio.css">
+  <link rel="stylesheet" href="./css/media.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
 </head>
 <body>
+
+<!-- Botão voltar ao topo -->
+<button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
 <header id="header" class="header">
   <div class="flex">
     <div class="logo-bar">
@@ -26,97 +32,514 @@
         Dashboard
       </div>
     </div>
-    <section class="background-section bg-light"></section>
-    <section class="background-section bg-dark"></section>
+    <!-- MENU CENTRAL -->
+    <nav class="nav" role="navigation" aria-label="Menu principal">
+      <!-- Logo no topo do menu mobile -->
+      <div class="mobile-logo">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Camada%201.png?raw=true" alt="Logo PE Tech" />
+      </div>
+      
+      <ul class="nav-list">
+        <li class="text-home"><a href="./index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home</a></li>
+        <li><a href="./projects.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projetos</a></li>
+        <li><a href="./rpa.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="9" r="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>RPA</a></li>
+        <li><a href="./pp.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Power Platform</a></li>
+      </ul>
 
+      <!-- Ícones sociais no rodapé do menu -->
+      <div class="nav-social-icons">
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+    </nav>
+    <!-- Lado Direito: Contato e Hambúrguer -->
+    <div class="right-content">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+      <!-- Botão Dark Mode Dinâmico -->
+      <button id="darkModeSophisticated" class="darkmode-navbar-btn" aria-label="Alternar modo escuro">
+        <div class="darkmode-icon"></div>
+        <div class="sky-scene">
+          <div class="sun"></div>
+          <div class="moon"></div>
+          <div class="clouds">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+          </div>
+          <div class="stars">
+            <div class="star star1"></div>
+            <div class="star star2"></div>
+            <div class="star star3"></div>
+            <div class="star star4"></div>
+            <div class="star star5"></div>
+          </div>
+        </div>
+      </button>
+      <button class="hamburguer" aria-label="Abrir menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Estrelas na navbar -->
+  <div style="position: absolute; top: 15px; left: 10%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.5s ease-in-out infinite; z-index: 1001; box-shadow: 0 0 8px #FFCC00;"></div>
+  <div style="position: absolute; top: 25px; right: 15%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.2s ease-in-out infinite 1s; z-index: 1001; box-shadow: 0 0 10px #fff;"></div>
+  <div style="position: absolute; top: 35px; left: 25%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.8s ease-in-out infinite 0.5s; z-index: 1001; box-shadow: 0 0 8px #28a745;"></div>
+  <div style="position: absolute; top: 20px; right: 25%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.1s ease-in-out infinite 1.5s; z-index: 1001; box-shadow: 0 0 8px #FFCC00;"></div>
+  <div style="position: absolute; top: 30px; left: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 3.6s ease-in-out infinite 0.8s; z-index: 1001; box-shadow: 0 0 10px #fff;"></div>
+</header>
 
-      <!-- MENU CENTRAL -->
-      <nav class="nav" role="navigation" aria-label="Menu principal">
-        <ul class="nav-list">
-          <li class="text-home"><a href="./index.html">Home</a></li>
-          <li><a href="./projects.html">Projetos</a></li>
-          <li><a href="./rpa.html">RPA</a></li>
-          <li><a href="./pp.html">Power Platform</a></li>
-          <li class="contato-list"><a href="./contact.html">Contato</a></li>
-        </ul>
-      </nav>
-
-      <!-- Lado Direito: Contato e Hambúrguer -->
-      <div class="right-content">
-        <a href="./contact.html" class="contato">Contato</a>
-        <button class="hamburguer" aria-label="Abrir menu">
-          <span></span>
-        </button>
+<main role="main">
+  <section class="hero-image" id="background" aria-label="Imagem de capa da página" style="display: flex; align-items: center; justify-content: center; position: relative; min-height: 100vh;">
+    <!-- Overlay com gradiente mais sutil -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(26,26,26,0.6) 0%, rgba(186,12,47,0.5) 30%, rgba(40,167,69,0.4) 70%, rgba(0,123,255,0.3) 100%); z-index: 1;"></div>
+    
+    <!-- Conteúdo principal -->
+    <div class="hero-content" style="position: relative; z-index: 2; text-align: center; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; max-width: 1200px; width: 100%;">
+      
+      <!-- Título principal com animação -->
+      <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <h1 style="font-size: 3.2rem; font-weight: 900; letter-spacing: 2px; line-height: 1.1; text-shadow: 0 6px 25px rgba(0,0,0,0.6); margin: 0; animation: fadeInUp 1s ease-out;">
+          <span style="background: linear-gradient(45deg, #FFCC00, #BA0C2F, #FFCC00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite;">Inovação</span> e 
+          <span style="background: linear-gradient(45deg, #28a745, #FFCC00, #28a745); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite reverse;">Tecnologia</span>
+        </h1>
+      </div>
+      
+      <!-- Subtítulo com efeito de digitação -->
+      <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+        <p style="font-size: 1.3rem; color: #e1e1e1; font-weight: 300; line-height: 1.5; text-shadow: 0 3px 15px rgba(0,0,0,0.4); margin: 0; max-width: 800px; animation: fadeInUp 1s ease-out 0.3s both;">
+          Transformando negócios através de soluções digitais inteligentes e automação de processos
+        </p>
+      </div>
+      
+      <!-- Botões de ação com efeitos avançados -->
+      <div style="height: 70px; display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap; animation: fadeInUp 1s ease-out 0.6s both;">
+        <a href="#portfolio" style="background: linear-gradient(135deg, #BA0C2F, #8B0000, #BA0C2F); color: #fff; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(186,12,47,0.4); border: 2px solid transparent; min-width: 160px; text-align: center; position: relative; overflow: hidden; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite;">
+          <span style="position: relative; z-index: 2;">Ver Projetos</span>
+        </a>
+        <a href="./contact.html" style="background: linear-gradient(135deg, #FFCC00, #e6b800, #FFCC00); color: #333; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(255,204,0,0.4); border: 2px solid transparent; min-width: 160px; text-align: center; position: relative; overflow: hidden; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite reverse;">
+          <span style="position: relative; z-index: 2;">Fale Conosco</span>
+        </a>
       </div>
     </div>
-  </header>
-  <div class="div-1"></div>
+    
+    <!-- Scroll indicator com animação melhorada - FORA DO CONTAINER -->
+    <div style="position: absolute; bottom: 6rem; left: 0; right: 0; text-align: center; z-index: 3; animation: fadeInUp 1s ease-out 0.9s both;">
+      <button onclick="document.getElementById('sobre').scrollIntoView({behavior: 'smooth'})" style="background: rgba(255,255,255,0.15); border: 2px solid #FFCC00; color: #FFCC00; width: 55px; height: 55px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 8px 25px rgba(255,204,0,0.3);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: bounce 2s infinite;">
+          <polyline points="6,9 12,15 18,9"></polyline>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Estrelas animadas -->
+    <div style="position: absolute; top: 10%; left: 15%; width: 3px; height: 3px; background: #FFCC00; border-radius: 50%; animation: twinkle 4s ease-in-out infinite; z-index: 1; box-shadow: 0 0 10px #FFCC00;"></div>
+    <div style="position: absolute; top: 25%; right: 20%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3s ease-in-out infinite 1s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 40%; left: 25%; width: 4px; height: 4px; background: #28a745; border-radius: 50%; animation: twinkle 5s ease-in-out infinite 2s; z-index: 1; box-shadow: 0 0 12px #28a745;"></div>
+    <div style="position: absolute; top: 60%; right: 30%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.5s ease-in-out infinite 0.5s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 75%; left: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.5s ease-in-out infinite 1.5s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 85%; right: 25%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3s ease-in-out infinite 2.5s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    
+    <!-- Mais estrelas -->
+    <div style="position: absolute; top: 15%; left: 45%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.8s ease-in-out infinite 0.8s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 35%; right: 45%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.2s ease-in-out infinite 1.2s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 50%; left: 10%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.2s ease-in-out infinite 0.3s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    <div style="position: absolute; top: 65%; right: 10%; width: 4px; height: 4px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.8s ease-in-out infinite 1.8s; z-index: 1; box-shadow: 0 0 12px #FFCC00;"></div>
+    <div style="position: absolute; top: 80%; left: 50%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3.6s ease-in-out infinite 0.7s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 90%; right: 40%; width: 3px; height: 3px; background: #28a745; border-radius: 50%; animation: twinkle 4.4s ease-in-out infinite 2.2s; z-index: 1; box-shadow: 0 0 10px #28a745;"></div>
+    
+    <!-- Estrelas adicionais -->
+    <div style="position: absolute; top: 5%; left: 60%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.4s ease-in-out infinite 1.4s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 30%; right: 5%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.6s ease-in-out infinite 0.6s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 55%; left: 60%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.9s ease-in-out infinite 1.9s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    <div style="position: absolute; top: 70%; right: 60%; width: 4px; height: 4px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.1s ease-in-out infinite 0.1s; z-index: 1; box-shadow: 0 0 12px #FFCC00;"></div>
+    <div style="position: absolute; top: 95%; left: 20%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3.7s ease-in-out infinite 1.7s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    
+    <!-- Mais 10 estrelas -->
+    <div style="position: absolute; top: 8%; left: 75%; width: 3px; height: 3px; background: #28a745; border-radius: 50%; animation: twinkle 4.3s ease-in-out infinite 0.3s; z-index: 1; box-shadow: 0 0 10px #28a745;"></div>
+    <div style="position: absolute; top: 18%; right: 75%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.1s ease-in-out infinite 1.1s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 28%; left: 85%; width: 4px; height: 4px; background: #fff; border-radius: 50%; animation: twinkle 4.7s ease-in-out infinite 1.7s; z-index: 1; box-shadow: 0 0 12px #fff;"></div>
+    <div style="position: absolute; top: 38%; right: 85%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.5s ease-in-out infinite 0.5s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    <div style="position: absolute; top: 48%; left: 5%; width: 3px; height: 3px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.9s ease-in-out infinite 1.9s; z-index: 1; box-shadow: 0 0 10px #FFCC00;"></div>
+    <div style="position: absolute; top: 58%; right: 5%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3.3s ease-in-out infinite 0.3s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 68%; left: 85%; width: 4px; height: 4px; background: #28a745; border-radius: 50%; animation: twinkle 4.5s ease-in-out infinite 1.5s; z-index: 1; box-shadow: 0 0 12px #28a745;"></div>
+    <div style="position: absolute; top: 78%; right: 85%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.8s ease-in-out infinite 0.8s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 88%; left: 75%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.2s ease-in-out infinite 2.2s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 98%; right: 75%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.6s ease-in-out infinite 1.6s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    
+    <!-- Mais 15 estrelas -->
+    <div style="position: absolute; top: 12%; left: 35%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.9s ease-in-out infinite 0.9s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 22%; right: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.4s ease-in-out infinite 1.4s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 32%; left: 45%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.2s ease-in-out infinite 0.2s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    <div style="position: absolute; top: 42%; right: 45%; width: 4px; height: 4px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.8s ease-in-out infinite 1.8s; z-index: 1; box-shadow: 0 0 12px #FFCC00;"></div>
+    <div style="position: absolute; top: 52%; left: 55%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3.7s ease-in-out infinite 0.7s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 62%; right: 55%; width: 3px; height: 3px; background: #28a745; border-radius: 50%; animation: twinkle 4.1s ease-in-out infinite 1.1s; z-index: 1; box-shadow: 0 0 10px #28a745;"></div>
+    <div style="position: absolute; top: 72%; left: 65%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.4s ease-in-out infinite 1.4s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 82%; right: 65%; width: 4px; height: 4px; background: #fff; border-radius: 50%; animation: twinkle 4.6s ease-in-out infinite 1.6s; z-index: 1; box-shadow: 0 0 12px #fff;"></div>
+    <div style="position: absolute; top: 92%; left: 40%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.8s ease-in-out infinite 0.8s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    <div style="position: absolute; top: 3%; right: 40%; width: 3px; height: 3px; background: #FFCC00; border-radius: 50%; animation: twinkle 4.3s ease-in-out infinite 1.3s; z-index: 1; box-shadow: 0 0 10px #FFCC00;"></div>
+    <div style="position: absolute; top: 13%; left: 25%; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: twinkle 3.6s ease-in-out infinite 0.6s; z-index: 1; box-shadow: 0 0 8px #fff;"></div>
+    <div style="position: absolute; top: 23%; right: 25%; width: 4px; height: 4px; background: #28a745; border-radius: 50%; animation: twinkle 4.9s ease-in-out infinite 1.9s; z-index: 1; box-shadow: 0 0 12px #28a745;"></div>
+    <div style="position: absolute; top: 33%; left: 15%; width: 2px; height: 2px; background: #FFCC00; border-radius: 50%; animation: twinkle 3.3s ease-in-out infinite 1.3s; z-index: 1; box-shadow: 0 0 8px #FFCC00;"></div>
+    <div style="position: absolute; top: 43%; right: 15%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.5s ease-in-out infinite 0.5s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
+    <div style="position: absolute; top: 53%; left: 70%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3.9s ease-in-out infinite 1.9s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
+    
+    <!-- Partículas decorativas animadas (reduzidas) -->
+    <div style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: #FFCC00; border-radius: 50%; animation: float 10s ease-in-out infinite; z-index: 1; box-shadow: 0 0 15px #FFCC00;"></div>
+    <div style="position: absolute; top: 70%; right: 15%; width: 5px; height: 5px; background: #28a745; border-radius: 50%; animation: float 12s ease-in-out infinite reverse; z-index: 1; box-shadow: 0 0 18px #28a745;"></div>
+    <div style="position: absolute; bottom: 30%; left: 20%; width: 3px; height: 3px; background: #BA0C2F; border-radius: 50%; animation: float 8s ease-in-out infinite; z-index: 1; box-shadow: 0 0 12px #BA0C2F;"></div>
+  </section>
 
-  <!-- Botão voltar ao topo -->
-  <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+  <section class="fade" id="sobre" style="max-width: 1200px; margin: 3rem auto 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem; text-align: center;">
+    <h2 style="color: #BA0C2F; font-size: 2rem; margin-bottom: 1rem;">Sobre a PE Tech</h2>
+    <p style="font-size: 1.15rem; color: #333; max-width: 700px; margin: 0 auto;">Somos apaixonados por tecnologia e inovação. Atuamos no desenvolvimento de soluções digitais, automação de processos, dashboards inteligentes e integração de plataformas para transformar negócios e impulsionar resultados. Nosso compromisso é entregar valor real, eficiência e crescimento sustentável para nossos clientes.</p>
+  </section>
 
-  <main role="main">
-    <section class="hero-image" id="background" aria-label="Imagem de capa da página"></section>
-    <!-- Seção Portfólio -->
-    <section id="portfolio" class="fade" aria-label="Seção portfólio">
-      <h2>Meu Portfólio</h2>
-      <div class="portfolio-grid">
-        <article class="portfolio-card">
-          <img
-            src="https://via.placeholder.com/400x225.png?text=Projeto+1"
-            alt="Imagem do projeto Automação Industrial"
-            loading="lazy"
-          />
+  <!-- Seção de Estatísticas -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Nossos Números</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+      <div style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(186,12,47,0.2);">
+        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">150+</div>
+        <div style="font-size: 1.1rem;">Projetos Entregues</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(40,167,69,0.2);">
+        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">85+</div>
+        <div style="font-size: 1.1rem;">Clientes Satisfeitos</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #FFCC00, #e6b800); color: #333; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(255,204,0,0.2);">
+        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">5+</div>
+        <div style="font-size: 1.1rem;">Anos de Experiência</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,123,255,0.2);">
+        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">98%</div>
+        <div style="font-size: 1.1rem;">Taxa de Sucesso</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Por que escolher a PE Tech -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Por que escolher a PE Tech?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem;">
+      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #BA0C2F; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
+        <h3 style="color: #BA0C2F; margin-bottom: 1rem; font-size: 1.3rem;">Excelência Comprovada</h3>
+        <p style="color: #666; line-height: 1.6;">Certificações Microsoft Gold Partner, metodologias ágeis e processos otimizados garantem resultados excepcionais em todos os projetos.</p>
+      </div>
+      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #28a745; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+        <h3 style="color: #28a745; margin-bottom: 1rem; font-size: 1.3rem;">Inovação Constante</h3>
+        <p style="color: #666; line-height: 1.6;">Sempre à frente das tendências tecnológicas, implementamos soluções de ponta que impulsionam a competitividade do seu negócio.</p>
+      </div>
+      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #FFCC00; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+        <h3 style="color: #FFCC00; margin-bottom: 1rem; font-size: 1.3rem;">Parceria Estratégica</h3>
+        <p style="color: #666; line-height: 1.6;">Verdadeiros parceiros no seu sucesso. Entendemos seu negócio e alinhamos tecnologia aos seus objetivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Tecnologias e Ferramentas aprimorada -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Tecnologias e Ferramentas</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI" style="height:22px;">Power BI</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="height:22px;">Python</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="height:22px;">Azure</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #8B0000; color:#8B0000; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="height:22px;">React</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #28a745; color:#28a745; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" style="height:22px;">Node.js</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Automate" style="height:22px;">Power Automate</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Apps" style="height:22px;">Power Apps</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #333; color:#333; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height:22px;">GitHub</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uipath/uipath-original.svg" alt="UiPath" style="height:22px;">UiPath</span>
+    </div>
+  </section>
+
+  <!-- Seção de Serviços -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Nossos Serviços</h2>
+    
+    <!-- Categoria: Tecnologia -->
+    <div style="margin-bottom: 3rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">🖥️ Soluções Tecnológicas</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #BA0C2F;">
+          <h4 style="color: #BA0C2F; margin-bottom: 0.8rem; font-size: 1.1rem;">🤖 Automação RPA</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Bots inteligentes para automação de processos, reduzindo custos em até 70%.</p>
+        </div>
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #28a745;">
+          <h4 style="color: #28a745; margin-bottom: 0.8rem; font-size: 1.1rem;">📊 Power Platform</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Dashboards interativos e aplicações low-code para análise de dados.</p>
+        </div>
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #FFCC00;">
+          <h4 style="color: #FFCC00; margin-bottom: 0.8rem; font-size: 1.1rem;">🌐 Desenvolvimento Web</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Soluções web personalizadas e sistemas de gestão empresarial.</p>
+        </div>
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #007bff;">
+          <h4 style="color: #007bff; margin-bottom: 0.8rem; font-size: 1.1rem;">🔗 Integração de Sistemas</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Conectamos sistemas legados com plataformas modernas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categoria: Engenharia Industrial -->
+    <div style="margin-bottom: 3rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">🏭 Engenharia Industrial</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #6f42c1;">
+          <h4 style="color: #6f42c1; margin-bottom: 0.8rem; font-size: 1.1rem;">🏭 Engenharia de Armazéns</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Otimização de armazéns e centros de distribuição para máxima eficiência.</p>
+        </div>
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #e83e8c;">
+          <h4 style="color: #e83e8c; margin-bottom: 0.8rem; font-size: 1.1rem;">🔧 Manutenção Industrial</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Sistemas de manutenção preventiva para equipamentos industriais.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categoria: Consultoria -->
+    <div>
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">📈 Consultoria Especializada</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #fd7e14;">
+          <h4 style="color: #fd7e14; margin-bottom: 0.8rem; font-size: 1.1rem;">📋 Labor Plan & Gestão</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Planejamento e otimização de força de trabalho e recursos humanos.</p>
+        </div>
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #20c997;">
+          <h4 style="color: #20c997; margin-bottom: 0.8rem; font-size: 1.1rem;">📈 Consultoria em Logística</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Otimização de processos logísticos e cadeia de suprimentos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Timeline -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Nossa Trajetória</h2>
+    <div style="position: relative; padding-left: 2rem;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #BA0C2F, #28a745);"></div>
+      
+      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
+        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #BA0C2F; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #BA0C2F;"></div>
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #BA0C2F;">
+          <h3 style="color: #BA0C2F; margin-bottom: 0.5rem;">2024 - Expansão Nacional</h3>
+          <p style="color: #666; margin: 0;">Abertura de escritório em São Paulo e contratação de 15 novos profissionais especializados.</p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
+        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #28a745; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #28a745;"></div>
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #28a745;">
+          <h3 style="color: #28a745; margin-bottom: 0.5rem;">2023 - Certificação Microsoft</h3>
+          <p style="color: #666; margin: 0;">Tornamo-nos Microsoft Gold Partner e obtivemos certificações em Power Platform e Azure.</p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
+        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #FFCC00; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #FFCC00;"></div>
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #FFCC00;">
+          <h3 style="color: #FFCC00; margin-bottom: 0.5rem;">2022 - Primeiro Cliente Enterprise</h3>
+          <p style="color: #666; margin: 0;">Implementação de solução RPA para multinacional, resultando em economia de R$ 2M/ano.</p>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
+        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #007bff; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #007bff;"></div>
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #007bff;">
+          <h3 style="color: #007bff; margin-bottom: 0.5rem;">2021 - Fundação da PE Tech</h3>
+          <p style="color: #666; margin: 0;">Nascimento da empresa com foco em transformação digital e automação de processos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Cases de Sucesso -->
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Cases de Sucesso</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+      <div style="background: linear-gradient(135deg, #fff, #f8f9fa); border: 1px solid #e9ecef; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+          <div style="width: 50px; height: 50px; background: #BA0C2F; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; margin-right: 1rem;">DHL</div>
+          <div>
+            <h3 style="color: #BA0C2F; margin: 0;">DHL Express Brasil</h3>
+            <p style="color: #666; margin: 0; font-size: 0.9rem;">Logística e Transportes</p>
+          </div>
+        </div>
+        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">Desenvolvimento de aplicativo mobile para rastreamento de entregas em tempo real, resultando em 40% de redução no tempo de entrega.</p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">React Native</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Node.js</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">AWS</span>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #fff, #f8f9fa); border: 1px solid #e9ecef; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+          <div style="width: 50px; height: 50px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; margin-right: 1rem;">VALE</div>
+          <div>
+            <h3 style="color: #28a745; margin: 0;">Vale S.A.</h3>
+            <p style="color: #666; margin: 0; font-size: 0.9rem;">Mineração</p>
+          </div>
+        </div>
+        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">Implementação de solução RPA para automação de processos financeiros, gerando economia de R$ 1.5M/ano.</p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">UiPath</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Power BI</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">SAP</span>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #fff, #f8f9fa); border: 1px solid #e9ecef; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+          <div style="width: 50px; height: 50px; background: #FFCC00; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold; margin-right: 1rem;">NUB</div>
+          <div>
+            <h3 style="color: #FFCC00; margin: 0;">Nubank</h3>
+            <p style="color: #666; margin: 0; font-size: 0.9rem;">Fintech</p>
+          </div>
+        </div>
+        <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">Desenvolvimento de dashboard analítico para monitoramento de fraudes, reduzindo em 60% os casos de fraude.</p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Power BI</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Python</span>
+          <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade" style="max-width: 1200px; margin: 2rem auto 2rem auto; background: #FFCC00; border-radius: 14px; box-shadow: 0 2px 12px rgba(186,12,47,0.07); padding: 2rem; text-align: center;">
+    <h2 style="color: #BA0C2F; font-size: 1.5rem; margin-bottom: 0.7rem;">Pronto para inovar?</h2>
+    <p style="font-size: 1.1rem; color: #222; margin-bottom: 0;">Conheça nossos projetos e descubra como a tecnologia pode transformar o seu negócio. Role para baixo e veja nosso portfólio!</p>
+  </section>
+
+  <!-- Seção Portfólio -->
+  <section id="portfolio" class="fade" aria-label="Seção portfólio">
+    <div class="portfolio-carousel">
+      <button class="carousel-arrow left premium-arrow" aria-label="Anterior" data-direction="left">
+        <div class="arrow-container">
+          <div class="arrow-background"></div>
+          <div class="arrow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="11" stroke="#FFCC00" stroke-width="2.5" fill="#fff"/>
+              <polyline points="14 8 10 12 14 16"/>
+            </svg>
+          </div>
+          <div class="arrow-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+      </button>
+      <div class="carousel-track">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Automação Industrial" loading="lazy" />
           <div class="portfolio-card-content">
             <h3>Projeto Automação Industrial</h3>
-            <p>
-              Desenvolvimento de sistema para automação e monitoramento de linhas produtivas
-              com integração IoT.
-            </p>
-            <a
-              href="./projects.html#projeto-automacao"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Ver Detalhes</a
-            >
+            <p>Desenvolvimento de sistema para automação e monitoramento de linhas produtivas com integração IoT.</p>
+            <a href="./projects.html#projeto-automacao" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
-        </article>
-
-        <article class="portfolio-card">
-          <img
-            src="https://via.placeholder.com/400x225.png?text=Projeto+2"
-            alt="Imagem do projeto Dashboard Power BI"
-            loading="lazy"
-          />
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Dashboard Power BI" loading="lazy" />
           <div class="portfolio-card-content">
             <h3>Dashboard Power BI</h3>
-            <p>
-              Criação de dashboards interativos para análise de performance de vendas
-              utilizando Power BI.
-            </p>
+            <p>Criação de dashboards interativos para análise de performance de vendas utilizando Power BI.</p>
             <a href="./pp.html" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
-        </article>
-
-        <article class="portfolio-card">
-          <img
-            src="https://via.placeholder.com/400x225.png?text=Projeto+3"
-            alt="Imagem do projeto Robotic Process Automation"
-            loading="lazy"
-          />
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Robotic Process Automation" loading="lazy" />
           <div class="portfolio-card-content">
             <h3>Robotic Process Automation (RPA)</h3>
-            <p>
-              Implementação de bots para automação de processos administrativos e redução
-              de erros manuais.
-            </p>
+            <p>Implementação de bots para automação de processos administrativos e redução de erros manuais.</p>
             <a href="./rpa.html" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
-        </article>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Integração de Sistemas" loading="lazy" />
+          <div class="portfolio-card-content">
+            <h3>Integração de Sistemas</h3>
+            <p>Plataforma de integração entre sistemas legados e cloud, com APIs seguras e escaláveis.</p>
+            <a href="./projects.html#integracao" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto App Mobile" loading="lazy" />
+          <div class="portfolio-card-content">
+            <h3>App Mobile DHL</h3>
+            <p>Aplicativo para acompanhamento de entregas, notificações e suporte ao cliente em tempo real.</p>
+            <a href="./projects.html#app-mobile" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+      <button class="carousel-arrow right premium-arrow" aria-label="Próximo" data-direction="right">
+        <div class="arrow-container">
+          <div class="arrow-background"></div>
+          <div class="arrow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="11" stroke="#FFCC00" stroke-width="2.5" fill="#fff"/>
+              <polyline points="10 8 14 12 10 16"/>
+            </svg>
+          </div>
+          <div class="arrow-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="carousel-indicators"></div>
+  </section>
+</main>
 
-  <section class="index"></section>
+<footer style="background: #222; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 3rem; font-size: 1.05rem; letter-spacing: 1px;">
+  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem;">
+    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto João Silva" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
+      <div style="font-weight: bold; color: #FFCC00;">João Silva</div>
+      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">Desenvolvedor Full Stack</div>
+      <a href="mailto:joao@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">joao@petech.com</a>
+      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Maria Souza" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
+      <div style="font-weight: bold; color: #FFCC00;">Maria Souza</div>
+      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">UX/UI Designer</div>
+      <a href="mailto:maria@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">maria@petech.com</a>
+      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 0.5rem;">
+    &copy; 2024 PE Tech. Todos os direitos reservados.
+  </div>
+  <div style="font-size: 1.2rem;">
+    <a href="https://www.linkedin.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">LinkedIn</a> |
+    <a href="https://github.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">GitHub</a>
+  </div>
+</footer>
+
+<!-- Botão flutuante de contato no lado inferior esquerdo -->
+<div id="floating-contact" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
+  <a href="./contact.html" class="contato" style="display: flex; align-items: center; gap: 8px; background: #000; color: #fff; padding: 12px 16px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid #BA0C2F; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <span class="icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </span>
+    Contato
+  </a>
+</div>
 </body>
-</html>
+</html> 
