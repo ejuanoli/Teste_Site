@@ -1,0 +1,158 @@
+/* Container que agrupa logo + barra + título */
+.logo-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 200px;
+    max-width: 340px;
+    flex-shrink: 0;
+  }
+  
+  /* Logo com borda verde leve, padding e background verde - tamanho aumentado */
+  .logo img {
+    height: 35px;
+    display: block;
+    border: 1px solid #FFCD00;
+    padding: 10px;
+    border-radius: 8px;
+    background: #FFCD00;
+    transition: all 0.3s ease;
+  }
+  .logo img:hover {
+    border-color: #FFCD00;
+    background: #FFCD00;
+    transform: scale(1.05);
+  }
+  
+  /* Barra reta vertical preta */
+  .separator {
+    width: 1px;
+    height: 35px;
+    background: linear-gradient(to bottom, #fff, #fff);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(40,167,69,0.3);
+  }
+  
+  /* Texto do título da página - estilo Power BI */
+  .page-title {
+    font-family: 'Segoe UI', 'Segoe UI Light', 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    user-select: none;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-shadow: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background-color: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }  
+
+/* Modo dark - ícones da navbar em branco */
+  /* Remover ícones SVG da navbar */
+.header .nav-list a svg {
+    display: none;
+  }
+  
+  /* Estilos apenas para desktop - não aplicam ao mobile */
+  @media (min-width: 901px) {
+    .nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 44px;
+  }
+  
+  .nav-list a {
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-bottom 0.2s, background 0.2s;
+    border-radius: 4px;
+  }
+  
+  .nav-list a:hover, .nav-list a.active {
+    color: #FFCC00;
+    background: rgba(34,34,34,0.18);
+    border-bottom: 2px solid #FFCC00;
+  }
+  
+  /* DIREITA */
+  .right-content {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    z-index: 2;
+  }
+  /* Estrelas do botão dark*/
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .star {
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #FFFFFF;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .star1 { top: 8px; left: 10px; width: 2px; height: 2px; animation: starTwinkle 3s ease-in-out infinite; }
+  .star2 { top: 12px; left: 25px; width: 1.5px; height: 1.5px; animation: starTwinkle 3s ease-in-out infinite 0.5s; }
+  .star3 { top: 18px; left: 15px; width: 2px; height: 2px; animation: starTwinkle 3s ease-in-out infinite 1s; }
+  .star4 { top: 22px; left: 28px; width: 1.5px; height: 1.5px; animation: starTwinkle 3s ease-in-out infinite 1.5s; }
+  .star5 { top: 16px; left: 35px; width: 2px; height: 2px; animation: starTwinkle 3s ease-in-out infinite 2s; }
+  
+  #theme-toggle-btn-top {
+    position: fixed;
+    top: 18px;
+    right: 32px;
+    z-index: 10001;
+    background: var(--dhl-yellow);
+    color: var(--dhl-red);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  #theme-toggle-btn-top:hover {
+    background: #ffe066;
+    color: #a00b28;
+  }
+  body.dark #theme-toggle-btn-top {
+    background: var(--dhl-red);
+    color: var(--dhl-yellow);
+  }
+  

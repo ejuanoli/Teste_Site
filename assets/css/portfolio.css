@@ -1,0 +1,326 @@
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.portfolio-card {
+  min-width: 340px;
+  max-width: 370px;
+  background: rgba(255,255,255,0.72);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(186,12,47,0.13), 0 1.5px 8px #FFCC0033;
+  border: 1.5px solid #FFCC00;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.5s cubic-bezier(.4,1.3,.6,1), box-shadow 0.3s, opacity 0.4s, filter 0.3s;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+  opacity: 0.7;
+  filter: blur(1px) grayscale(0.1);
+  position: relative;
+}
+.portfolio-card.active {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  opacity: 1;
+  filter: none;
+  z-index: 2;
+  border-color: #BA0C2F;
+}
+.portfolio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+.portfolio-card-content {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card-content h3 {
+  color: var(--dhl-red);
+  margin-bottom: 0.7rem;
+}
+.portfolio-card-content p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.portfolio-card-content a {
+  background: linear-gradient(90deg, #BA0C2F 0%, #FFCC00 100%);
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #BA0C2F22;
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+  display: inline-block;
+}
+.portfolio-card-content a:hover {
+  background: linear-gradient(90deg, #FFCC00 0%, #BA0C2F 100%);
+  color: #BA0C2F;
+  box-shadow: 0 4px 16px #FFCC0033;
+  transform: scale(1.07);
+}
+.carousel-arrow {
+  background: rgba(255,255,255,0.95) !important;
+  border: 3px solid #BA0C2F !important;
+  border-radius: 50% !important;
+  width: 55px !important;
+  height: 55px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 6px 20px rgba(186,12,47,0.25) !important;
+  position: relative !important;
+}
+.carousel-arrow svg {
+  width: 24px !important;
+  height: 24px !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)) !important;
+  border-color: #BA0C2F !important;
+}  
+.carousel-arrow svg circle {
+  stroke: #BA0C2F !important;
+  fill: transparent !important;
+  stroke-width: 2.5 !important;
+}
+.carousel-arrow svg polyline {
+  stroke: #000 !important;
+  stroke-width: 2.5 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+  min-height: 340px;
+  transition: opacity 0.5s;
+}
+.portfolio-carousel {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    user-select: none;
+    z-index: 1;
+  }
+  /* Efeitos hover para os botões */
+  /* Contorno vermelho nos cards do carrossel */
+.portfolio-card {
+    border: 2px solid #BA0C2F !important;
+    border-radius: 12px;
+    max-width: 350px !important;
+    width: 100% !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  .portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(186, 12, 47, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+  }
+  
+  .portfolio-card:hover::before {
+    left: 100%;
+  }
+  
+  .portfolio-card.active {
+    border: 2px solid #BA0C2F !important;
+    max-width: 350px !important;
+    width: 100% !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(186, 12, 47, 0.3) !important;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(186, 12, 47, 0.4) !important;
+  }
+  
+  .portfolio-card img {
+    transition: transform 0.4s ease !important;
+  }
+  
+  .portfolio-card:hover img {
+    transform: scale(1.1) !important;
+  }
+  
+  .portfolio-card-content {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9)) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 1.5rem !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  .portfolio-card-content h3 {
+    color: #BA0C2F !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.8rem !important;
+    font-size: 1.2rem !important;
+    position: relative !important;
+  }
+  
+  .portfolio-card-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #BA0C2F;
+    transition: width 0.3s ease;
+  }
+  
+  .portfolio-card:hover .portfolio-card-content h3::after {
+    width: 100%;
+  }
+  
+  .portfolio-card-content a {
+    background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+    color: #fff !important;
+    padding: 0.8rem 1.5rem !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3) !important;
+  }
+  
+  .portfolio-card-content a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .portfolio-card-content a:hover::before {
+    left: 100%;
+  }
+  
+  .portfolio-card-content a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(186, 12, 47, 0.5) !important;
+  }
+  
+  /* Carrossel aprimorado */
+  .portfolio-carousel {
+    position: relative !important;
+    padding: 2rem 0 !important;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(186,12,47,0.05)) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(186,12,47,0.2) !important;
+  }
+  
+  .carousel-track {
+    display: flex !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    gap: 2rem !important;
+    padding: 1rem !important;
+  }
+  
+  /* Indicadores aprimorados */
+  .carousel-indicators {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .carousel-indicators .indicator {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: rgba(186,12,47,0.3) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent !important;
+  }
+  
+  .carousel-indicators .indicator.active {
+    background: #BA0C2F !important;
+    transform: scale(1.2) !important;
+    box-shadow: 0 0 10px rgba(186,12,47,0.5) !important;
+  }
+  
+  .carousel-indicators .indicator:hover {
+    background: rgba(186,12,47,0.6) !important;
+    transform: scale(1.1) !important;
+  } 
+  /* --- CARROSSEL: REMOVER GRADIENTES E PULSO DAS SETAS --- */
+  .premium-arrow::before, .premium-arrow::after,
+  .premium-arrow:hover::before, .premium-arrow:hover::after,
+  .premium-arrow .arrow-particles, .premium-arrow:hover .arrow-particles,
+  .premium-arrow .arrow-background, .premium-arrow:hover .arrow-background {
+    display: none !important;
+    opacity: 0 !important;
+    animation: none !important;
+  }
+  .premium-arrow:hover, .carousel-arrow:hover {
+    background: #f7f7f7 !important;
+    border-color: #8B0000 !important;
+    box-shadow: 0 8px 24px #BA0C2F33 !important;
+    transform: scale(1.08) !important;
+  }
+  .premium-arrow .arrow-icon, .carousel-arrow .arrow-icon {
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .premium-arrow .arrow-icon svg, .carousel-arrow .arrow-icon svg {
+    filter: none !important;
+    animation: none !important;
+  }
+  /* Efeito hover nos botões dos carrosséis */
+.carousel-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+  }
+  
+  @keyframes energyPulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(186,12,47,0.6));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(186,12,47,0.8));
+    }
+  }
+  
+  /* Efeito de rotação suave nas setas */
+  .premium-arrow .arrow-icon {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .premium-arrow:hover .arrow-icon {
+    transform: scale(1.1) rotate(5deg);
+  }    

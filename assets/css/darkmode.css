@@ -1,0 +1,578 @@
+  body.dark-mode .header .nav-list a svg {
+    color: #fff !important;
+  }
+  body.dark-mode .header .nav-list a:hover svg, 
+  body.dark-mode .header .nav-list a.active svg {
+    color: #FFCC00 !important;
+  }
+  body.dark-mode .header.scrolled .nav-list a svg {
+    color: #fff !important;
+  }
+  body.dark-mode .header.scrolled .nav-list a:hover svg, 
+  body.dark-mode .header.scrolled .nav-list a.active svg {
+    color: #FFCC00 !important;
+  }
+/* --- DARK MODE BUTTON DINÂMICO COM SOL/NUVENS E CÉU/NOITE --- */
+.darkmode-navbar-btn {
+    background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
+    border: 2px solid #FFCC00;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 18px;
+    box-shadow: none !important;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .darkmode-navbar-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: none !important;
+  }
+  
+  .darkmode-navbar-btn .darkmode-icon {
+    display: none;
+  }
+  
+  /* Cena do céu */
+  .sky-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Sol */
+  .sun {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #FFD700;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+  
+  /* Lua */
+  .moon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    background: #F0F8FF;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #F0F8FF;
+    opacity: 0;
+    transform: translateX(20px) scale(0.8);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+  
+  /* Nuvens */
+  .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cloud1 {
+    top: 12px;
+    left: 6px;
+    width: 8px;
+    height: 4px;
+    animation: cloudFloat 4s ease-in-out infinite;
+  }
+  
+  .cloud2 {
+    top: 18px;
+    left: 18px;
+    width: 6px;
+    height: 3px;
+    animation: cloudFloat 4s ease-in-out infinite 1s;
+  }
+  
+  .cloud3 {
+    top: 15px;
+    left: 28px;
+    width: 7px;
+    height: 3px;
+    animation: cloudFloat 4s ease-in-out infinite 2s;
+  }
+  .navbar-sep {
+    color: var(--dhl-yellow);
+    font-size: 1.2rem;
+    margin: 0 0.7rem;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .navbar-current {
+    color: var(--dhl-yellow);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  body.dark .navbar-sep, body.dark .navbar-current {
+    color: var(--dhl-yellow);
+  }
+  /* Modo escuro ativo */
+body.dark-mode .darkmode-navbar-btn {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-color: #FFCC00;
+    box-shadow: 0 4px 16px rgba(26, 26, 46, 0.6);
+  }
+  
+  body.dark-mode .darkmode-navbar-btn:hover {
+    box-shadow: 0 8px 24px rgba(26, 26, 46, 0.8);
+  }
+  
+  body.dark-mode .sun {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+  }
+  
+  body.dark-mode .moon {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  
+  body.dark-mode .clouds {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  body.dark-mode .stars {
+    opacity: 1;
+  }
+  
+  body.dark-mode .star {
+    opacity: 1;
+  }  
+  /* Footer no modo dark */
+  body.dark-mode footer {
+    background: rgba(35,35,50,0.92) !important;
+  }
+  
+  /* Botão flutuante no modo dark */
+  body.dark-mode #floating-contact .contato {
+    background: #BA0C2F !important;
+    color: #fff !important;
+    border-color: #BA0C2F !important;
+  }
+  
+  body.dark-mode #floating-contact .contato:hover {
+    background: #FFCC00 !important;
+    color: #BA0C2F !important;
+  }
+  
+  /* Botão voltar ao topo no modo dark */
+  body.dark-mode #scrollTopBtn {
+    background: #BA0C2F !important;
+    color: #fff !important;
+    border-color: #111 !important;
+  }
+  
+  body.dark-mode #scrollTopBtn:hover {
+    background: #8B0000 !important;
+    color: #fff !important;
+  }
+  body.dark-mode .page-title {
+    color: #fff;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    background-color: rgba(40,40,40,0.9);
+  }
+  body.dark-mode .page-title:hover {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-color: #fff;
+    box-shadow: 0 4px 12px rgba(255,204,0,0.2);
+  }
+  body.dark-mode .header {
+    background: linear-gradient(120deg, #1a1a1a 60%, #BA0C2F 100%);
+    color: #fff;
+  }
+  body.dark-mode .header .nav-list a, body.dark-mode .header .page-title {
+    color: #fff !important;
+  }
+  body.dark-mode .header .nav-list a:hover, body.dark-mode .header .nav-list a.active {
+    color: #fff;
+    border-bottom: 2.5px solid #FFCC00;
+    background: none;
+    text-shadow: 0 0 8px #FFCC0099;
+  }
+  body.dark-mode .header .nav-list a svg {
+    color: #fff !important;
+  }
+  body.dark-mode .header .nav-list a:hover svg, body.dark-mode .header .nav-list a.active svg {
+    color: #FFCC00 !important;
+    filter: drop-shadow(0 0 6px #FFCC00);
+    transform: scale(1.18) rotate(-8deg);
+  }
+  body.dark-mode .header.scrolled {
+    background: linear-gradient(120deg, #000 60%, #BA0C2F 100%);
+    color: #fff;
+    border-bottom: 2px solid #BA0C2F;
+    box-shadow: none;
+  }
+  body.dark-mode .header.scrolled .nav-list a, body.dark-mode .header.scrolled .page-title {
+    color: #FFCC00;
+  }
+  body.dark-mode .header.scrolled .nav-list a:hover, body.dark-mode .header.scrolled .nav-list a.active {
+    color: #fff;
+    border-bottom: 2.5px solid #FFCC00;
+    background: none;
+    text-shadow: 0 0 8px #FFCC0099;
+  }
+  body.dark-mode .header.scrolled .nav-list a svg {
+    color: #fff !important;
+  }
+  body.dark-mode .header.scrolled .nav-list a:hover svg, body.dark-mode .header.scrolled .nav-list a.active svg {
+    color: #FFCC00 !important;
+    filter: drop-shadow(0 0 6px #FFCC00);
+    transform: scale(1.18) rotate(8deg);
+  }
+  body.dark-mode .nav-list a {
+    color: #FFCC00;
+  }
+  
+  body.dark-mode .nav-list a:hover, body.dark-mode .nav-list a.active {
+    color: #fff;
+    background: #232323;
+    border-bottom: 2px solid #FFCC00;
+  }
+  body.dark-mode .portfolio-card-content a {
+    background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  }
+  body.dark-mode .portfolio-card-content a:hover {
+    background: linear-gradient(135deg, #8B0000, #BA0C2F) !important;
+    border-color: rgba(255,255,255,0.4) !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+  }
+  body.dark-mode .portfolio-carousel::before {
+    display: none !important;
+  }
+  body.dark-mode .portfolio-carousel > * { position: relative; z-index: 1; }
+  body.dark-mode .portfolio-card {
+    background: rgba(10,10,10,0.82);
+    border: 1.5px solid #FFCC00;
+    box-shadow: 0 4px 24px #FFCC0033, 0 1.5px 8px #BA0C2F33;
+    color: #fff;
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  }
+  body.dark-mode .portfolio-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+    border-color: #FFCC00;
+  }
+  body.dark-mode .portfolio-card-content h3,
+  body.dark-mode .portfolio-card-content p {
+    color: #FFCC00;
+  }
+  body.dark-mode .portfolio-card-content a {
+    background: linear-gradient(90deg, #232323 0%, #FFCC00 100%);
+    color: #232323;
+    border: 1.5px solid #FFCC00;
+  }
+  body.dark-mode .portfolio-card-content a:hover {
+    background: linear-gradient(90deg, #FFCC00 0%, #232323 100%);
+    color: #FFCC00;
+  }
+  body.dark-mode {
+    background: #23232b;
+    color: #f1f1f1;
+  } 
+  /* Cards de cases no modo dark */
+  body.dark-mode .fade div[style*="background: linear-gradient(135deg, #fff, #f8f9fa)"] {
+    background: linear-gradient(135deg, rgba(34,34,34,0.9), rgba(51,51,51,0.8)) !important;
+    border-color: #FFCC00 !important;
+  }
+  
+  /* Tags/span no modo dark */
+  body.dark-mode .fade span[style*="background: #e9ecef"] {
+    background: rgba(255,204,0,0.2) !important;
+    color: #FFCC00 !important;
+  }
+  
+  /* Timeline no modo dark */
+  body.dark-mode .fade div[style*="background: #f8f9fa"][style*="border-left"] {
+    background: rgba(51,51,51,0.8) !important;
+  }
+  
+  /* Seção amarela no modo dark */
+  body.dark-mode .fade[style*="background: #FFCC00"] {
+    background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+  }
+  
+  body.dark-mode .fade[style*="background: #FFCC00"] h2 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade[style*="background: #FFCC00"] p {
+    color: #fff !important;
+  }
+  
+  /* Cards de estatísticas no modo dark */
+  body.dark-mode .fade div[style*="background: linear-gradient(135deg, #BA0C2F"] {
+    background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+    box-shadow: 0 4px 16px rgba(186,12,47,0.4) !important;
+  }
+  
+  body.dark-mode .fade div[style*="background: linear-gradient(135deg, #28a745"] {
+    background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+    box-shadow: 0 4px 16px rgba(40,167,69,0.4) !important;
+  }
+  
+  body.dark-mode .fade div[style*="background: linear-gradient(135deg, #FFCC00"] {
+    background: linear-gradient(135deg, #FFCC00, #e6b800) !important;
+    box-shadow: 0 4px 16px rgba(255,204,0,0.4) !important;
+  }
+  
+  body.dark-mode .fade div[style*="background: linear-gradient(135deg, #007bff"] {
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+    box-shadow: 0 4px 16px rgba(0,123,255,0.4) !important;
+  }
+  
+  /* Seção amarela no modo dark */
+  body.dark-mode .fade[style*="background: #FFCC00"] {
+    background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+  }
+  
+  body.dark-mode .fade[style*="background: #FFCC00"] h2 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade[style*="background: #FFCC00"] p {
+    color: #fff !important;
+  }
+  
+  /* Categorias de serviços no modo dark */
+  body.dark-mode .fade h3[style*="border-bottom: 2px solid #FFCC00"] {
+    color: #FFCC00 !important;
+    border-bottom-color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade h4 {
+    color: inherit !important;
+  }
+  
+  /* Cores específicas para cada serviço no modo dark */
+  body.dark-mode .fade div[style*="border-left: 4px solid #BA0C2F"] {
+    border-left-color: #BA0C2F !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #28a745"] {
+    border-left-color: #28a745 !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #FFCC00"] {
+    border-left-color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #007bff"] {
+    border-left-color: #007bff !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #6f42c1"] {
+    border-left-color: #6f42c1 !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #fd7e14"] {
+    border-left-color: #fd7e14 !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #20c997"] {
+    border-left-color: #20c997 !important;
+  }
+  
+  body.dark-mode .fade div[style*="border-left: 4px solid #e83e8c"] {
+    border-left-color: #e83e8c !important;
+  }
+  body.dark-mode .portfolio-carousel::before {
+    background: rgba(35,35,43,0.92) !important;
+  }
+  
+  body.dark-mode footer {
+    background: rgba(35,35,50,0.92) !important;
+  }
+  body.dark-mode .header .nav-list a svg {
+    display: none;
+  }
+  body.dark-mode .carousel-arrow svg polyline {
+    stroke: #000 !important;
+  }
+  
+  body.dark-mode .carousel-arrow:hover svg circle {
+    stroke: #8B0000 !important;
+    fill: transparent !important;
+  }
+  
+  body.dark-mode .carousel-arrow:hover svg polyline {
+    stroke: #fff !important;
+  }
+  /* Modo dark para setas premium */
+body.dark-mode .premium-arrow {
+    background: linear-gradient(135deg, #2a2a2a, #333) !important;
+    border-color: #BA0C2F !important;
+    box-shadow: 
+      0 8px 25px rgba(186,12,47,0.4),
+      0 0 0 0 rgba(186,12,47,0.8) !important;
+  }
+  
+  body.dark-mode .premium-arrow:hover {
+    background: linear-gradient(135deg, #333, #2a2a2a) !important;
+    box-shadow: 
+      0 15px 35px rgba(186,12,47,0.6),
+      0 0 0 8px rgba(186,12,47,0.3),
+      0 0 0 4px rgba(255,204,0,0.4) !important;
+  } 
+  body.dark-mode .arrow-icon svg polyline {
+    stroke: #fff !important;
+  }
+  /* Estilos para seções detalhadas de projetos no modo dark */
+body.dark-mode .projeto-detalhado {
+    background: #23232b !important;
+    color: #f1f1f1 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+  }
+  
+  body.dark-mode .projeto-detalhado h2 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado h3 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado h4 {
+    color: #e1e1e1 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado p {
+    color: #e1e1e1 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado ul li {
+    color: #e1e1e1 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado blockquote {
+    background: #2a2a2a !important;
+    color: #e1e1e1 !important;
+    border-left-color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .projeto-detalhado span[style*="background: #e9ecef"] {
+    background: rgba(255,204,0,0.2) !important;
+    color: #FFCC00 !important;
+    border: 1px solid rgba(255,204,0,0.3) !important;
+  }
+  
+  /* Carrossel no modo dark */
+  body.dark-mode .carousel-container {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+  }
+  
+  body.dark-mode .carousel-btn {
+    background: rgba(186,12,47,0.8) !important;
+    color: #fff !important;
+  }
+  
+  body.dark-mode .carousel-btn:hover {
+    background: rgba(186,12,47,1) !important;
+  }
+  
+  body.dark-mode .dot {
+    background: rgba(255,255,255,0.6) !important;
+  }
+  
+  body.dark-mode .dot.active {
+    background: #FFCC00 !important;
+    box-shadow: 0 0 8px rgba(255,204,0,0.5) !important;
+  }
+  
+  body.dark-mode {
+    background: #23232b !important;
+    color: #f1f1f1 !important;
+  }
+  
+  /* Seções no modo dark */
+  body.dark-mode .fade {
+    background: rgba(35,35,43,0.92) !important;
+    color: #f1f1f1 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+  }
+  
+  body.dark-mode .fade h2 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade h3 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .fade p {
+    color: #e1e1e1 !important;
+  }
+  
+  body.dark-mode .fade ul li {
+    color: #e1e1e1 !important;
+  }
+  
+  /* Cards de projetos no modo dark */
+  body.dark-mode .portfolio-card {
+    background: rgba(35,35,43,0.95) !important;
+    border: 2px solid #BA0C2F !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+  }
+  
+  body.dark-mode .portfolio-card-content {
+    background: rgba(35,35,43,0.98) !important;
+  }
+  
+  body.dark-mode .portfolio-card-content h3 {
+    color: #FFCC00 !important;
+  }
+  
+  body.dark-mode .portfolio-card-content p {
+    color: #e1e1e1 !important;
+  }
+  
+  /* Tecnologias no modo dark */
+  body.dark-mode .tech-badge {
+    background: rgba(35,35,43,0.9) !important;
+    border-color: #FFCC00 !important;
+    color: #FFCC00 !important;
+  }
