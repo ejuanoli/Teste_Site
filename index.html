@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <link rel="stylesheet" href="assets/css/media.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/ops.css">
   <script defer src="assets/js/script.js"></script>
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -40,10 +42,10 @@
       </div>
       
       <ul class="nav-list">
-        <li class="text-home"><a href="./index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home</a></li>
-        <li><a href="./projects.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projetos</a></li>
-        <li><a href="./rpa.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="9" r="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>RPA</a></li>
-        <li><a href="./pp.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Power Platform</a></li>
+        <li class="text-home"><a href="./index.html"></svg>Home</a></li>
+        <li><a href="./time_info.html">Conheça o nosso time</a></li>
+        <li><a href="./rpa.html">RPA</a></li>
+        <li><a href="./pp.html">Power Platform</a></li>
       </ul>
 
       <!-- Ícones sociais no rodapé do menu -->
@@ -222,23 +224,23 @@
   </section>
 
   <!-- Seção: Por que escolher a PE Tech -->
-  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
-    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Por que escolher a PE Tech?</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem;">
-      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #BA0C2F; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
-        <h3 style="color: #BA0C2F; margin-bottom: 1rem; font-size: 1.3rem;">Excelência Comprovada</h3>
-        <p style="color: #666; line-height: 1.6;">Certificações Microsoft Gold Partner, metodologias ágeis e processos otimizados garantem resultados excepcionais em todos os projetos.</p>
+  <section class="fade" id="strategy">
+    <h2 class="darktxt" style="color: #000; font-size: 1.8rem; margin-top: 2.5rem; text-align: center;">Por que escolher a PE Tech?</h2>
+    <div class="darktxt" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem;">
+      <div class="darktxt" style="margin-top: 4rem; padding: 2rem; height: 250px; background: rgba(0,0,0,0.07); border-radius: 12px; border: 1px solid #000; text-align: center;">
+        <div class="darktxt" style="font-size: 3rem;">🏆</div>
+        <h3 class="darktxt" style="color: #000; margin-bottom: 1rem; font-size: 1.3rem;">Excelência Comprovada</h3>
+        <p class="darktxt" style="color: #000; line-height: 1.6; font-weight: 600;">Certificações Microsoft Gold Partner, metodologias ágeis e processos otimizados garantem resultados excepcionais em todos os projetos.</p>
       </div>
-      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #28a745; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-        <h3 style="color: #28a745; margin-bottom: 1rem; font-size: 1.3rem;">Inovação Constante</h3>
-        <p style="color: #666; line-height: 1.6;">Sempre à frente das tendências tecnológicas, implementamos soluções de ponta que impulsionam a competitividade do seu negócio.</p>
+      <div class="darktxt" style="margin-top: 4rem; padding: 2rem; height: 250px; background: rgba(0,0,0,0.07);border-radius: 12px; border: 1px solid #000; text-align: center;">
+        <div class="darktxt" style="font-size: 3rem;">⚡</div>
+        <h3 class="darktxt" style="color: #000; margin-bottom: 1rem; font-size: 1.3rem;">Inovação Constante</h3>
+        <p class="darktxt" style="color: #000; line-height: 1.6; font-weight: 600;">Sempre à frente das tendências tecnológicas, implementamos soluções de ponta que impulsionam a competitividade do seu negócio.</p>
       </div>
-      <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #FFCC00; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-        <h3 style="color: #FFCC00; margin-bottom: 1rem; font-size: 1.3rem;">Parceria Estratégica</h3>
-        <p style="color: #666; line-height: 1.6;">Verdadeiros parceiros no seu sucesso. Entendemos seu negócio e alinhamos tecnologia aos seus objetivos.</p>
+      <div class="darktxt" style="margin-top: 4rem; padding: 2rem; height: 250px; background: rgba(0,0,0,0.07);border-radius: 12px; border: 1px solid #000; text-align: center;">
+        <div class="darktxt" style="font-size: 3rem;">🤝</div>
+        <h3 class="darktxt" style="color: #000; margin-bottom: 1rem; font-size: 1.3rem;">Parceria Estratégica</h3>
+        <p class="darktxt" style="color: #000; line-height: 1.6; font-weight: 600;">Verdadeiros parceiros no seu sucesso. Entendemos seu negócio e alinhamos tecnologia aos seus objetivos.</p>
       </div>
     </div>
   </section>
@@ -247,15 +249,16 @@
   <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
     <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Tecnologias e Ferramentas</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI" style="height:22px;">Power BI</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://imakestuff.online/wp-content/uploads/2019/12/HTML-CSS-JS-Logo.png" alt="HTML, CSS e JS" style="height:22px;">HTML, CSS e JS</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Microsoft_Visual_Basic_for_Applications_logo.svg" alt="VBA" style="height:22px;">VBA</span>
       <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="height:22px;">Python</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="height:22px;">Azure</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #8B0000; color:#8B0000; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="height:22px;">React</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #28a745; color:#28a745; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" style="height:22px;">Node.js</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Automate" style="height:22px;">Power Automate</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Power Apps" style="height:22px;">Power Apps</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #333; color:#333; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height:22px;">GitHub</span>
-      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/uipath/uipath-original.svg" alt="UiPath" style="height:22px;">UiPath</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://img.icons8.com/?size=512&id=38192&format=png" alt="SAP" style="height:22px;">SAP</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #28a745; color:blue; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://plantensive.com/wp-content/uploads/2020/10/Blue_Yonder_logo_lg.png" alt="JDA" style="height:22px;">JDA</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #8B0000; color:#8B0000; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://download.logo.wine/logo/Oracle_SQL_Developer/Oracle_SQL_Developer-Logo.wine.png" alt="SQL" style="height:22px;">SQL</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://summitbajracharya.com.np/wp-content/uploads/2020/10/PowerAutomate-2020-icon-1024x1024.png" alt="Power Automate" style="height:22px;">Power Automate</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://img.icons8.com/?size=512&id=OU2ddOKw840K&format=png" alt="Power Apps" style="height:22px;">Power Apps</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://1000logos.net/wp-content/uploads/2022/12/Power-BI-Logo.png" alt="Power BI" style="height:22px;">Power BI</span>
+      <span class="tech-badge" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;"><img src="https://img.icons8.com/color/512/uipath.png" alt="UiPath" style="height:22px;">UiPath</span>
     </div>
   </section>
 
@@ -268,95 +271,23 @@
       <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">🖥️ Soluções Tecnológicas</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
         <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #BA0C2F;">
-          <h4 style="color: #BA0C2F; margin-bottom: 0.8rem; font-size: 1.1rem;">🤖 Automação RPA</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Bots inteligentes para automação de processos, reduzindo custos em até 70%.</p>
+          <h4 style="color: #BA0C2F; margin-bottom: 0.8rem; font-size: 1.1rem;"><img src="https://img.icons8.com/color/512/uipath.png" alt="UiPath" style="height:30px;margin: 0 0 -10px -10px;"> Automação RPA</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Perdendo muito tempo com tarefas repetitivas? Podemos ajudar com automações utilizando as melhores ferramentas no mercado.</p>
         </div>
         <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #28a745;">
-          <h4 style="color: #28a745; margin-bottom: 0.8rem; font-size: 1.1rem;">📊 Power Platform</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Dashboards interativos e aplicações low-code para análise de dados.</p>
+          <h4 style="color: #28a745; margin-bottom: 0.8rem; font-size: 1.1rem;"><img src="https://1000logos.net/wp-content/uploads/2022/12/Power-BI-Logo.png" alt="Power BI" style="height:30px;margin: 0 0 -10px -10px;"> Power Platform</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Precisando de visibilidade para os KPI's da sua operação, produtividade ou informações do estoque? Possuímos alto conhecimento com SQL e ferramentas como Power BI e The View para montar visibilidades.</p>
         </div>
         <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #FFCC00;">
-          <h4 style="color: #FFCC00; margin-bottom: 0.8rem; font-size: 1.1rem;">🌐 Desenvolvimento Web</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Soluções web personalizadas e sistemas de gestão empresarial.</p>
+          <h4 style="color: #FFCC00; margin-bottom: 0.8rem; font-size: 1.1rem;"><img src="https://imakestuff.online/wp-content/uploads/2019/12/HTML-CSS-JS-Logo.png" style="height:35px;margin: 0 0 -10px -10px;"> Desenvolvimento Web</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Perdendo muito tempo com planilhas, análise de dados manuais e falta de visibilidade no seu sistema? Deixe-nos ajudar com sites mordernos e robustos, com conexão em tempo real ao seu sistema.</p>
         </div>
         <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #007bff;">
-          <h4 style="color: #007bff; margin-bottom: 0.8rem; font-size: 1.1rem;">🔗 Integração de Sistemas</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Conectamos sistemas legados com plataformas modernas.</p>
+          <h4 style="color: #007bff; margin-bottom: 0.8rem; font-size: 1.1rem;"><img src="https://cdn.blueyonder.com/global/images/logo-social-blue.png" alt="JDA" style="height:40px;margin: -15px 0 -10px -10px;"> Sistemas Operacionais</h4>
+          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Problemas com seu sistema operacional? Precisando configurar um sistema? Nós temos super-usuários capacitados para configurar ou alterar seu sistema operacional da melhor forma!</p>
         </div>
       </div>
     </div>
-
-    <!-- Categoria: Engenharia Industrial -->
-    <div style="margin-bottom: 3rem;">
-      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">🏭 Engenharia Industrial</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #6f42c1;">
-          <h4 style="color: #6f42c1; margin-bottom: 0.8rem; font-size: 1.1rem;">🏭 Engenharia de Armazéns</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Otimização de armazéns e centros de distribuição para máxima eficiência.</p>
-        </div>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #e83e8c;">
-          <h4 style="color: #e83e8c; margin-bottom: 0.8rem; font-size: 1.1rem;">🔧 Manutenção Industrial</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Sistemas de manutenção preventiva para equipamentos industriais.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Categoria: Consultoria -->
-    <div>
-      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 2px solid #FFCC00; padding-bottom: 0.5rem;">📈 Consultoria Especializada</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #fd7e14;">
-          <h4 style="color: #fd7e14; margin-bottom: 0.8rem; font-size: 1.1rem;">📋 Labor Plan & Gestão</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Planejamento e otimização de força de trabalho e recursos humanos.</p>
-        </div>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #20c997;">
-          <h4 style="color: #20c997; margin-bottom: 0.8rem; font-size: 1.1rem;">📈 Consultoria em Logística</h4>
-          <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">Otimização de processos logísticos e cadeia de suprimentos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Timeline -->
-  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
-    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Nossa Trajetória</h2>
-    <div style="position: relative; padding-left: 2rem;">
-      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #BA0C2F, #28a745);"></div>
-      
-      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
-        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #BA0C2F; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #BA0C2F;"></div>
-        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #BA0C2F;">
-          <h3 style="color: #BA0C2F; margin-bottom: 0.5rem;">2024 - Expansão Nacional</h3>
-          <p style="color: #666; margin: 0;">Abertura de escritório em São Paulo e contratação de 15 novos profissionais especializados.</p>
-        </div>
-      </div>
-
-      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
-        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #28a745; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #28a745;"></div>
-        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #28a745;">
-          <h3 style="color: #28a745; margin-bottom: 0.5rem;">2023 - Certificação Microsoft</h3>
-          <p style="color: #666; margin: 0;">Tornamo-nos Microsoft Gold Partner e obtivemos certificações em Power Platform e Azure.</p>
-        </div>
-      </div>
-
-      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
-        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #FFCC00; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #FFCC00;"></div>
-        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #FFCC00;">
-          <h3 style="color: #FFCC00; margin-bottom: 0.5rem;">2022 - Primeiro Cliente Enterprise</h3>
-          <p style="color: #666; margin: 0;">Implementação de solução RPA para multinacional, resultando em economia de R$ 2M/ano.</p>
-        </div>
-      </div>
-
-      <div style="position: relative; margin-bottom: 2rem; padding-left: 2rem;">
-        <div style="position: absolute; left: -1.5rem; top: 0.5rem; width: 12px; height: 12px; background: #007bff; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #007bff;"></div>
-        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 3px solid #007bff;">
-          <h3 style="color: #007bff; margin-bottom: 0.5rem;">2021 - Fundação da PE Tech</h3>
-          <p style="color: #666; margin: 0;">Nascimento da empresa com foco em transformação digital e automação de processos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Seção de Cases de Sucesso -->
   <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
     <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Cases de Sucesso</h2>
@@ -415,8 +346,6 @@
     <h2 style="color: #BA0C2F; font-size: 1.5rem; margin-bottom: 0.7rem;">Pronto para inovar?</h2>
     <p style="font-size: 1.1rem; color: #222; margin-bottom: 0;">Conheça nossos projetos e descubra como a tecnologia pode transformar o seu negócio. Role para baixo e veja nosso portfólio!</p>
   </section>
-
-  <!-- Seção Portfólio -->
   <section id="portfolio" class="fade" aria-label="Seção portfólio">
     <div class="portfolio-carousel">
       <button class="carousel-arrow left premium-arrow" aria-label="Anterior" data-direction="left">
@@ -439,8 +368,8 @@
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Automação Industrial" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Projeto Automação Industrial</h3>
-            <p>Desenvolvimento de sistema para automação e monitoramento de linhas produtivas com integração IoT.</p>
+            <h3>Automação de Tarefas</h3>
+            <p>Desenvolvimento de automações com um grande acervo de ferramentas, tais como RPA, Power Automate, Python, VBS, VBA e outras! Conheça nossos projetos clicando no link abaixo.</p>
             <a href="./projects.html#projeto-automacao" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
         </div>
@@ -455,24 +384,24 @@
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Robotic Process Automation" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Robotic Process Automation (RPA)</h3>
-            <p>Implementação de bots para automação de processos administrativos e redução de erros manuais.</p>
+            <h3>Desenvolvimento de Visibilidades (KPI)</h3>
+            <p>Garantimos a acertividade de informações com visibilidades gerenciais, como The View ou Power BI. Clique abaixo para visualizar nossos desenvolvimentos!</p>
             <a href="./rpa.html" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
         </div>
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto Integração de Sistemas" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Integração de Sistemas</h3>
-            <p>Plataforma de integração entre sistemas legados e cloud, com APIs seguras e escaláveis.</p>
+            <h3>Sistemas Operacionais</h3>
+            <p>Possuímos um time capacitado e com alta proficiência em sistemas operacionais, clique abaixo e conheça mais sobre os nosso serviços!</p>
             <a href="./projects.html#integracao" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
         </div>
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Imagem do projeto App Mobile" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>App Mobile DHL</h3>
-            <p>Aplicativo para acompanhamento de entregas, notificações e suporte ao cliente em tempo real.</p>
+            <h3>Formulários Integrados</h3>
+            <p>Sua operação está precisando de um formulário para registro de dados? Conte conosco, podemos implementar facilmente, e trabalhar com visibilidades de forma automatizada.</p>
             <a href="./projects.html#app-mobile" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
           </div>
         </div>
@@ -498,28 +427,49 @@
   </section>
 </main>
 
+<!-- Footer -->
 <footer style="background: #222; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 3rem; font-size: 1.05rem; letter-spacing: 1px;">
   <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem;">
     <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto João Silva" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
-      <div style="font-weight: bold; color: #FFCC00;">João Silva</div>
-      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">Desenvolvedor Full Stack</div>
-      <a href="mailto:joao@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">joao@petech.com</a>
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Aurelio Ferreira" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00">
+        <div style="font-weight:bold; color:#FFCC00; font-size:1.05rem;">Aurelio Ferreira</div>
+        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Coord. de Sistemas Operacionais</div>
+        <a href="mailto:Aurelio.Ferreira@dhl.com" style="color:#FFCC00; font-size:0.97rem; margin-bottom:0.2rem;">Aurelio.Ferreira@dhl.com</a>
       <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
         <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
         <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
       </div>
-    </div>
-    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Maria Souza" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
-      <div style="font-weight: bold; color: #FFCC00;">Maria Souza</div>
-      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">UX/UI Designer</div>
-      <a href="mailto:maria@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">maria@petech.com</a>
-      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
       </div>
-    </div>
+      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Pedro Mattoso Cruzolini" style="width:48px; height:48px; border-radius:50%; border:2px solid #28a745; margin-bottom:0.5rem;">
+        <div style="font-weight:bold; color:#28a745; font-size:1.05rem;">João Pedro Mattoso Cruzolini</div>
+        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Supervisor de Processos</div>
+        <a href="mailto:Joao.Cruzolini@dhl.com" style="color:#28a745; font-size:0.97rem; margin-bottom:0.2rem;">Joao.Cruzolini@dhl.com</a>
+        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+        <img src="https://dpdhl.sharepoint.com/_vti_bin/afdcache.ashx/_userprofile/userphoto.jpg?_oat_=1751534565_b1db149bc1c33f279f08d2dbd05525ea0522ceae79ab5bd1cd0763af954b1871&P1=1751477532&P2=-83916695&P3=1&P4=blM5DMOAbFeHtpvRWnQzHq2OsbcUZ5rQojsp%2FVPZWkUytj67Zbi8NB6OyH5pEMqH1H1v9wnFGvz6PF%2FC%2FdOV6ccrv4VYSggB1nEfIo%2BODWaowGBJ3OlbN%2BNARwtuz8aHxIOA%2BewcrFP3SDfgJNJx31c%2Fze2BChXVTd%2FaFdH44JZxFwU8eE41z0IAqeXdw5HxRQDJXgk%2FsBLd4ZNKQ4Xyd1EcZt9JPQJXg6Ecw6l96a37LFoBYIwZGEraY7ToDbbiyoN76svTFnsfUNhGtvtomWrMKdoz%2FDkfGixVStaVswNJ4WpBCyFMw4k3Z3U0pITpGH68qeDhAfYGIdB7LB6P3w%3D%3D&size=S&accountname=eduardojuan%40dhl.com" alt="Eduardo Juan Oliveira" style="width:48px; height:48px; border-radius:50%; border:2px solid #BA0C2F; margin-bottom:0.5rem;">
+        <div style="font-weight:bold; color:#BA0C2F; font-size:1.05rem;">Eduardo Juan</div>
+        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Analista de Processos e Digitalização Jr</div>
+        <a href="mailto:eduardojuan@dhl.com" style="color:#BA0C2F; font-size:0.97rem; margin-bottom:0.2rem;">eduardojuan@dhl.com</a>
+        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
+        <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Rogerio Pimentel" style="width:48px; height:48px; border-radius:50%; border:2px solid #0078D4; margin-bottom:0.5rem;">
+        <div style="font-weight:bold; color:#0078D4; font-size:1.05rem;">Rogerio Pimentel</div>
+        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Coordenador de Sistemas Operacionais</div>
+        <a href="mailto:Rogerio.Pimentel@dhl.com" style="color:#0078D4; font-size:0.97rem; margin-bottom:0.2rem;">Rogerio.Pimentel@dhl.com</a>
+        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
+          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
   </div>
   <div style="margin-bottom: 0.5rem;">
     &copy; 2024 PE Tech. Todos os direitos reservados.
@@ -541,5 +491,26 @@
     Contato
   </a>
 </div>
+<!-- Botão flutuante Ops Profile -->
+<div id="floating-ops-profile" style="position: fixed; top: 50%; left: 0; transform: translateY(-50%); z-index: 1000;">
+  <div style="position: relative;">
+    <button id="opsProfileBtn">
+      <span style="display: block; transform: rotate(180deg);">Ops Profile</span>
+    </button>
+    <div id="opsProfileTooltip" style="display: none; position: absolute; left: 110%; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #fffbe6 70%, #ffe7b3 100%); color: #222; border-radius: 16px; box-shadow: 0 4px 24px rgba(186,12,47,0.13); padding: 1.2rem 1.5rem; min-width: 220px; max-width: 320px; font-size: 1rem; font-weight: 400; border-left: 5px solid #FFCC00; z-index: 1001; border-top: 2px solid #BA0C2F; border-bottom: 2px solid #BA0C2F;">
+      <div style="margin-bottom: 0.7rem; font-weight: 700; color: #BA0C2F; font-size: 1.08rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem;">
+        Operações Tech
+      </div>
+      <div style="color: #333; font-size: 1.01rem; margin-bottom: 1rem; line-height: 1.5; font-weight: 500;">
+        Descubra como é o perfil das nossas operações na DHL!
+      </div>
+      <a href="./ops.html" target="_blank" class="ver-operacoes-btn">
+        <svg width="15" height="15" fill="none" stroke="#BA0C2F" stroke-width="2.2" viewBox="0 0 24 24" class="ver-ops-ico"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Ver Operações
+      </a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html> 
