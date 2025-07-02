@@ -412,6 +412,8 @@ body.dark-mode .darkmode-navbar-btn {
   body.dark-mode .fade div[style*="border-left: 4px solid #fd7e14"] {
     border-left-color: #fd7e14 !important;
   }
+
+
   
   body.dark-mode .fade div[style*="border-left: 4px solid #20c997"] {
     border-left-color: #20c997 !important;
@@ -575,4 +577,122 @@ body.dark-mode .projeto-detalhado {
     background: rgba(35,35,43,0.9) !important;
     border-color: #FFCC00 !important;
     color: #FFCC00 !important;
+  }
+
+  body.dark-mode .fade {
+    box-shadow: none !important;
+  } 
+  body.dark-mode .portfolio-carousel {
+    background: none;}
+
+  body.dark-mode #strategy {
+    max-width: 1200px !important; 
+    height: 470px !important;
+    margin: 2rem auto !important; 
+    background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sem%20t%C3%ADtulo.png?raw=true') !important;
+    background-size:100% !important;
+    background-clip:padding-box !important;
+    background-repeat: no-repeat !important;
+    border-radius: 14px !important; 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07) !important; 
+    padding: 2rem !important;
+  }
+  
+  body.dark-mode .filter-ferramenta-btn {
+    margin-top: 5rem;
+    margin-bottom: -5rem;
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  body.dark-mode .filter-ferramenta-btn:hover {
+    background: grey !important;
+    color: #000 !important;
+    border-color: #fff !important;
+    border-width: 2.5px;
+    box-shadow: 0 2px 10px #FFCC0033;
+    transform: scale(1.05);
+  }
+  body.dark-mode .filter-ferramenta-btn.selected,  body.dark-mode .filter-ferramenta-btn[aria-pressed="true"] {
+    background: #BA0C2F !important;
+    color: #fff !important;
+    border-color: #000 !important;
+    font-weight: bold;
+    box-shadow: 0 4px 16px #BA0C2F22;
+    outline: none;
+  }
+
+
+  body.dark-mode .card {
+    min-width: 300px;
+    max-width: 340px;
+    height: 260px;
+    background: #000;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  body.dark-mode .card:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode  .card h3 {
+    color: #BA0C2F; /* Ajuste conforme necessário */
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  body.dark-mode .card p {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  
+  body.dark-mode .ver-projeto-btn {
+    margin-top: 180px;
+    position: absolute;
+    background: #8B0000; /* Ajuste conforme necessário */
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    border-radius: 22px;
+    border-color: #000 !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  
+  body.dark-mode .ver-projeto-btn:hover {
+    background: #FFCC00; /* Ajuste conforme necessário */
+    color: #000;
+  }
+
+  body.dark-mode .team-card {
+    background: #000;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #0002;
+    padding: 0.8rem 0.5rem;
+    width: 180px;
+    color: #fff !important;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+ body.darkmode .team-card h2 {
+    color: #fff !important; /* Ajuste conforme necessário */
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
   }
