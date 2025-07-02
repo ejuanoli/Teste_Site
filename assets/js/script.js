@@ -176,7 +176,11 @@ const filename = window.location.pathname.split("/").pop();
 const pageNames = {
   "index.html": "Home",
   "projects.html": "Projetos",
+  "projects_so.html": "Sistemas Op.",
+  "projects_digi.html": "Digitalização",
+  "ops.html": "Operations Profile",
   "pp.html": "Power Platform",
+  "time_info.html": "Nosso Time",
   "rpa.html": "RPA",
   "contact.html": "Contato",
   "": "Home"
@@ -564,3 +568,262 @@ function createRippleEffect(btn) {
 }
 
 document.addEventListener('DOMContentLoaded', setupSophisticatedDarkModeBtn); 
+
+  // Tooltip dinâmica para Ops Profile
+  const opsBtn = document.getElementById('opsProfileBtn');
+  const opsTooltip = document.getElementById('opsProfileTooltip');
+  if (opsBtn && opsTooltip) {
+    opsBtn.addEventListener('mouseenter', () => {
+      opsTooltip.style.display = 'block';
+    });
+    opsBtn.addEventListener('mouseleave', () => {
+      opsTooltip.style.display = 'none';
+    });
+    opsTooltip.addEventListener('mouseenter', () => {
+      opsTooltip.style.display = 'block';
+    });
+    opsTooltip.addEventListener('mouseleave', () => {
+      opsTooltip.style.display = 'none';
+    });
+  };
+
+  // Carrossel de portfólio com setas premium
+function initPortfolioCarousel2() {
+  const track = document.querySelector('.ops-carousel-track');
+  const cards = Array.from(document.querySelectorAll('.ops-portfolio-card'));
+  const leftBtn = document.querySelector('.carousel-arrow.left');
+  const rightBtn = document.querySelector('.carousel-arrow.right');
+  const indicators = document.querySelector('.carousel-indicators');
+  if (!track || !cards.length || !leftBtn || !rightBtn || !indicators) return;
+
+  let current = 0;
+  let cardsToShow = 3;
+  let autoplayTimer = null;
+  
+  function updateCardsToShow() {
+    if (window.innerWidth < 600) cardsToShow = 1;
+    else if (window.innerWidth < 900) cardsToShow = 2;
+    else cardsToShow = 3;
+  }
+  updateCardsToShow();
+  window.addEventListener('resize', () => {
+    updateCardsToShow();
+    goTo(current);
+  });
+
+  function goTo(idx) {
+    current = (idx + cards.length) % cards.length;
+    const cardWidth = cards[0].offsetWidth + 32; // 32px gap
+    track.scrollTo({ left: current * cardWidth, behavior: 'smooth' });
+    cards.forEach((c, i) => c.classList.toggle('active', i === current));
+    updateIndicators();
+    
+    // Efeito de partículas nas setas
+    const direction = idx > current ? 'right' : 'left';
+    const activeBtn = direction === 'right' ? rightBtn : leftBtn;
+    if (activeBtn) {
+      createArrowParticles(activeBtn, direction);
+    }
+  }
+
+  function updateIndicators() {
+    indicators.innerHTML = '';
+    for (let i = 0; i < cards.length; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'indicator' + (i === current ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      indicators.appendChild(dot);
+    }
+  }
+
+  function nextAuto() {
+    goTo(current + 1);
+  }
+  function startAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(nextAuto, 4000);
+  }
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+
+  // Efeitos especiais para setas premium
+  function createArrowParticles(arrow, direction) {
+    const rect = arrow.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 8; i++) {
+      const particle = document.createElement("div");
+      particle.style.position = "fixed";
+      particle.style.left = centerX + "px";
+      particle.style.top = centerY + "px";
+      particle.style.width = "3px";
+      particle.style.height = "3px";
+      particle.style.background = ["#BA0C2F", "#FFCC00", "#8B0000", "#28a745"][i % 4];
+      particle.style.borderRadius = "50%";
+      particle.style.pointerEvents = "none";
+      particle.style.zIndex = "9999";
+      particle.style.transition = "all 1.2s ease-out";
+      particle.style.boxShadow = "0 0 6px currentColor";
+      
+      document.body.appendChild(particle);
+      
+      // Partículas que sobem em diferentes direções
+      const angle = (i / 8) * Math.PI * 2;
+      const distance = 60 + Math.random() * 40;
+      const endX = centerX + Math.cos(angle) * (distance * 0.3);
+      const endY = centerY - Math.abs(Math.sin(angle) * distance) - 40; // Sempre para cima
+      
+      setTimeout(() => {
+        particle.style.transform = `translate(${endX - centerX}px, ${endY - centerY}px) scale(0)`;
+        particle.style.opacity = "0";
+      }, 10);
+      
+      setTimeout(() => {
+        if (document.body.contains(particle)) {
+          document.body.removeChild(particle);
+        }
+      }, 1200);
+    }
+  }
+
+  // Efeitos de hover dinâmicos para setas premium
+  function addPremiumArrowEffects() {
+    const premiumArrows = document.querySelectorAll('.premium-arrow');
+    
+    premiumArrows.forEach(arrow => {
+      // Efeito de rotação no hover
+      arrow.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.2) rotate(5deg)';
+        this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Adicionar classe para animação de partículas
+        this.classList.add('hover-active');
+      });
+      
+      arrow.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+        this.classList.remove('hover-active');
+      });
+      
+      // Efeito de clique com partículas
+      arrow.addEventListener('click', function(e) {
+        const direction = this.getAttribute('data-direction');
+        createArrowParticles(this, direction);
+        
+        // Efeito de pulso
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1.2) rotate(5deg)';
+        }, 100);
+      });
+    });
+  }
+
+  leftBtn.addEventListener('click', () => { 
+    goTo(current - 1); 
+    stopAutoplay(); 
+  });
+  rightBtn.addEventListener('click', () => { 
+    goTo(current + 1); 
+    stopAutoplay(); 
+  });
+  
+  track.addEventListener('mouseenter', stopAutoplay);
+  track.addEventListener('mouseleave', startAutoplay);
+  track.addEventListener('focusin', stopAutoplay);
+  track.addEventListener('focusout', startAutoplay);
+  track.addEventListener('touchstart', stopAutoplay);
+  track.addEventListener('touchend', startAutoplay);
+
+  // Swipe para mobile
+  let startX = null;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+  track.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx > 50) goTo(current - 1);
+    if (dx < -50) goTo(current + 1);
+    startX = null;
+  });
+
+  // Inicialização
+  goTo(0);
+  startAutoplay();
+  addPremiumArrowEffects();
+}
+document.addEventListener('DOMContentLoaded', initPortfolioCarousel2); 
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_rmfn5xj';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+
+// Get the current date and time in UTC
+
+const areaBtns = document.querySelectorAll('.filter-btn.area');
+const ferramentaBtns = document.querySelectorAll('.filter-btn.ferramenta');
+const responsavelBtns = document.querySelectorAll('.filter-btn.responsavel');
+const cards = document.querySelectorAll('.portfolio-card');
+
+let selectedArea = 'all';
+let selectedFerramenta = 'all';
+let selectedResponsavel = 'all';
+
+function filtrarProjetos() {
+  cards.forEach(card => {
+    const matchArea = (selectedArea === 'all' || card.dataset.area === selectedArea);
+    const matchFerramenta = (selectedFerramenta === 'all' || (card.dataset.ferramenta && card.dataset.ferramenta.split(',').map(f => f.trim()).includes(selectedFerramenta)));
+    const matchResponsavel = (selectedResponsavel === 'all' || card.dataset.responsavel === selectedResponsavel);
+    if (matchArea && matchFerramenta && matchResponsavel) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+areaBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    areaBtns.forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    selectedArea = this.dataset.area;
+    filtrarProjetos();
+  });
+});
+ferramentaBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    ferramentaBtns.forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    selectedFerramenta = this.dataset.ferramenta;
+    filtrarProjetos();
+  });
+});
+responsavelBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    responsavelBtns.forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    selectedResponsavel = this.dataset.responsavel;
+    filtrarProjetos();
+  });
+});
