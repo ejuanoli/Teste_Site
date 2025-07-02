@@ -337,3 +337,192 @@ header, main, footer {
     transform: translateY(0);
   }
 }
+
+#strategy {
+  max-width: 1200px; 
+  height: 470px;
+  margin: 2rem auto; 
+  background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sem%20t%C3%ADtulo.png?raw=true');
+  background-size:100% ;
+  background-clip:padding-box;
+  background-repeat: no-repeat;
+  border-radius: 14px; 
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); 
+  padding: 2rem;
+}
+
+#strategy .darktxt {
+  color: #000 !important;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.7rem;
+  border-radius: 10px;
+  border: none;
+  margin: 0 0.5rem 1.5rem 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f8f9fa;
+  color: #BA0C2F;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.filter-btn.selected, .filter-btn:hover {
+  background: #FFCC00;
+  color: #222;
+  box-shadow: 0 4px 16px #FFCC0033;
+}
+.main-btn {
+  display: inline-block;
+  background: #BA0C2F;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.85rem 2.2rem;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 2px 8px #BA0C2F22;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.main-btn:hover {
+  background: #FFCC00;
+  color: #222;
+  box-shadow: 0 4px 16px #FFCC0033;
+}
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, box-shadow 0.2s;
+  border: none;
+}
+.icon-btn:hover {
+  background: #FFCC00;
+  box-shadow: 0 4px 16px #FFCC0033;
+}
+
+.filter-container {
+  max-height: 50px; /* Altura inicial */
+  overflow: hidden;
+  width: 50px; /* Largura inicial */
+  transition: max-height 0.3s ease, width 0.3s ease;
+  margin-left: 100px;
+}
+
+.filter-container.expanded {
+  max-height: 500px; /* Altura após expandir */
+  width: 200px; /* Largura após expandir */
+}
+
+.filter-header .arrow {
+  transition: transform 0.3s ease;
+}
+
+.filter-container.expanded .arrow {
+  transform: rotate(180deg);
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 0.8rem 0.5rem;
+  width: 180px;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.team-card h2 {
+  color: #BA0C2F; /* Ajuste conforme necessário */
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.team-card div {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.card {
+  min-width: 300px;
+  max-width: 340px;
+  height: 260px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: #BA0C2F; /* Ajuste conforme necessário */
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.ver-projeto-btn {
+  margin-top: 180px;
+  position: absolute;
+  background: #FFCC00; /* Ajuste conforme necessário */
+  color: #000;
+  padding: 0.7rem 1.3rem;
+  border-radius: 22px;
+  border-color: #000 !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.ver-projeto-btn:hover {
+  background: #8B0000; /* Ajuste conforme necessário */
+  color: #fff;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem; /* Ajuste conforme necessário */
+}
+
+.tech-badge {
+  background-color: rgba(0,0,0,0.07);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;/* Espaçamento entre as tags */
+}
