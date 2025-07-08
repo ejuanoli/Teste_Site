@@ -3,15 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Power Platform | PE Tech</title>
+  <title>MySupplyChain | PE Tech</title>
   <link rel="stylesheet" href="assets/css/navbar.css">
   <link rel="stylesheet" href="assets/css/darkmode.css">
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <link rel="stylesheet" href="assets/css/media.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/script.js"></script>
+  <script defer src="./js/carrossel.js"></script>
+  <style>
+
+#filter {
+  max-width: 1200px !important; 
+  height: 350px;
+  
+  background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sem%20t%C3%ADtulo.png?raw=true') !important;
+  background-size:100% !important;
+  background-clip:padding-box !important;
+  background-repeat: no-repeat !important;
+  border-radius: 14px !important;  
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07) !important; 
+  padding: 2rem !important;
+}
+
+.filter-ferramenta-btn {
+  margin-top: 5rem;
+  margin-bottom: -5rem;
+  border-color: #000 !important;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.filter-ferramenta-btn:hover {
+  background: #BA0C2F !important;
+  color: #fff !important;
+  border-color: #000 !important;
+  border-width: 2.5px;
+  box-shadow: 0 2px 10px #FFCC0033;
+  transform: scale(1.05);
+}
+.filter-ferramenta-btn.selected, .filter-ferramenta-btn[aria-pressed="true"] {
+  background: #BA0C2F !important;
+  color: #fff !important;
+  border-color: #BA0C2F;
+  font-weight: bold;
+  box-shadow: 0 4px 16px #BA0C2F22;
+  outline: none;
+}
+  </style>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterContainer = document.querySelector('.filter-container');
+    const filterHeader = document.querySelector('.filter-header');
+    const areaBtns = document.querySelectorAll('.filter-btn.area');
+    const ferramentaBtns = document.querySelectorAll('.filter-btn.ferramenta');
+    const responsavelBtns = document.querySelectorAll('.filter-btn.responsavel');
+    const cards = document.querySelectorAll('.portfolio-card');
+
+    let selectedArea = 'all';
+    let selectedFerramenta = 'all';
+    let selectedResponsavel = 'all';
+
+    function filtrarProjetos() {
+        cards.forEach(card => {
+            const matchArea = (selectedArea === 'all' || card.dataset.area === selectedArea);
+            const matchFerramenta = (selectedFerramenta === 'all' || (card.dataset.ferramenta && card.dataset.ferramenta.split(',').map(f => f.trim()).includes(selectedFerramenta)));
+            const matchResponsavel = (selectedResponsavel === 'all' || card.dataset.responsavel === selectedResponsavel);
+            if (matchArea && matchFerramenta && matchResponsavel) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleFilter(filterBtns, selectedFilter) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedFilter = 'all';
+                } else {
+                    filterBtns.forEach(b => b.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedFilter = this.dataset[filterBtns[0].classList[1]];
+                }
+                filtrarProjetos();
+            });
+        });
+    }
+
+    toggleFilter(areaBtns, selectedArea);
+    toggleFilter(ferramentaBtns, selectedFerramenta);
+    toggleFilter(responsavelBtns, selectedResponsavel);
+
+    filterHeader.addEventListener('click', function() {
+        filterContainer.classList.toggle('expanded');
+    });
+});
+
+// Filtro por ferramenta (tecnologia)
+document.addEventListener('DOMContentLoaded', function() {
+    // ... código existente ...
+    // Filtro por ferramenta (badges)
+    const ferramentaBadges = document.querySelectorAll('.filter-ferramenta-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const projetosDetalhados = document.querySelectorAll('section.projeto-detalhado');
+    let ferramentaSelecionada = null;
+
+    ferramentaBadges.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Alternar seleção
+            if (btn.classList.contains('selected')) {
+                btn.classList.remove('selected');
+                btn.setAttribute('aria-pressed', 'false');
+                ferramentaSelecionada = null;
+            } else {
+                ferramentaBadges.forEach(b => { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+                btn.classList.add('selected');
+                btn.setAttribute('aria-pressed', 'true');
+                ferramentaSelecionada = btn.getAttribute('data-ferramenta');
+            }
+            // Filtrar cards do portfólio
+            portfolioCards.forEach(card => {
+                const ferramentasCard = card.dataset.ferramenta ? card.dataset.ferramenta.split(',').map(f => f.trim()) : [];
+                if (!ferramentaSelecionada || ferramentasCard.includes(ferramentaSelecionada)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            // Filtrar projetos detalhados
+            projetosDetalhados.forEach(section => {
+                const tecnologias = Array.from(section.querySelectorAll('span,button')).map(e => e.textContent.trim());
+                if (!ferramentaSelecionada || tecnologias.includes(ferramentaSelecionada)) {
+                    section.style.display = '';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
-<body>
+<body style="background: linear-gradient(135deg, #f8f9fa 60%, #fff 100%); min-height:100vh;">
+
+  
+  <!-- Your content here -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick Carousel JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!-- Botão voltar ao topo -->
 <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
@@ -29,24 +172,20 @@
       </div>
       <div class="separator"></div>
       <div class="page-title" id="pageTitle">
-        Power Platform
+        Projetos
       </div>
     </div>
     <!-- MENU CENTRAL -->
     <nav class="nav" role="navigation" aria-label="Menu principal">
       <ul class="nav-list">
-        <li class="text-home"><a href="./index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home</a></li>
-        <li><a href="./projects.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Projetos</a></li>
-        <li><a href="./rpa.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="9" r="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>RPA</a></li>
-        <li><a href="./pp.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Power Platform</a></li>
+        <li class="text-home"><a href="./index.html"></svg>Home</a></li>
+        <li><a href="./time_info.html">Conheça o nosso time</a></li>
+        <li><a href="./rpa.html">RPA</a></li>
+        <li><a href="./mysc.html">MySupplyChain</a></li>
       </ul>
     </nav>
     <!-- Lado Direito: Contato e Hambúrguer -->
     <div class="right-content">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-      </div>
       <!-- Botão Dark Mode Dinâmico -->
       <button id="darkModeSophisticated" class="darkmode-navbar-btn" aria-label="Alternar modo escuro">
         <div class="darkmode-icon"></div>
@@ -92,15 +231,15 @@
       <!-- Título principal com animação -->
       <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
         <h1 style="font-size: 3.2rem; font-weight: 900; letter-spacing: 2px; line-height: 1.1; text-shadow: 0 6px 25px rgba(0,0,0,0.6); margin: 0; animation: fadeInUp 1s ease-out;">
-          <span style="background: linear-gradient(45deg, #FFCC00, #BA0C2F, #FFCC00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite;">Power</span> 
-          <span style="background: linear-gradient(45deg, #28a745, #FFCC00, #28a745); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite reverse;">Platform</span>
+          <span style="background: linear-gradient(45deg, #FFCC00, #BA0C2F, #FFCC00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite;">Nossos</span> 
+          <span style="background: linear-gradient(45deg, #28a745, #FFCC00, #28a745); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradientShift 3s ease-in-out infinite reverse;">Projetos</span>
         </h1>
       </div>
       
       <!-- Subtítulo com efeito de digitação -->
       <div style="height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
         <p style="font-size: 1.3rem; color: #e1e1e1; font-weight: 300; line-height: 1.5; text-shadow: 0 3px 15px rgba(0,0,0,0.4); margin: 0; max-width: 800px; animation: fadeInUp 1s ease-out 0.3s both;">
-          Soluções low-code para automação, análise de dados e desenvolvimento de aplicações
+          Conheça alguns dos projetos que desenvolvemos para transformar negócios
         </p>
       </div>
     </div>
@@ -113,95 +252,143 @@
     <div style="position: absolute; top: 75%; left: 35%; width: 3px; height: 3px; background: #fff; border-radius: 50%; animation: twinkle 4.5s ease-in-out infinite 1.5s; z-index: 1; box-shadow: 0 0 10px #fff;"></div>
     <div style="position: absolute; top: 85%; right: 25%; width: 2px; height: 2px; background: #28a745; border-radius: 50%; animation: twinkle 3s ease-in-out infinite 2.5s; z-index: 1; box-shadow: 0 0 8px #28a745;"></div>
   </section>
+  <div style="margin-top: 2rem;"></div>
 
-  <section id="portfolio" class="fade" style="max-width: 1200px; margin: 3rem auto 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;" aria-label="Seção Power Platform">
-    <h2 style="color: #BA0C2F; font-size: 2rem; margin-bottom: 1rem; text-align: center;">Projetos Power Platform</h2>
-    <p style="font-size: 1.15rem; color: #333; max-width: 700px; margin: 0 auto 2rem auto; text-align: center;">Descubra como a Microsoft Power Platform pode transformar seus processos de negócio.</p>
-    
-    <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem;">
-      <article class="portfolio-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 1px solid #e9ecef;">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Power Apps" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;" />
-        <div class="portfolio-card-content" style="padding: 1.5rem;">
-          <h3 style="color: #BA0C2F; margin-bottom: 1rem; font-size: 1.3rem;">Power Apps</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Aplicativos personalizados para automação de processos internos usando Power Apps. Desenvolvimento rápido e eficiente sem necessidade de código complexo.</p>
-          <a href="#" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; display: inline-block;">Ver Detalhes</a>
-        </div>
-      </article>
-      
-      <article class="portfolio-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 1px solid #e9ecef;">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Power Automate" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;" />
-        <div class="portfolio-card-content" style="padding: 1.5rem;">
-          <h3 style="color: #28a745; margin-bottom: 1rem; font-size: 1.3rem;">Power Automate</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Fluxos automatizados para integração de sistemas e redução de tarefas manuais. Otimize seus processos com automação inteligente.</p>
-          <a href="#" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; display: inline-block;">Ver Detalhes</a>
-        </div>
-      </article>
-      
-      <article class="portfolio-card" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 1px solid #e9ecef;">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Power BI" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;" />
-        <div class="portfolio-card-content" style="padding: 1.5rem;">
-          <h3 style="color: #FFCC00; margin-bottom: 1rem; font-size: 1.3rem;">Power BI</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Dashboards interativos e relatórios dinâmicos para análise de dados empresariais. Transforme dados em insights acionáveis.</p>
-          <a href="#" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #FFCC00, #e6b800); color: #333; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; display: inline-block;">Ver Detalhes</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Seção de Benefícios -->
-  <section class="fade" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
-    <h2 style="color: #BA0C2F; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Por que escolher a Power Platform?</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #BA0C2F; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-        <h3 style="color: #BA0C2F; margin-bottom: 1rem; font-size: 1.3rem;">Desenvolvimento Rápido</h3>
-        <p style="color: #666; line-height: 1.6;">Crie aplicações e automações em tempo recorde com ferramentas low-code da Microsoft.</p>
-      </div>
-      <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #28a745; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🔗</div>
-        <h3 style="color: #28a745; margin-bottom: 1rem; font-size: 1.3rem;">Integração Nativa</h3>
-        <p style="color: #666; line-height: 1.6;">Conecte-se facilmente com outros serviços Microsoft e aplicações de terceiros.</p>
-      </div>
-      <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #FFCC00; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
-        <h3 style="color: #FFCC00; margin-bottom: 1rem; font-size: 1.3rem;">Análise Avançada</h3>
-        <p style="color: #666; line-height: 1.6;">Transforme dados em insights visuais poderosos para tomada de decisões estratégicas.</p>
-      </div>
-    </div>
-  </section>
 </main>
 
-<footer style="background: #222; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 3rem; font-size: 1.05rem; letter-spacing: 1px;">
-  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem;">
-    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto João Silva" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
-      <div style="font-weight: bold; color: #FFCC00;">João Silva</div>
-      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">Desenvolvedor Full Stack</div>
-      <a href="mailto:joao@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">joao@petech.com</a>
-      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+<!-- Footer -->
+<footer style="background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/dsaasd.png?raw=true'); background-size:cover; background-repeat:  no-repeat;">
+  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-top: 40px;">
+    <!-- Aurelio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Aurelio.jpg?raw=true" alt="Aurelio Ferreira">
+        <div class="members_footer">Aurelio Ferreira</div>
+        <div class= "job_footer">Coordenador de Sistemas Operacionais</div>
+        <a href="mailto:Aurelio.Ferreira@dhl.com" class="email_footer">Aurelio.Ferreira@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
       </div>
-    </div>
-    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Maria Souza" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00;">
-      <div style="font-weight: bold; color: #FFCC00;">Maria Souza</div>
-      <div style="font-size: 0.98rem; color: #fff; margin-bottom: 0.3rem;">UX/UI Designer</div>
-      <a href="mailto:maria@petech.com" style="color: #FFCC00; font-size: 0.97rem; margin-bottom: 0.2rem;">maria@petech.com</a>
-      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      <!-- João -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/João.jpg?raw=true" alt="Eduardo Juan Oliveira">
+        <div class="members_footer">João Pedro</div>
+        <div class= "job_footer">Supervisor Digitalização</div>
+        <a href="mailto:joao.cruzolini@dhl.com" class="email_footer">joao.cruzolini@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
       </div>
+      <!-- Eduardo -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Eduardo.jpg?raw=true" alt="Eduardo Juan Oliveira">
+        <div class="members_footer">Eduardo Juan</div>
+        <div class= "job_footer">Analista de Processos e Digitalização Jr</div>
+        <a href="mailto:eduardojuan@dhl.com" class="email_footer">eduardojuan@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Rogerio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Rogerio.jpg?raw=true" alt="Rogerio Pimentel">
+        <div class="members_footer">Rogerio Pimentel</div>
+        <div class="job_footer">Coordenador de Sistemas Operacionais</div>
+        <a href="mailto:Rogerio.Pimentel@dhl.com" class="email_footer">Rogerio.Pimentel@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Ana -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Ana.jpg?raw=true" alt="Ana Carolina">
+        <div class="members_footer">Ana Carolina</div>
+        <div class="job_footer">Supervisora de Processos</div>
+        <a href="mailto:Ana.Carolinac@dhl.com" class="email_footer">Ana.Carolinac@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Arthur -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Arthur.jpg?raw=true" alt="Arthur Neto">
+        <div class="members_footer">Arthur Neto</div>
+        <div class="job_footer">Gerente de Processos</div>
+        <a href="mailto:arthur.neto@dhl.com" class="email_footer">arthur.neto@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Gabriel -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Gabriel.jpg?raw=true" alt="Gabriel Matucci">
+        <div class="members_footer">Gabriel Matucci</div>
+        <div class="job_footer">Analista de Processos PL</div>
+        <a href="mailto:Gabriel.SilvaMC@dhl.com" class="email_footer">Gabriel.SilvaMC@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Otavio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Otavio.jpg?raw=true" alt="Otavio Petrin">
+        <div class="members_footer">Otavio Petrin</div>
+        <div class="job_footer">Analista de Processos PL</div>
+        <a href="mailto:Gabriel.SilvaMC@dhl.com" class="email_footer">Otavio.PetrinR@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>   
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px; position: relative;">
+    <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Icones%20DHL/DHL_Group_Strategy2025_RGB_white.png?raw=true" style="height: 55px; position: relative; top: -20px; left: -40px;">
+    <img src="https://raw.githubusercontent.com/ejuanoli/Teste_Site/3ed8554afbb0310f70abdb0210bf7f14bf3c43b0/assets/img/Icones%20DHL/Imagem13.svg" style="height: 25px; border:1px solid; border-radius: 10px; border-color: #000; background-color: #FFCC00; padding: 6px; margin-right: 20px; margin-top: -1rem;">
+    <div style="margin-bottom: 1rem; color: #fff;">
+      &copy; Desenvolvido pelo time de Digitalização Tech Brasil 2025.
     </div>
   </div>
-  <div style="margin-bottom: 0.5rem;">
-    &copy; 2024 PE Tech. Todos os direitos reservados.
-  </div>
-  <div style="font-size: 1.2rem;">
-    <a href="https://www.linkedin.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">LinkedIn</a> |
-    <a href="https://github.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">GitHub</a>
   </div>
 </footer>
+
+<script>
+  $(document).ready(function(){
+    $('.footer-team').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
 
 <!-- Botão flutuante de contato no lado inferior esquerdo -->
 <div id="floating-contact" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
