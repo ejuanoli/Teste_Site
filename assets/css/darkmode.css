@@ -3,7 +3,7 @@
   }
   body.dark-mode .header .nav-list a:hover svg, 
   body.dark-mode .header .nav-list a.active svg {
-    color: #FFCC00 !important;
+    color: #fff !important;
   }
   body.dark-mode .header.scrolled .nav-list a svg {
     color: #fff !important;
@@ -172,10 +172,6 @@ body.dark-mode .darkmode-navbar-btn {
   body.dark-mode .star {
     opacity: 1;
   }  
-  /* Footer no modo dark */
-  body.dark-mode footer {
-    background: rgba(35,35,50,0.92) !important;
-  }
   
   /* Botão flutuante no modo dark */
   body.dark-mode #floating-contact .contato {
@@ -225,9 +221,9 @@ body.dark-mode .darkmode-navbar-btn {
   }
   body.dark-mode .header .nav-list a:hover, body.dark-mode .header .nav-list a.active {
     color: #fff;
-    border-bottom: 2.5px solid #FFCC00;
+    border-bottom: 2.5px solid #fff;
     background: none;
-    text-shadow: 0 0 8px #FFCC0099;
+    text-shadow: 0 0 8px #fff;
   }
   body.dark-mode .header .nav-list a svg {
     color: #fff !important;
@@ -266,8 +262,10 @@ body.dark-mode .darkmode-navbar-btn {
   
   body.dark-mode .nav-list a:hover, body.dark-mode .nav-list a.active {
     color: #fff;
-    background: #232323;
-    border-bottom: 2px solid #FFCC00;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #fff;
   }
   body.dark-mode .portfolio-card-content a {
     background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
@@ -425,10 +423,6 @@ body.dark-mode .darkmode-navbar-btn {
   body.dark-mode .portfolio-carousel::before {
     background: rgba(35,35,43,0.92) !important;
   }
-  
-  body.dark-mode footer {
-    background: rgba(35,35,50,0.92) !important;
-  }
   body.dark-mode .header .nav-list a svg {
     display: none;
   }
@@ -574,13 +568,13 @@ body.dark-mode .projeto-detalhado {
   
   /* Tecnologias no modo dark */
   body.dark-mode .tech-badge {
-    background: rgba(35,35,43,0.9) !important;
-    border-color: #FFCC00 !important;
-    color: #FFCC00 !important;
+    background: darkslategray !important;
+    border-color: #000 !important;
+    color: lightgray !important;
   }
 
   body.dark-mode .fade {
-    box-shadow: none !important;
+    box-shadow: rgba(0,0,0,01) !important;
   } 
   body.dark-mode .portfolio-carousel {
     background: none;}
@@ -625,55 +619,40 @@ body.dark-mode .projeto-detalhado {
   }
 
 
-  body.dark-mode .card {
-    min-width: 300px;
-    max-width: 340px;
-    height: 260px;
-    background: #000;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  body.dark-mode .card:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-  }
-  
-  body.dark-mode  .card h3 {
-    color: #BA0C2F; /* Ajuste conforme necessário */
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-  }
-  
-  body.dark-mode .card p {
-    color: #333;
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-    text-align: center;
-  }
-  
-  body.dark-mode .ver-projeto-btn {
-    margin-top: 180px;
-    position: absolute;
-    background: #8B0000; /* Ajuste conforme necessário */
-    color: #fff;
-    padding: 0.7rem 1.3rem;
-    border-radius: 22px;
-    border-color: #000 !important;
-    font-weight: 600;
-    font-size: 1.05rem;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  
-  body.dark-mode .ver-projeto-btn:hover {
-    background: #FFCC00; /* Ajuste conforme necessário */
-    color: #000;
-  }
+/* Estilos para dark-mode */
+body.dark-mode .card_so, 
+body.dark-mode .card_digi {
+  background: #333; /* Cor de fundo escura */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5); /* Ajuste conforme necessário */
+}
+
+body.dark-mode .fade h1 {
+  color: #fff !important;
+}
+
+body.dark-mode .card_digi .overlay {
+  opacity: 0.9 !important; /* Ajuste conforme necessário */
+}
+
+body.dark-mode .card_digi h3,
+body.dark-mode .card_so h3 {
+  color: #fff !important; /* Ajuste conforme necessário */
+}
+
+body.dark-mode .card_digi p {
+  color: #ddd; /* Ajuste conforme necessário */
+}
+
+body.dark-mode .card_digi .ver-projeto-btn {
+  background-color: #BA0C2F; /* Ajuste conforme necessário */
+  color: #fff; /* Ajuste conforme necessário */
+}
+
+body.dark-mode .ver-projeto-btn:hover {
+  background: #FFCC00; /* Ajuste conforme necessário */
+  color: #000;
+  border: 1px solid var(--dhl-red);
+}
 
   body.dark-mode .team-card {
     background: #000;
@@ -696,3 +675,41 @@ body.dark-mode .projeto-detalhado {
     font-weight: 700;
     margin-bottom: 0.1rem;
   }
+
+ body.dark-mode .members {
+    color:#fff; 
+    font-size:0.85rem;
+  }
+  
+ 
+/* Estilos específicos para o modo dark */
+body.dark-mode .carousel-btn2prev2 svg, 
+body.dark-mode .carousel-btn2next2 svg {
+  color: #fff !important;
+}
+
+body.dark-mode .carousel-btn2prev2:hover, 
+body.dark-mode .carousel-btn2next2:hover {
+  background: rgba(255,255,255,0.66); /* Ajuste conforme necessário */
+}
+
+body.dark-mode .carousel-btn2prev2:hover svg, 
+body.dark-mode .carousel-btn2next2:hover svg {
+  color: #000 !important; /* Ajuste conforme necessário */
+}
+
+body.dark-mode .projeto-carousel blockquote {
+  background: #2a2a2a !important;
+  color: #e1e1e1 !important;
+  border-left-color: #FFCC00 !important;
+}
+
+body.dark-mode .projeto-carousel span[style*="background: #e9ecef"] {
+  background: rgba(255,204,0,0.2) !important;
+  color: #FFCC00 !important;
+  border: 1px solid rgba(255,204,0,0.3) !important;
+}
+
+body.dark-mode #sobre div {
+  background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Icones%20DHL/DHL_Group_Strategy2025_RGB_white.png?raw=true') !important;
+}
