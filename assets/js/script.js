@@ -179,7 +179,7 @@ const pageNames = {
   "projects_so.html": "Sistemas Op.",
   "projects_digi.html": "Digitalização",
   "ops.html": "Operations Profile",
-  "pp.html": "Power Platform",
+  "mysc.html": "MySupplyChain",
   "time_info.html": "Nosso Time",
   "rpa.html": "RPA",
   "contact.html": "Contato",
