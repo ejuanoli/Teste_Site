@@ -145,9 +145,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
   </script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
-<body>
+<body style="background: linear-gradient(135deg, #f8f9fa 60%, #fff 100%); min-height:100vh;">
 
+  
+  <!-- Your content here -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick Carousel JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- Botão voltar ao topo -->
 <button id="scrollTopBtn" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
 
@@ -173,15 +180,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <li class="text-home"><a href="./index.html"></svg>Home</a></li>
         <li><a href="./time_info.html">Conheça o nosso time</a></li>
         <li><a href="./rpa.html">RPA</a></li>
-        <li><a href="./pp.html">Power Platform</a></li>
+        <li><a href="./mysc.html">MySupplyChain</a></li>
       </ul>
     </nav>
     <!-- Lado Direito: Contato e Hambúrguer -->
     <div class="right-content">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" aria-label="GitHub"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-      </div>
       <!-- Botão Dark Mode Dinâmico -->
       <button id="darkModeSophisticated" class="darkmode-navbar-btn" aria-label="Alternar modo escuro">
         <div class="darkmode-icon"></div>
@@ -254,15 +257,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="fade" id="filter" style="max-width: 1200px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
       <h2 class= "titulo_filtro" style="color: #000 !important; font-size: 2.3rem; margin-top: 3rem; margin-bottom: -1rem; text-align: center;">Filtro de Tecnologias e Ferramentas</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="HTML, CSS e JS"><img src="https://imakestuff.online/wp-content/uploads/2019/12/HTML-CSS-JS-Logo.png" alt="HTML, CSS e JS" style="height:22px;">HTML, CSS e JS</button>
+        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="HTML, CSS e JS"><img src="https://www.insidermonkey.com/blog/wp-content/uploads/2012/11/RedPrairie_small.jpg" alt="DLX" style="height:22px; width: 23px;">Dlx</button>
         <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="VBA"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Microsoft_Visual_Basic_for_Applications_logo.svg" alt="VBA" style="height:22px;">VBA</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="height:22px;">Python</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="SAP"><img src="https://img.icons8.com/?size=512&id=38192&format=png" alt="SAP" style="height:22px;">SAP</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #28a745; color:blue; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="JDA"><img src="https://plantensive.com/wp-content/uploads/2020/10/Blue_Yonder_logo_lg.png" alt="JDA" style="height:22px;">JDA</button>
+        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Yamazumi"><img src="https://www.cmmtelecoms.co.uk/wp-content/uploads/2020/06/Productivity-Microsoft-inTune.png" alt="Yamazumi" style="height:22px;">Yamazumi</button>
+        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #0078D4; color:#0078D4; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="The View"><img src="https://img.freepik.com/premium-vector/graph-with-increase-report-diagram-with-rise-gain-progress-vector-illustration_186380-1910.jpg" alt="The View" style="height:18px;">The View</button>
+        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #28a745; color:blue; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="JDA"><img src="https://plantensive.com/wp-content/uploads/2020/10/Blue_Yonder_logo_lg.png" alt="JDA" style="height:22px; margin-top: -6px;">JDA</button>
         <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #8B0000; color:#8B0000; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="SQL"><img src="https://download.logo.wine/logo/Oracle_SQL_Developer/Oracle_SQL_Developer-Logo.wine.png" alt="SQL" style="height:22px;">SQL</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Power Automate"><img src="https://summitbajracharya.com.np/wp-content/uploads/2020/10/PowerAutomate-2020-icon-1024x1024.png" alt="Power Automate" style="height:22px;">Power Automate</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Power Apps"><img src="https://img.icons8.com/?size=512&id=OU2ddOKw840K&format=png" alt="Power Apps" style="height:22px;">Power Apps</button>
-        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #BA0C2F; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Power BI"><img src="https://1000logos.net/wp-content/uploads/2022/12/Power-BI-Logo.png" alt="Power BI" style="height:22px;">Power BI</button>
+        <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="Merlin"><img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/77a5d692e72f4079e74f" alt="Merlin" style="height:22px;">Merlin</button>
         <button class="tech-badge filter-ferramenta-btn" style="background:#fff; border:1.5px solid #FFCC00; color:#BA0C2F; padding:0.7rem 1.3rem; border-radius:22px; font-weight:600; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;" data-ferramenta="UiPath"><img src="https://img.icons8.com/color/512/uipath.png" alt="UiPath" style="height:22px;">UiPath</button>
       </div>
     </section>
@@ -286,58 +287,64 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </button>
       <div class="carousel-track">
-        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="React,Azure,Node.js" data-responsavel="João Pedro">
-          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80" alt="Portal Web Corporativo" loading="lazy" />
+        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="JDA" data-responsavel="João Pedro">
+          <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Captura%20de%20tela%202025-07-07%20090728.png?raw=true" alt="Portal Web Corporativo" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Portal Web Corporativo</h3>
-            <p>Portal moderno para integração de sistemas internos e comunicação corporativa. Redução de 40% no tempo de busca por informações.</p>
+            <h3>Reconfiguração JDA - Signify</h3>
+            <p>Implementamos melhorias no JDA em janeiro de 2025, aumentando a eficiência na separação e reduzindo itens fracionados para 3,53% em março. A operação está mais organizada e atende melhor à demanda diária.</p>
             <div class="tech-badges">
-              <span class="tech-badge">React</span>
-              <span class="tech-badge">Azure</span>
-              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">JDA</span>
             </div>
             <a href="#projeto-portal" class="ver-detalhes">Ver Detalhes</a>
           </div>
         </div>
-        <div class="portfolio-card" data-area="Sistemas Operacionais" data-ferramenta="React Native,Node.js,AWS" data-responsavel="Aurélio">
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="App Mobile DHL" loading="lazy" />
+        <div class="portfolio-card" data-area="Sistemas Operacionais" data-ferramenta="Yamazumi" data-responsavel="Aurélio">
+          <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Captura%20de%20tela%202025-07-07%20090748.png?raw=true" alt="App Mobile DHL" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>App Mobile DHL</h3>
-            <p>Aplicativo para acompanhamento de entregas e notificações em tempo real. Redução de 40% no tempo de entrega.</p>
+            <h3>Projeto Concórdia</h3>
+            <p>O Projeto Concórdia visa consolidar as atividades de Inventário e Sala de Operações, criando células específicas para cada pilar: Varginha e HP. Já em andamento, o foco inicial está na Sala de Operações para HP e no Inventário para Varginha, aproveitando os lessons learned.</p>
             <div class="tech-badges">
-              <span class="tech-badge">React Native</span>
-              <span class="tech-badge">Node.js</span>
-              <span class="tech-badge">AWS</span>
+              <span class="tech-badge">Yamazumi</span>
             </div>
             <a href="#projeto-app-dhl" class="ver-detalhes">Ver Detalhes</a>
           </div>
         </div>
-        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="Power BI,Python,Machine Learning" data-responsavel="Eduardo Juan">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Business Intelligence Nubank" loading="lazy" />
+        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="JDA" data-responsavel="Eduardo Juan">
+          <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Miniprinter.png?raw=true" alt="Business Intelligence Nubank" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Business Intelligence Nubank</h3>
-            <p>Dashboards e relatórios para análise estratégica de dados. Redução de 60% em fraudes.</p>
+            <h3>Mini Printer - Signify</h3>
+            <p>Com a Mini Printer, etiquetas serão impressas após cada separação, melhorando organização, produtividade e rotatividade no stage de outbound. A implementação está prevista para junho de 2025, com operações revisando procedimentos e PE realizando testes.</p>
             <div class="tech-badges">
-              <span class="tech-badge">Power BI</span>
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Machine Learning</span>
+              <span class="tech-badge">JDA</span>
             </div>
             <a href="#projeto-bi-nubank" class="ver-detalhes">Ver Detalhes</a>
           </div>
         </div>
-        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="UiPath,Power BI,SAP" data-responsavel="Rogério">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="RPA Vale" loading="lazy" />
+        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="JDA,VBA" data-responsavel="Rogério">
+          <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Etiqueta%20de%20Inbound.png?raw=true" alt="RPA Vale" loading="lazy" />
           <div class="portfolio-card-content">
-            <h3>Robotic Process Automation Vale</h3>
-            <p>Automação de processos financeiros com robôs RPA, gerando economia anual de R$ 1,5 milhão.</p>
+            <h3>Etiqueta de Inbound - Signify</h3>
+            <p>Durante um Gemba, identificamos que etiquetas da Signify são inconsistentes, causando morosidade e riscos. Desenvolvemos uma ferramenta para impressão de etiquetas com código de barras, que está em testes e será implementada após treinamento em maio.</p>
             <div class="tech-badges">
-              <span class="tech-badge">UiPath</span>
-              <span class="tech-badge">Power BI</span>
-              <span class="tech-badge">SAP</span>
+              <span class="tech-badge">JDA</span>
+              <span class="tech-badge">VBA</span>
             </div>
             <a href="#projeto-rpa-vale" class="ver-detalhes">Ver Detalhes</a>
           </div>
         </div>
+        <div class="portfolio-card" data-area="Digitalização" data-ferramenta="JDA,Merlin" data-responsavel="Eduardo Juan">
+          <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Upgrande%20Pernod.png?raw=true" alt="Business Intelligence Nubank" loading="lazy" />
+          <div class="portfolio-card-content">
+            <h3>Upgrade NTV – Pernod Ricard</h3>
+            <p>A Pernod Ricard está atualizando o WMS e o Concept Of Operation. Estamos revisitando processos e transcrevendo informações para o Merlin, garantindo conformidade com os padrões da companhia.</p>
+            <div class="tech-badges">
+              <span class="tech-badge">JDA</span>
+              <span class="tech-badge">Merlin</span>
+            </div>
+            <a href="#projeto-bi-nubank" class="ver-detalhes">Ver Detalhes</a>
+          </div>
+        </div>
+
       </div>
       <button class="carousel-arrow right premium-arrow" aria-label="Próximo" data-direction="right">
         <div class="arrow-container">
@@ -358,83 +365,153 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="carousel-indicators"></div>
   </section>
-  
-<!-- Projeto 1: RawData -->
-<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
-  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Automação RawData Nokia</h2>
-  
-  <!-- Carrossel de imagens -->
-  <div class="projeto-carousel">
-    <div class="carousel-container" id="nokia">
-        <div class="carousel-track1">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Nokia/Captura%20de%20tela%202025-07-01%20132236.png?raw=true" alt="Portal Web - Dashboard">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Nokia/Captura%20de%20tela%202025-07-01%20132445.png?raw=true" alt="Portal Web - Interface">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Nokia/Captura%20de%20tela%202025-07-01%20132541.png?raw=true" alt="Portal Web - Analytics">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Nokia/Captura%20de%20tela%202025-07-02%20085211.png?raw=true" alt="Portal Web - Python">
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('nokia', -1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15,18 9,12 15,6"></polyline>
-            </svg>
-        </button>
-        <button class="carousel-btn next" onclick="moveCarousel('nokia', 1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9,18 15,12 9,6"></polyline>
-            </svg>
-        </button>
-        <div class="carousel-dots">
-            <span class="dot active" onclick="goToSlide('nokia', 0)"></span>
-            <span class="dot" onclick="goToSlide('nokia', 1)"></span>
-            <span class="dot" onclick="goToSlide('nokia', 2)"></span>
-            <span class="dot" onclick="goToSlide('nokia', 3)"></span>
-        </div>
-    </div>
-  </div>
 
+  <!-- Projeto 1: JDA Signify -->
+<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Reconfiguração JDA - Signify</h2>
     <!-- Conteúdo detalhado -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
-      <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
-        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Automação RawData é um projeto que visa agrupar informações de multiplas planilhas e organizar de forma que o cliente consiga ter o mesmo arquivo que precisam fazer manualmente. Com a automação, temos isso de forma automática.</p>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
-          <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Grande quantidade de planilhas</li>
-          <li>Automatização do processo de extração das tabelas do Power BI</li>
-          <li>Conversão do arquivo para .XLSX e envio por e-mail</li>
-        </ul>
-      </div>
+    <div style=" margin-top: 2rem; min-width: 300px; display: flex;">
       
       <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
-        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Automação para salvar os arquivos utilizados no Power BI em uma pasta do Sharepoint</li>
-          <li>Atualização automática conforme os e-mails são recebidos</li>
-          <li>Envio automático dos e-mails solicitados pelo cliente no fechamento do mês</li>
-        </ul>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-          <div style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">40%</div>
-            <div style="font-size: 0.9rem;">Redução no tempo de busca</div>
-          </div>
-          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">30%</div>
-            <div style="font-size: 0.9rem;">Aumento na colaboração</div>
-          </div>
-        </div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Fizemos um mapeamento detalhado dos processos, identificamos diversas falhas na configuração do JDA, como: Cadastro de produto, Regras de Separação, Regras de Armazenagem e Inventário. 
+          <br>Após realizar todas as configurações corretas em ambiente de projetos, tivemos uma rodada de testes para garantir o funcionamento e, no início de jan/25, subimos tudo para produção e iniciamos o acompanhamento da performance operacional.
+          <br>Esse “5S sistêmico” trouxe uma evolução considerável para operação, elevando bastante o perfil de separação de pallet e caixas e diminuindo o percentual de fracionados. Em março, chegamos a ter apenas 3,53% de separação em unidades.
+          <br>Além disso, no Gemba fica visível a melhor organização da operação e atendimento da demanda diária.</p>
+
       </div>
+      <div style="display: flex; height: 400px;">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Captura%20de%20tela%202025-07-07%20090728.png?raw=true" alt="Portal Web - Dashboard">
+    </div>
+
     </div>
 
     <!-- Tecnologias utilizadas -->
     <div style="margin-top: 2rem;">
       <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power BI</span>
-        <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power Automate</span>
-        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Sharepoint</span>
-        <span style="background: #e9ecef; color: #333; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Python</span>
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">JDA</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #BA0C2F; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "O novo portal transformou completamente nossa rotina diária. A comunicação entre departamentos melhorou significativamente e agora temos acesso rápido a todas as informações necessárias."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente de TI, Cliente PE Tech</span>
+    </blockquote>
+</section>
+
+<!-- Projeto 2: Concórdia -->
+<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Projeto Concórdia</h2>
+    <!-- Conteúdo detalhado -->
+    <div style=" margin-top: 2rem; min-width: 300px; display: flex;">
+      
+      <div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">
+          Identificamos a oportunidade de potencializar de sinergia entre operações para as atividades de Inventário e Sala de Operações – Com isso, surgiu o <b>Projeto Concórdia</b> – Ele visa consolidar as atividades desses dois setores (inventário e sala) que acontecem de maneira totalmente segregadas atualmente. A estratégia é trabalharmos com uma célula de Inventário e uma de Sala de Operações para cada pilar, 
+          sendo eles:
+          <br> 
+          <ul style="list-style:square;">
+            <li>Varginha: 1 Sala de Operações e 1 Inventário para os múltiplos clientes do site;</li>
+            <li>HP: 1 Sala de Operações e 1 Inventário para múltiplos sites, do mesmo cliente;</li>
+          </ul>
+          <br>O projeto já está em andamento, tendo as operações da HP focadas primeiramente em Sala de Operações e Varginha focada em Inventário. Com isso poderemos usar o lessons learned de cada uma das frentes.
+        </p>
+
+      </div>
+      <div style="display: flex; height: 400px;">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Captura%20de%20tela%202025-07-07%20090748.png?raw=true" alt="Portal Web - Dashboard">
+    </div>
+
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Yamazumi</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #BA0C2F; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "O novo portal transformou completamente nossa rotina diária. A comunicação entre departamentos melhorou significativamente e agora temos acesso rápido a todas as informações necessárias."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente de TI, Cliente PE Tech</span>
+    </blockquote>
+</section>
+
+<!-- Projeto 3: MiniPrinter -->
+<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Mini Printer - Signify</h2>
+    <!-- Conteúdo detalhado -->
+    <div style=" margin-top: 2rem; min-width: 300px; display: flex;">
+      
+      <div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">
+          Atualmente o time operacional realiza a separação via tarefa direta e, após depositar todos os produtos do pedido em stage e conferir, faz a impressão da etiqueta. Com a Mini Printer, após o término de cada separação, as etiquetas daquele local serão impressas. 
+          <br>Essa implementação trará diversos benefícios, entre eles:
+          Melhor organização do stage de outbound;
+          Maior produtividade na conferência;
+          Maior rotatividade na área de stage, que hoje é “apertada” para o cenário operacional;
+          <br>Neste momento estamos na reta final, com duas frentes em paralelo:
+          <ul>
+          <li><b>Operações</b>: Revisão de procedimentos e treinamento do time;</li>
+          <li><b>PE (Super Usuário)</b>: Realização de testes em ambiente de projetos para coleta de evidencias do funcionamento.</li>
+          </ul>
+          <br>A expectativa é que tenhamos a implementação no mês de Junho/25. 
+          </p>
+
+      </div>
+      <div style="display: flex; height: 400px;">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Miniprinter.png?raw=true" alt="Portal Web - Dashboard">
+    </div>
+
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">JDA</span>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <blockquote style="background: #f8f9fa; border-left: 4px solid #BA0C2F; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
+      "O novo portal transformou completamente nossa rotina diária. A comunicação entre departamentos melhorou significativamente e agora temos acesso rápido a todas as informações necessárias."
+      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente de TI, Cliente PE Tech</span>
+    </blockquote>
+</section>
+
+<!-- Projeto 4: Etiqueta de Inbound - Signify -->
+<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
+  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Etiqueta de Inbound - Signify</h2>
+    <!-- Conteúdo detalhado -->
+    <div style=" margin-top: 2rem; min-width: 300px; display: grid;">
+      
+      <div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">
+          Durante um Gemba, vimos que as etiquetas da Signify não tem padrão e, muitas vezes, falta informação. Por isso, o time precisa digitar o SKU durante as atividades (recebimento, separação, inventário), o que morosidade para o processo, além dos riscos de inversão. Escrevemos uma FD para o time de IT desenvolver uma Page Builder no JDA que possibilita a impressão de uma etiqueta, onde teríamos as informações necessárias para fazer a leitura de um código de barras e não mais a digitação do SKU, mas a cotação (R$ 12.177,76) não foi aprovada.
+          <br>Para apoiar o time operacional, estamos desenvolvendo uma ferramenta para impressão dessa etiqueta. A ideia será colar uma etiqueta por pallet, ao lado da LPN, no ato do recebimento/conferência física. Assim, em todos os demais processos, os colaboradores poderão bipar o código de barras com RF, trazendo velocidade e confiabilidade para as atividades. 
+          <br>A ferramenta está em fase de testes e deve ser concluída até o fim de maio. Após isso, será apresentada ao time operacional para atualizar os procedimentos e treinar o time antes da implementação.      
+          </p>
+
+      </div>
+    <div style="display: grid; height: 230px; justify-content: center;">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Etiqueta%20de%20Inbound.png?raw=true" alt="Portal Web - Dashboard">
+    </div>
+
+    </div>
+
+    <!-- Tecnologias utilizadas -->
+    <div style="margin-top: 2rem;">
+      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">JDA</span>
         <span style="background: #e9ecef; color: #28a745; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">VBA</span>
       </div>
     </div>
@@ -446,82 +523,32 @@ document.addEventListener('DOMContentLoaded', function() {
     </blockquote>
 </section>
 
-
-<!-- Projeto 2: Canon -->
+<!-- Projeto 5:Upgrade NTV – Pernod Ricard -->
 <section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
-  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Power BI Canon</h2>
-  
-  <!-- Carrossel de imagens -->
-  <div class="projeto-carousel">
-    <div class="carousel-container" id="canon">
-        <div class="carousel-track2">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Canon/Captura%20de%20tela%202025-07-02%20101831.png?raw=true" alt="Portal Web - Interface">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Canon/Captura%20de%20tela%202025-07-02%20101811.png?raw=true" alt="Portal Web - Analytics">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Canon/Captura%20de%20tela%202025-07-02%20101755.png?raw=true" alt="Portal Web - Analytics">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Canon/Captura%20de%20tela%202025-07-02%20101739.png?raw=true" alt="Portal Web - Analytics">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Canon/Captura%20de%20tela%202025-07-02%20101725.png?raw=true" alt="Portal Web - Analytics">
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('canon', -1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15,18 9,12 15,6"></polyline>
-            </svg>
-        </button>
-        <button class="carousel-btn next" onclick="moveCarousel('canon', 1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9,18 15,12 9,6"></polyline>
-            </svg>
-        </button>
-        <div class="carousel-dots">
-            <span class="dot active" onclick="goToSlide('canon', 0)"></span>
-            <span class="dot" onclick="goToSlide('canon', 1)"></span>
-            <span class="dot" onclick="goToSlide('canon', 2)"></span>
-            <span class="dot" onclick="goToSlide('canon', 3)"></span>
-            <span class="dot" onclick="goToSlide('canon', 4)"></span>
-        </div>
-    </div>
-  </div>
-
+  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Upgrade NTV – Pernod Ricard</h2>
     <!-- Conteúdo detalhado -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
-      <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
-        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Power BI Gerencial, com KPIs e visões sobre o estoque, separação, expedição e inbound, importante para a operação acompanhar o andamento da produtividade durante o dia-a-dia e para a gerência analisar oportunidades e se os targets estão sendo atingidos.</p>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
-          <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Muitos paradigmas necessários para as queries funcionarem corretamente</li>
-          <li>Criação de formulas complexas para montar os dashboards de forma dinâmica e relacional</li>
-        </ul>
-      </div>
+    <div style=" margin-top: 2rem; min-width: 300px; display: grid;">
       
       <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
-        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Estudo do modelo de negócio operacional para implementação nas queries</li>
-          <li>Reuniões para verificação de dados</li>
-        </ul>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-          <div style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">40%</div>
-            <div style="font-size: 0.9rem;">Redução no tempo de busca</div>
-          </div>
-          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">30%</div>
-            <div style="font-size: 0.9rem;">Aumento na colaboração</div>
-          </div>
-        </div>
+        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
+        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">
+          A Pernod Ricard está passando por uma atualização no WMS e, com isso, surgiu a necessidade de atualizar os Concept Of Operation. Quando as operações foram implementadas, ainda não utilizávamos o Merlin e as documentações eram feitas fora da ferramenta.
+          <br>Com o projeto, além da oportunidade de revisitar os processos descritos no documento, estamos transcrevendo as informações para o Merlin, e garantir que a operação esteja dentro dos padrões da companhia.          
+          </p>
+
       </div>
+    <div style="display: grid; height: 230px; justify-content: center;">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Sistemas/Upgrande%20Pernod.png?raw=true" alt="Portal Web - Dashboard">
+    </div>
+
     </div>
 
     <!-- Tecnologias utilizadas -->
     <div style="margin-top: 2rem;">
       <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power BI</span>
-        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Sharepoint</span>
-        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">SQL</span>
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">JDA</span>
+        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Merlin</span>
       </div>
     </div>
 
@@ -532,144 +559,141 @@ document.addEventListener('DOMContentLoaded', function() {
     </blockquote>
 </section>
 
-
-<!-- Projeto 3: Whirlpool -->
-<section id="projeto-portal" class="projeto-detalhado fade" style="max-width: 1200px; margin: 3rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem;">
-  <h2 style="color: #BA0C2F; font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Power BI Whrilpool</h2>
-  
-  <!-- Carrossel de imagens -->
-  <div class="projeto-carousel">
-    <div class="carousel-container" id="whirlpool">
-        <div class="carousel-track3">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Whirlpool/Captura%20de%20tela%202025-07-02%20101546.png?raw=true" alt="Portal Web - Dashboard">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Whirlpool/Captura%20de%20tela%202025-07-02%20101607.png?raw=true" alt="Portal Web - Interface">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Whirlpool/Captura%20de%20tela%202025-07-02%20101621.png?raw=true" alt="Portal Web - Analytics">
-            <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Whirlpool/Captura%20de%20tela%202025-07-02%20101633.png?raw=true" alt="Portal Web - Analytics">
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('whirlpool', -1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15,18 9,12 15,6"></polyline>
-            </svg>
-        </button>
-        <button class="carousel-btn next" onclick="moveCarousel('whirlpool', 1)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9,18 15,12 9,6"></polyline>
-            </svg>
-        </button>
-        <div class="carousel-dots">
-            <span class="dot active" onclick="goToSlide('canon', 0)"></span>
-            <span class="dot" onclick="goToSlide('whirlpool', 1)"></span>
-            <span class="dot" onclick="goToSlide('whirlpool', 2)"></span>
-            <span class="dot" onclick="goToSlide('whirlpool', 3)"></span>
-        </div>
-    </div>
-  </div>
-
-    <!-- Conteúdo detalhado -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem;">
-      <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Sobre o Projeto</h3>
-        <p style="color: #444; line-height: 1.7; margin-bottom: 1.5rem;">Power BI Gerencial voltado para transporte, com KPIs e visões sobre o tracking de outbound, dinâmicas sobre as notas fiscais e volumetrias relacionadas ao hub, assim como destaque para os infratores, de forma que podem analisar e tratar rapidamente.</p>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Desafios Enfrentados</h4>
-          <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Banco de dados de transporte com queries complexas e extensas</li>
-          <li>Adaptação de uma planilha de excel, de forma que não perca dados, dinâmicas ou gráficos necessários para a operação</li>
-          <li>Lógicas para definir status para as NFs, assim como sobre OTD, NET e GROSS</li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Solução Implementada</h3>
-        <ul style="color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
-          <li>Utilização de lógicas e dinamicas presentes em PBIs parecidos</li>
-          <li>Reuniões para alinhamento de alterações conforme solicitações</li>
-        </ul>
-        
-        <h4 style="color: #333; font-size: 1.2rem; margin-bottom: 0.8rem;">Resultados Alcançados</h4>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-          <div style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">40%</div>
-            <div style="font-size: 0.9rem;">Redução no tempo de busca</div>
-          </div>
-          <div style="background: linear-gradient(135deg, #28a745, #1e7e34); color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
-            <div style="font-size: 1.8rem; font-weight: bold;">30%</div>
-            <div style="font-size: 0.9rem;">Aumento na colaboração</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tecnologias utilizadas -->
-    <div style="margin-top: 2rem;">
-      <h3 style="color: #BA0C2F; font-size: 1.4rem; margin-bottom: 1rem;">Tecnologias Utilizadas</h3>
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <span style="background: #e9ecef; color: #BA0C2F; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Power BI</span>
-        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Sharepoint</span>
-        <span style="background: #e9ecef; color: #0078D4; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">SQL</span>
-      </div>
-    </div>
-
-    <!-- Depoimento -->
-    <blockquote style="background: #f8f9fa; border-left: 4px solid #BA0C2F; color: #555; padding: 1.5rem; border-radius: 8px; font-style: italic; margin-top: 2rem;">
-      "O novo portal transformou completamente nossa rotina diária. A comunicação entre departamentos melhorou significativamente e agora temos acesso rápido a todas as informações necessárias."
-      <br><span style="font-size: 0.95rem; color: #888; font-style: normal;">— Gerente de TI, Cliente PE Tech</span>
-    </blockquote>
-</section>
 </main>
 
 <!-- Footer -->
-<footer style="background: #222; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 3rem; font-size: 1.05rem; letter-spacing: 1px;">
-  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem;">
-    <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Aurelio Ferreira" style="width: 54px; height: 54px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #FFCC00">
-        <div style="font-weight:bold; color:#FFCC00; font-size:1.05rem;">Aurelio Ferreira</div>
-        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Coord. de Sistemas Operacionais</div>
-        <a href="mailto:Aurelio.Ferreira@dhl.com" style="color:#FFCC00; font-size:0.97rem; margin-bottom:0.2rem;">Aurelio.Ferreira@dhl.com</a>
-      <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-        <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-        <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-      </div>
-      </div>
-      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Pedro Mattoso Cruzolini" style="width:48px; height:48px; border-radius:50%; border:2px solid #28a745; margin-bottom:0.5rem;">
-        <div style="font-weight:bold; color:#28a745; font-size:1.05rem;">João Pedro Mattoso Cruzolini</div>
-        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Supervisor de Processos</div>
-        <a href="mailto:Joao.Cruzolini@dhl.com" style="color:#28a745; font-size:0.97rem; margin-bottom:0.2rem;">Joao.Cruzolini@dhl.com</a>
-        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+<footer style="background-image: url('https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/dsaasd.png?raw=true'); background-size:cover; background-repeat:  no-repeat;">
+  <div class="footer-team" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; margin-top: 40px;">
+    <!-- Aurelio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Aurelio.jpg?raw=true" alt="Aurelio Ferreira">
+        <div class="members_footer">Aurelio Ferreira</div>
+        <div class= "job_footer">Coordenador de Sistemas Operacionais</div>
+        <a href="mailto:Aurelio.Ferreira@dhl.com" class="email_footer">Aurelio.Ferreira@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
-      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-        <img src="https://dpdhl.sharepoint.com/_vti_bin/afdcache.ashx/_userprofile/userphoto.jpg?_oat_=1751534565_b1db149bc1c33f279f08d2dbd05525ea0522ceae79ab5bd1cd0763af954b1871&P1=1751477532&P2=-83916695&P3=1&P4=blM5DMOAbFeHtpvRWnQzHq2OsbcUZ5rQojsp%2FVPZWkUytj67Zbi8NB6OyH5pEMqH1H1v9wnFGvz6PF%2FC%2FdOV6ccrv4VYSggB1nEfIo%2BODWaowGBJ3OlbN%2BNARwtuz8aHxIOA%2BewcrFP3SDfgJNJx31c%2Fze2BChXVTd%2FaFdH44JZxFwU8eE41z0IAqeXdw5HxRQDJXgk%2FsBLd4ZNKQ4Xyd1EcZt9JPQJXg6Ecw6l96a37LFoBYIwZGEraY7ToDbbiyoN76svTFnsfUNhGtvtomWrMKdoz%2FDkfGixVStaVswNJ4WpBCyFMw4k3Z3U0pITpGH68qeDhAfYGIdB7LB6P3w%3D%3D&size=S&accountname=eduardojuan%40dhl.com" alt="Eduardo Juan Oliveira" style="width:48px; height:48px; border-radius:50%; border:2px solid #BA0C2F; margin-bottom:0.5rem;">
-        <div style="font-weight:bold; color:#BA0C2F; font-size:1.05rem;">Eduardo Juan</div>
-        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Analista de Processos e Digitalização Jr</div>
-        <a href="mailto:eduardojuan@dhl.com" style="color:#BA0C2F; font-size:0.97rem; margin-bottom:0.2rem;">eduardojuan@dhl.com</a>
-        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      <!-- João -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/João.jpg?raw=true" alt="Eduardo Juan Oliveira">
+        <div class="members_footer">João Pedro</div>
+        <div class= "job_footer">Supervisor Digitalização</div>
+        <a href="mailto:joao.cruzolini@dhl.com" class="email_footer">joao.cruzolini@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
-      <div class="team-member" style="min-width: 180px; max-width: 220px; background: #181818; border-radius: 12px; padding: 1.1rem 1rem; box-shadow: 0 2px 12px #0002; display: flex; flex-direction: column; align-items: center;">
-        <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Rogerio Pimentel" style="width:48px; height:48px; border-radius:50%; border:2px solid #0078D4; margin-bottom:0.5rem;">
-        <div style="font-weight:bold; color:#0078D4; font-size:1.05rem;">Rogerio Pimentel</div>
-        <div style="font-size:0.97rem; color:#fff; margin-bottom:0.2rem;">Coordenador de Sistemas Operacionais</div>
-        <a href="mailto:Rogerio.Pimentel@dhl.com" style="color:#0078D4; font-size:0.97rem; margin-bottom:0.2rem;">Rogerio.Pimentel@dhl.com</a>
-        <div style="display: flex; gap: 10px; margin-top: 0.2rem;">
-          <a href="https://linkedin.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-          <a href="https://github.com/" target="_blank" style="color: #FFCC00;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      <!-- Eduardo -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Eduardo.jpg?raw=true" alt="Eduardo Juan Oliveira">
+        <div class="members_footer">Eduardo Juan</div>
+        <div class= "job_footer">Analista de Processos e Digitalização Jr</div>
+        <a href="mailto:eduardojuan@dhl.com" class="email_footer">eduardojuan@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
+      <!-- Rogerio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Rogerio.jpg?raw=true" alt="Rogerio Pimentel">
+        <div class="members_footer">Rogerio Pimentel</div>
+        <div class="job_footer">Coordenador de Sistemas Operacionais</div>
+        <a href="mailto:Rogerio.Pimentel@dhl.com" class="email_footer">Rogerio.Pimentel@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Ana -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Ana.jpg?raw=true" alt="Ana Carolina">
+        <div class="members_footer">Ana Carolina</div>
+        <div class="job_footer">Supervisora de Processos</div>
+        <a href="mailto:Ana.Carolinac@dhl.com" class="email_footer">Ana.Carolinac@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Arthur -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Arthur.jpg?raw=true" alt="Arthur Neto">
+        <div class="members_footer">Arthur Neto</div>
+        <div class="job_footer">Gerente de Processos</div>
+        <a href="mailto:arthur.neto@dhl.com" class="email_footer">arthur.neto@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Gabriel -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Gabriel.jpg?raw=true" alt="Gabriel Matucci">
+        <div class="members_footer">Gabriel Matucci</div>
+        <div class="job_footer">Analista de Processos PL</div>
+        <a href="mailto:Gabriel.SilvaMC@dhl.com" class="email_footer">Gabriel.SilvaMC@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <!-- Otavio -->
+      <div class="team-member">
+        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/TIme_DHL/Otavio.jpg?raw=true" alt="Otavio Petrin">
+        <div class="members_footer">Otavio Petrin</div>
+        <div class="job_footer">Analista de Processos PL</div>
+        <a href="mailto:Gabriel.SilvaMC@dhl.com" class="email_footer">Otavio.PetrinR@dhl.com</a>
+        <div class="linkedin_footer">
+          <a href="https://linkedin.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+          <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>   
   </div>
-  <div style="margin-bottom: 0.5rem;">
-    &copy; 2024 PE Tech. Todos os direitos reservados.
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px; position: relative;">
+    <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Icones%20DHL/DHL_Group_Strategy2025_RGB_white.png?raw=true" style="height: 55px; position: relative; top: -20px; left: -40px;">
+    <img src="https://raw.githubusercontent.com/ejuanoli/Teste_Site/3ed8554afbb0310f70abdb0210bf7f14bf3c43b0/assets/img/Icones%20DHL/Imagem13.svg" style="height: 25px; border:1px solid; border-radius: 10px; border-color: #000; background-color: #FFCC00; padding: 6px; margin-right: 20px; margin-top: -1rem;">
+    <div style="margin-bottom: 1rem; color: #fff;">
+      &copy; Desenvolvido pelo time de Digitalização Tech Brasil 2025.
+    </div>
   </div>
-  <div style="font-size: 1.2rem;">
-    <a href="https://www.linkedin.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">LinkedIn</a> |
-    <a href="https://github.com/" target="_blank" style="color: #FFCC00; margin: 0 8px; text-decoration: none;">GitHub</a>
   </div>
 </footer>
+
+<script>
+  $(document).ready(function(){
+    $('.footer-team').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
 
 <!-- Botão flutuante de contato no lado inferior esquerdo -->
 <div id="floating-contact" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
