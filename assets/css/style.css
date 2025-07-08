@@ -87,14 +87,17 @@ main {
 }
 
 footer {
-  background: var(--dhl-yellow);
-  color: var(--dhl-red);
   text-align: center;
-  padding: 1rem 0;
-  font-weight: 500;
+  padding: 3rem 0 0 0;
+  font-weight: 600;
   letter-spacing: 1px;
+  height: 480px;
 }
 
+body.dark-mode #team-pe,
+body.dark-mode #portfolio {
+  box-shadow: none !important;
+}
 /* Seções dinâmicas */
 .section {
   margin-bottom: 4rem;
@@ -108,15 +111,7 @@ footer {
   margin-right: auto;
 }
 
-.section-title {
-  color: var(--dhl-red);
-  font-size: 2.3rem;
-  margin-bottom: 1.5rem;
-  border-left: 8px solid var(--dhl-yellow);
-  padding-left: 1rem;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-}
+
 
 .background-image {
   position: fixed;
@@ -262,8 +257,16 @@ header, main, footer {
   background: rgba(186,12,47,0.1) !important;
   border-color: #FFCC00 !important;
   color: #FFCC00 !important;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255,204,0,0.3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255,255,255,0.18) !important;
+}
+
+.hero-content a[href="#inovar"]:hover {
+  background: rgba(186,12,47,0.1) !important;
+  border-color: #FFCC00 !important;
+  color: #FFCC00 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255,255,255,0.18) !important;
 }
 
 /* Efeito hover para o botão de scroll */
@@ -432,6 +435,7 @@ header, main, footer {
 }
 
 .team-card {
+  min-height: 95px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px #0002;
@@ -454,6 +458,7 @@ header, main, footer {
 
 .team-card div {
   color: #888;
+  margin-top: 5px;
   font-size: 0.85rem;
 }
 
@@ -465,10 +470,10 @@ header, main, footer {
   margin: 2.5rem 0;
 }
 
-.card {
+.card_so, .card_digi {
   min-width: 300px;
-  max-width: 340px;
-  height: 260px;
+  max-width: 600px;
+  height: 400px;
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -479,40 +484,184 @@ header, main, footer {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+.card_digi {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem; /* Ajuste conforme necessário */
+  border-radius: 14px; /* Ajuste conforme necessário */
 }
 
-.card h3 {
-  color: #BA0C2F; /* Ajuste conforme necessário */
-  font-size: 1.3rem;
+.card_digi img {
+  position: absolute; 
+  left: -15px;
+  margin-left: -40px;
+  margin-top: -1rem;
+  height: 400px;
+}
+
+.card_digi .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajuste conforme necessário */
+  z-index: 1; /* Coloca a camada de overlay atrás do texto */
+  opacity: 0.9 !important; /* Ajuste o valor da transparência conforme necessário */
+}
+
+.card_digi .overlay:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px !important; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  background: transparent;
+}
+
+.card_digi h3,
+.card_digi p,
+.card_digi a,
+.card_digi .ver-projeto-btn {
+  position: relative !important;
+  z-index: 5 !important; /* Coloca o texto acima da camada de overlay */
+}
+
+.card_digi h3 {
+  margin-top: 5px;
+  color: #fff; /* Ajuste conforme necessário */
+  font-size: 1.6rem;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
-.card p {
-  color: #333;
-  font-size: 1rem;
+.card_digi p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 1.2rem;
   text-align: center;
 }
 
-.ver-projeto-btn {
-  margin-top: 180px;
-  position: absolute;
-  background: #FFCC00; /* Ajuste conforme necessário */
-  color: #000;
-  padding: 0.7rem 1.3rem;
-  border-radius: 22px;
-  border-color: #000 !important;
+.card_digi .ver-projeto-btn {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  background-color: #BA0C2F; /* Ajuste conforme necessário */
+  border-radius: 10px; /* Ajuste conforme necessário */
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #000;
+  margin-top: 4rem;
   font-weight: 600;
   font-size: 1.05rem;
-  text-decoration: none;
   transition: background 0.2s;
 }
 
+.card_digi:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Aplicar desfoque e transparência a todos os elementos exceto h3, p, a e a div com imagem de fundo */
+.card_digi :not(h3):not(p):not(a):not(:first-child) {
+  filter: blur(5px); /* Ajuste o valor do desfoque conforme necessário */
+  opacity: 0.8; /* Ajuste o valor da transparência conforme necessário */
+}
+
 .ver-projeto-btn:hover {
-  background: #8B0000; /* Ajuste conforme necessário */
+  background: #FFCC00 !important; /* Ajuste conforme necessário */
+  color: #000 !important;
+  border: 1px solid var(--dhl-red) !important;
+}
+
+
+.card_so {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem; /* Ajuste conforme necessário */
+  border-radius: 14px; /* Ajuste conforme necessário */
+}
+
+.card_so img {
+  position: absolute; 
+  left: -15px;
+  margin-left: -40px;
+  margin-top: -1rem;
+  height: 400px;
+}
+
+.card_so .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajuste conforme necessário */
+  z-index: 1; /* Coloca a camada de overlay atrás do texto */
+  opacity: 0.9 !important; /* Ajuste o valor da transparência conforme necessário */
+}
+
+.card_so .overlay:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px !important; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  background: transparent;
+}
+
+.card_so h3,
+.card_so p,
+.card_so a,
+.card_so .ver-projeto-btn {
+  position: relative !important;
+  z-index: 5 !important; /* Coloca o texto acima da camada de overlay */
+}
+
+.card_so h3 {
+  margin-top: 5px;
+  color: #fff ; /* Ajuste conforme necessário */
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.card_so p {
   color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.card_so .ver-projeto-btn {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  position: absolute;
+  background-color: #BA0C2F; /* Ajuste conforme necessário */
+  border-radius: 10px; /* Ajuste conforme necessário */
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #000;
+  margin-top: 7rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+
+.card_so:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Aplicar desfoque e transparência a todos os elementos exceto h3, p, a e a div com imagem de fundo */
+.card_so :not(h3):not(p):not(a):not(:first-child) {
+  filter: blur(px); /* Ajuste o valor do desfoque conforme necessário */
+  opacity: 0.8; /* Ajuste o valor da transparência conforme necessário */
 }
 
 .tech-badges {
@@ -526,3 +675,139 @@ header, main, footer {
   padding: 0.1rem 0.5rem;
   border-radius: 10px;/* Espaçamento entre as tags */
 }
+
+.members {
+  color:#999; 
+  font-size:0.85rem;
+}
+
+.members_footer {
+  font-weight:bold; 
+  color:#fff; 
+  font-size:1.05rem;
+}
+
+.job_footer {
+  margin-top: 3px;
+  color:#999; 
+  font-size:0.85rem;
+}
+
+.email_footer {
+  position: absolute;
+  margin-top: 7.9rem; 
+  color:lightgray; 
+  font-size:0.75rem;
+}
+
+.linkedin_footer {
+  display: flex;
+  margin-top: 9.2rem; 
+  position: absolute;
+  gap: 7px;
+}
+
+.linkedin_footer a {
+  color: #fff;
+}
+
+.team-member {
+  height: 300px !important;
+  background-color: rgba(0,0,0,0.30) !important;
+  padding: 100px 0 0 0 !important;
+  margin-bottom: 20px !important;
+  margin-top: -60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.team-member img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track_cases {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide_cases {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.carousel-btn2prev2, .carousel-btn2next2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.10);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Adicionar z-index */
+}
+
+.carousel-btn2prev2 svg, .carousel-btn2next2 svg {
+  color: #000;
+}
+
+.carousel-btn2prev2:hover, .carousel-btn2next2:hover {
+  background: rgba(0,0,0,0.66);
+}
+
+.carousel-btn2prev2:hover svg, .carousel-btn2next2:hover svg {
+  color: #fff !important;
+}
+
+.carousel-btn2prev2 {
+  left: 5px;
+}
+
+.carousel-btn2next2 {
+  right: 5px;
+}
+.carousel-dots {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background: #BA0C2F;
+}
+
+
