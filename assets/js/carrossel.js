@@ -18,6 +18,21 @@ const carousels = {
         currentSlide: 0,
         trackSelector: '.carousel-track4',
         dotSelector: '.dot'
+    },
+    powerautomate: {
+        currentSlide: 0,
+        trackSelector: '.carousel-track_powerautomate',
+        dotSelector: '.dot'
+    },
+    python: {
+        currentSlide: 0,
+        trackSelector: '.carousel-track_python',
+        dotSelector: '.dot'
+    },
+    cases: {
+        currentSlide: 0,
+        trackSelector: '.carousel-track_cases',
+        dotSelector: '.dot'
     }
 };
 
