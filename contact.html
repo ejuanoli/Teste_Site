@@ -16,8 +16,8 @@
 <body style="background: linear-gradient(135deg, #f8f9fa 60%, #fff 100%); min-height:100vh;">
 
   
-  <!-- Your content here -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <!-- Carregar jQuery antes de qualquer script que dependa dele -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Slick Carousel JS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- Botão voltar ao topo -->
@@ -124,33 +124,42 @@
     <form class="contato-form" id="contatoForm" onsubmit="event.preventDefault(); enviarContato();" style="max-width: 600px; margin: 0 auto; text-align: left;">
       <!-- Filtro de área -->
       <div style="margin-bottom: 1.5rem;">
-        <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600;">Área de interesse:</label>
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Área de interesse:</label>
         <div id="areaBtns" style="display: flex; gap: 10px;">
-          <button type="button" class="area-btn" data-email="eduardojuan@dhl.com" data-area="Digitalização" style="flex:1; padding: 10px; border-radius: 8px; border: 2px solid #e0e0e0; background: #f8f9fa; cursor: pointer; font-weight: 600;">Digitalização</button>
-          <button type="button" class="area-btn" data-email="eduardojuan@dhl.com" data-area="Sistemas Operacionais" style="flex:1; padding: 10px; border-radius: 8px; border: 2px solid #e0e0e0; background: #f8f9fa; cursor: pointer; font-weight: 600;">Sistemas Operacionais</button>
-          <button type="button" class="area-btn" data-email="eduardojuan@dhl.com" data-area="Labor Plan" style="flex:1; padding: 10px; border-radius: 8px; border: 2px solid #e0e0e0; background: #f8f9fa; cursor: pointer; font-weight: 600;">Labor Plan</button>
+          <button type="button" class="area-btn" data-email="eduardojuan@dhl.com" data-area="Digitalização" style="flex:1; padding: 10px; border-radius: 8px; border: 2px solid #e0e0e0; background: #f8f9fa; cursor: pointer; font-weight: 600 !important;">Digitalização</button>
+          <button type="button" class="area-btn" data-email="eduardojuan@dhl.com" data-area="Sistemas Operacionais" style="flex:1; padding: 10px; border-radius: 8px; border: 2px solid #e0e0e0; background: #f8f9fa; cursor: pointer; font-weight: 600 !important;">Sistemas Operacionais</button>
         </div>
         <input type="hidden" name="areaSelecionada" id="areaSelecionada" value="Digitalização">
-        <input type="hidden" name="emailDestino" id="emailDestino" value="eduardojuan@dhl.com">
-        <div id="areaSelecionadaMsg" style="margin-top: 0.5rem; color: #BA0C2F; font-size: 1rem; font-weight: 500;">Área selecionada: Digitalização</div>
+        <input type="hidden" name="emailDestino" id="emailDestino" value="eduardojuan@dhl.com; joao.cruzolini@dhl.com">
+        <div class="lbl" id="areaSelecionadaMsg" style="margin-top: 0.5rem; color: #BA0C2F; font-size: 1rem; font-weight: 500 !important;">Área selecionada: Digitalização</div>
       </div>
       
       <div style="margin-bottom: 1.5rem;">
-        <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600;">Nome:</label>
-        <input type="text" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease;">
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Nome:</label>
+        <input type="text" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease !important;">
       </div>
       
       <div style="margin-bottom: 1.5rem;">
-        <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600;">Email:</label>
-        <input type="email" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease;">
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Seu Email:</label>
+        <input type="email" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease !important;">
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Local de trabalho:</label>
+        <input type="article" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease !important;">
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Sua Operação:</label>
+        <input type="address" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease !important;">
       </div>
       
       <div style="margin-bottom: 1.5rem;">
-        <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600;">Mensagem:</label>
-        <textarea required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; min-height: 120px; resize: vertical; transition: border-color 0.3s ease;"></textarea>
+        <label class="lbl" style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: 600 !important;">Mensagem:</label>
+        <textarea required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; min-height: 120px; resize: vertical; transition: border-color 0.3s ease !important;"></textarea>
       </div>
       
-      <button class="btn" type="submit" style="background: linear-gradient(135deg, #BA0C2F, #8B0000); color: #fff; padding: 1rem 2rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; width: 100%;">Enviar Mensagem</button>
+      <button class="btn" type="submit">Enviar Mensagem</button>
     </form>
   </section>
 </main>
@@ -246,47 +255,17 @@
           <a href="https://github.com/" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
         </div>
       </div>   
-      <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px; position: relative;">
-        <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Icones%20DHL/DHL_Group_Strategy2025_RGB_white.png?raw=true" style="height: 55px; position: relative; top: -20px; left: -40px;">
-        <img src="https://raw.githubusercontent.com/ejuanoli/Teste_Site/3ed8554afbb0310f70abdb0210bf7f14bf3c43b0/assets/img/Icones%20DHL/Imagem13.svg" style="height: 25px; border:1px solid; border-radius: 10px; border-color: #000; background-color: #FFCC00; padding: 6px; margin-right: 20px; margin-top: -1rem;">
-        <div style="margin-bottom: 1rem; color: #fff;">
-          &copy; Desenvolvido pelo time de Digitalização Tech Brasil 2025.
-        </div>
-      </div>
-      </div>
-    </footer>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px; position: relative;">
+    <img src="https://github.com/ejuanoli/Teste_Site/blob/main/assets/img/Icones%20DHL/DHL_Group_Strategy2025_RGB_white.png?raw=true" style="height: 55px; position: relative; top: -20px; left: -40px;">
+    <img src="https://raw.githubusercontent.com/ejuanoli/Teste_Site/3ed8554afbb0310f70abdb0210bf7f14bf3c43b0/assets/img/Icones%20DHL/Imagem13.svg" style="height: 25px; border:1px solid; border-radius: 10px; border-color: #000; background-color: #FFCC00; padding: 6px; margin-right: 20px; margin-top: -1rem;">
+    <div style="margin-bottom: 1rem; color: #fff;">
+      &copy; Desenvolvido pelo time de Digitalização Tech Brasil 2025.
+    </div>
+  </div>
+  </div>
+</footer>
 
-<script>
-  $(document).ready(function(){
-    $('.footer-team').slick({
-      infinite: true,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: false,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: false
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
 
 <!-- Botão flutuante de contato no lado inferior esquerdo -->
 <div id="floating-contact" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
@@ -301,113 +280,128 @@
 </div>
 
   <!-- EmailJS -->
- <!-- EmailJS -->
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
- <script type="text/javascript">
-   emailjs.init('CRXajw4MBNAMM8N1g');
- </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('CRXajw4MBNAMM8N1g');
+  </script>
 
- <script>
-   document.addEventListener('DOMContentLoaded', function() {
-     // Inicialização do Slick Carousel
-     $('.footer-team').slick({
-       infinite: true,
-       slidesToShow: 5,
-       slidesToScroll: 1,
-       dots: false,
-       arrows: false,
-       autoplay: true,
-       autoplaySpeed: 2000,
-       responsive: [
-         {
-           breakpoint: 1024,
-           settings: {
-             slidesToShow: 2,
-             slidesToScroll: 1,
-             infinite: true,
-             dots: false
-           }
-         },
-         {
-           breakpoint: 600,
-           settings: {
-             slidesToShow: 1,
-             slidesToScroll: 1
-           }
-         }
-       ]
-     });
+  <script>
+    $(document).ready(function(){
+      $('.footer-team').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
 
-     // Lógica para seleção de área e alteração do email de destino
-     const areaBtns = document.querySelectorAll('.area-btn');
-     const areaSelecionadaInput = document.getElementById('areaSelecionada');
-     const emailDestinoInput = document.getElementById('emailDestino');
-     const areaSelecionadaMsg = document.getElementById('areaSelecionadaMsg');
-     let areaAtual = 'Digitalização';
+      // Lógica para seleção de área e alteração do email de destino
+      const areaBtns = document.querySelectorAll('.area-btn');
+      const areaSelecionadaInput = document.getElementById('areaSelecionada');
+      const emailDestinoInput = document.getElementById('emailDestino');
+      const areaSelecionadaMsg = document.getElementById('areaSelecionadaMsg');
+      let areaAtual = 'Digitalização';
 
-     areaBtns.forEach(btn => {
-       btn.addEventListener('click', function() {
-         areaBtns.forEach(b => b.style.background = '#f8f9fa');
-         this.style.background = '#FFCC00';
-         areaSelecionadaInput.value = this.dataset.area;
-         emailDestinoInput.value = this.dataset.email;
-         areaAtual = this.dataset.area;
-         areaSelecionadaMsg.textContent = 'Área selecionada: ' + this.dataset.area;
-       });
-     });
+      areaBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          areaBtns.forEach(b => b.style.background = '#f8f9fa');
+          this.style.background = '#FFCC00';
+          areaSelecionadaInput.value = this.dataset.area;
+          emailDestinoInput.value = this.dataset.email;
+          areaAtual = this.dataset.area;
+          areaSelecionadaMsg.textContent = 'Área selecionada: ' + this.dataset.area;
+        });
+      });
 
-     // Função de envio do formulário usando EmailJS
-     function enviarContato(event) {
-       event.preventDefault(); // Evita o envio padrão do formulário
+      // Função de envio do formulário usando EmailJS
+      function enviarContato(event) {
+        event.preventDefault(); // Evita o envio padrão do formulário
 
-       const nome = document.querySelector('#contatoForm input[type="text"]').value;
-       const email = document.querySelector('#contatoForm input[type="email"]').value;
-       const mensagem = document.querySelector('#contatoForm textarea').value;
-       const area = areaSelecionadaInput.value;
-       const emailDestino = emailDestinoInput.value;
-       const today = new Date();
-       const utcHours = today.getUTCHours();
-       const utcMinutes = today.getUTCMinutes();
-       const utcDay = today.getUTCDate();
-       const utcMonth = today.getUTCMonth() + 1; // Months are zero-indexed
-       const utcYear = today.getUTCFullYear().toString().slice(-2); // Get last two digits of the year
+      const nome = document.querySelector('#contatoForm input[type="text"]').value;
+      const email = document.querySelector('#contatoForm input[type="email"]').value;
+      const mensagem = document.querySelector('#contatoForm textarea').value;
+      const op = document.querySelector('#contatoForm input[type="address"]').value;
+      const local = document.querySelector('#contatoForm input[type="article"]').value;
+      const area = areaSelecionadaInput.value;
+      const emailDestino = emailDestinoInput.value;
+      const today = new Date();
 
-       // Format the date and time as dd/mm/yy hh:mm
-       const formattedDate = `${utcDay.toString().padStart(2, '0')}/${utcMonth.toString().padStart(2, '0')}/${utcYear}`;
-       const formattedTime = `${utcHours.toString().padStart(2, '0')}:${utcMinutes.toString().padStart(2, '0')}`;
-       const formattedDateTime = `${formattedDate} ${formattedTime}`;
+      // Diminuir 3 horas da data atual
+      today.setHours(today.getHours() - 3);
 
-       // Parâmetros para o template do EmailJS
-       const templateParams = {
-         from_name: nome,
-         from_email: email,
-         message: mensagem,
-         area: area,
-         to_email: emailDestino,
-         data: formattedDateTime
-       };
+      const utcHours = today.getUTCHours();
+      const utcMinutes = today.getUTCMinutes();
+      const utcDay = today.getUTCDate();
+      const utcMonth = today.getUTCMonth() + 1; // Months are zero-indexed
+      const utcYear = today.getUTCFullYear().toString().slice(-2); // Get last two digits of the year
 
-       // Substitua 'default_service' e 'template_rmfn5xj' pelos seus dados do EmailJS
-       emailjs.send('default_service', 'template_rmfn5xj', templateParams)
-         .then(function(response) {
-           alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-           document.getElementById('contatoForm').reset();
-           areaSelecionadaInput.value = 'Digitalização';
-           emailDestinoInput.value = 'eduardojuan@dhl.com';
-           areaSelecionadaMsg.textContent = 'Área selecionada: Digitalização';
-           areaBtns.forEach(b => b.style.background = '#f8f9fa');
-           areaBtns[0].style.background = '#FFCC00';
-         }, function(error) {
-           alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
-         });
-     }
+      // Format the date and time as dd/mm/yy hh:mm
+      const formattedDate = `${utcDay.toString().padStart(2, '0')}/${utcMonth.toString().padStart(2, '0')}/${utcYear}`;
+      const formattedTime = `${utcHours.toString().padStart(2, '0')}:${utcMinutes.toString().padStart(2, '0')}`;
+      const formattedDateTime = `${formattedDate} ${formattedTime}`;
 
-     // Adiciona o evento de submit ao formulário
-     document.getElementById('contatoForm').addEventListener('submit', enviarContato);
+      // Parâmetros para o template do EmailJS
+      const templateParams = {
+        from_name: nome,
+        from_email: email,
+        message: mensagem,
+        area: area,
+        operacao: op,
+        local: local,
+        to_email: emailDestino,
+        data: formattedDateTime
+      };
 
-     // Inicializa botão padrão
-     if(areaBtns.length) areaBtns[0].style.background = '#FFCC00';
-   });
- </script>
+    // Adiciona a classe 'sending' ao botão
+    const sendButton = document.querySelector('#contatoForm .btn');
+    sendButton.classList.add('sending');
+    sendButton.disabled = true;
+
+    // Substitua 'default_service' e 'template_rmfn5xj' pelos seus dados do EmailJS
+    emailjs.send('default_service', 'template_rmfn5xj', templateParams)
+      .then(function(response) {
+        alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+        document.getElementById('contatoForm').reset();
+        areaSelecionadaInput.value = 'Digitalização';
+        emailDestinoInput.value = 'eduardojuan@dhl.com';
+        areaSelecionadaMsg.textContent = 'Área selecionada: Digitalização';
+        areaBtns.forEach(b => b.style.background = '#f8f9fa');
+        areaBtns[0].style.background = '#FFCC00';
+        sendButton.classList.remove('sending');
+        sendButton.disabled = false;
+      }, function(error) {
+        alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
+        sendButton.classList.remove('sending');
+        sendButton.disabled = false;
+      });
+  }
+
+      // Adiciona o evento de submit ao formulário
+      document.getElementById('contatoForm').addEventListener('submit', enviarContato);
+
+      // Inicializa botão padrão
+      if(areaBtns.length) areaBtns[0].style.background = '#FFCC00';
+    });
+  </script>
 </body>
 </html> 
