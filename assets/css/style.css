@@ -456,6 +456,56 @@ header, main, footer {
   margin-bottom: 0.1rem;
 }
 
+.btn {
+  background: linear-gradient(135deg, #BA0C2F, #8B0000) !important;
+  color: #fff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #8B0000, #BA0C2F) !important;
+}
+
+.btn:active {
+  background: linear-gradient(135deg, #FF4500, #BA0C2F) !important;
+}
+
+.btn.sending {
+  position: relative !important;
+  color: transparent !important; /* Esconde o texto do botão */
+}
+
+.btn.sending::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px; /* Metade da altura */
+  margin-left: -10px; /* Metade da largura */
+  border: 3px solid #ccc;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .team-card div {
   color: #888;
   margin-top: 5px;
