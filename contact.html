@@ -300,76 +300,114 @@
   </a>
 </div>
 
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- EmailJS -->
+ <!-- EmailJS -->
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+ <script type="text/javascript">
+   emailjs.init('CRXajw4MBNAMM8N1g');
+ </script>
 
-<script type="text/javascript">
-  emailjs.init('CRXajw4MBNAMM8N1g')
-</script>
-<script>
-// Lógica para seleção de área e alteração do email de destino
-const areaBtns = document.querySelectorAll('.area-btn');
-const areaSelecionadaInput = document.getElementById('areaSelecionada');
-const emailDestinoInput = document.getElementById('emailDestino');
-const areaSelecionadaMsg = document.getElementById('areaSelecionadaMsg');
-let areaAtual = 'Digitalização';
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     // Inicialização do Slick Carousel
+     $('.footer-team').slick({
+       infinite: true,
+       slidesToShow: 5,
+       slidesToScroll: 1,
+       dots: false,
+       arrows: false,
+       autoplay: true,
+       autoplaySpeed: 2000,
+       responsive: [
+         {
+           breakpoint: 1024,
+           settings: {
+             slidesToShow: 2,
+             slidesToScroll: 1,
+             infinite: true,
+             dots: false
+           }
+         },
+         {
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 1,
+             slidesToScroll: 1
+           }
+         }
+       ]
+     });
 
-areaBtns.forEach(btn => {
-  btn.addEventListener('click', function() {
-    areaBtns.forEach(b => b.style.background = '#f8f9fa');
-    this.style.background = '#FFCC00';
-    areaSelecionadaInput.value = this.dataset.area;
-    emailDestinoInput.value = this.dataset.email;
-    areaAtual = this.dataset.area;
-    areaSelecionadaMsg.textContent = 'Área selecionada: ' + this.dataset.area;
-  });
-});
+     // Lógica para seleção de área e alteração do email de destino
+     const areaBtns = document.querySelectorAll('.area-btn');
+     const areaSelecionadaInput = document.getElementById('areaSelecionada');
+     const emailDestinoInput = document.getElementById('emailDestino');
+     const areaSelecionadaMsg = document.getElementById('areaSelecionadaMsg');
+     let areaAtual = 'Digitalização';
 
-// Função de envio do formulário usando EmailJS
-function enviarContato() {
-  const nome = document.querySelector('#contatoForm input[type="text"]').value;
-  const email = document.querySelector('#contatoForm input[type="email"]').value;
-  const mensagem = document.querySelector('#contatoForm textarea').value;
-  const area = areaSelecionadaInput.value;
-  const emailDestino = emailDestinoInput.value;
-  const today = new Date();
-  const utcHours = today.getUTCHours();
-  const utcMinutes = today.getUTCMinutes();
-  const utcDay = today.getUTCDate();
-  const utcMonth = today.getUTCMonth() + 1; // Months are zero-indexed
-  const utcYear = today.getUTCFullYear().toString().slice(-2); // Get last two digits of the year
+     areaBtns.forEach(btn => {
+       btn.addEventListener('click', function() {
+         areaBtns.forEach(b => b.style.background = '#f8f9fa');
+         this.style.background = '#FFCC00';
+         areaSelecionadaInput.value = this.dataset.area;
+         emailDestinoInput.value = this.dataset.email;
+         areaAtual = this.dataset.area;
+         areaSelecionadaMsg.textContent = 'Área selecionada: ' + this.dataset.area;
+       });
+     });
 
-  // Format the date and time as dd/mm/yy hh:mm
-  const formattedDate = `${utcDay.toString().padStart(2, '0')}/${utcMonth.toString().padStart(2, '0')}/${utcYear}`;
-  const formattedTime = `${utcHours.toString().padStart(2, '0')}:${utcMinutes.toString().padStart(2, '0')}`;
-  const formattedDateTime = `${formattedDate} ${formattedTime}`;
+     // Função de envio do formulário usando EmailJS
+     function enviarContato(event) {
+       event.preventDefault(); // Evita o envio padrão do formulário
 
-  // Parâmetros para o template do EmailJS
-  const templateParams = {
-    from_name: nome,
-    from_email: email,
-    message: mensagem,
-    area: area,
-    to_email: emailDestino,
-    data: formattedDateTime
-  };
+       const nome = document.querySelector('#contatoForm input[type="text"]').value;
+       const email = document.querySelector('#contatoForm input[type="email"]').value;
+       const mensagem = document.querySelector('#contatoForm textarea').value;
+       const area = areaSelecionadaInput.value;
+       const emailDestino = emailDestinoInput.value;
+       const today = new Date();
+       const utcHours = today.getUTCHours();
+       const utcMinutes = today.getUTCMinutes();
+       const utcDay = today.getUTCDate();
+       const utcMonth = today.getUTCMonth() + 1; // Months are zero-indexed
+       const utcYear = today.getUTCFullYear().toString().slice(-2); // Get last two digits of the year
 
-  // Substitua 'SEU_SERVICE_ID' e 'SEU_TEMPLATE_ID' pelos seus dados do EmailJS
-  emailjs.send('default_service', 'template_rmfn5xj', templateParams)
-    .then(function(response) {
-      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-      document.getElementById('contatoForm').reset();
-      areaSelecionadaInput.value = 'Digitalização';
-      emailDestinoInput.value = 'eduardojuan@dhl.com';
-      areaSelecionadaMsg.textContent = 'Área selecionada: Digitalização';
-      areaBtns.forEach(b => b.style.background = '#f8f9fa');
-      areaBtns[0].style.background = '#FFCC00';
-    }, function(error) {
-      alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
-    });
-}
-// Inicializa botão padrão
-if(areaBtns.length) areaBtns[0].style.background = '#FFCC00';
-</script>
+       // Format the date and time as dd/mm/yy hh:mm
+       const formattedDate = `${utcDay.toString().padStart(2, '0')}/${utcMonth.toString().padStart(2, '0')}/${utcYear}`;
+       const formattedTime = `${utcHours.toString().padStart(2, '0')}:${utcMinutes.toString().padStart(2, '0')}`;
+       const formattedDateTime = `${formattedDate} ${formattedTime}`;
+
+       // Parâmetros para o template do EmailJS
+       const templateParams = {
+         from_name: nome,
+         from_email: email,
+         message: mensagem,
+         area: area,
+         to_email: emailDestino,
+         data: formattedDateTime
+       };
+
+       // Substitua 'default_service' e 'template_rmfn5xj' pelos seus dados do EmailJS
+       emailjs.send('default_service', 'template_rmfn5xj', templateParams)
+         .then(function(response) {
+           alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+           document.getElementById('contatoForm').reset();
+           areaSelecionadaInput.value = 'Digitalização';
+           emailDestinoInput.value = 'eduardojuan@dhl.com';
+           areaSelecionadaMsg.textContent = 'Área selecionada: Digitalização';
+           areaBtns.forEach(b => b.style.background = '#f8f9fa');
+           areaBtns[0].style.background = '#FFCC00';
+         }, function(error) {
+           alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
+         });
+     }
+
+     // Adiciona o evento de submit ao formulário
+     document.getElementById('contatoForm').addEventListener('submit', enviarContato);
+
+     // Inicializa botão padrão
+     if(areaBtns.length) areaBtns[0].style.background = '#FFCC00';
+   });
+ </script>
 </body>
 </html> 
