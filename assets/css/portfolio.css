@@ -382,13 +382,14 @@
     opacity: 1;
   }
 
-  .carousel-track1, .carousel-track2, .carousel-track3, .carousel-track4 {
+  .carousel-track1, .carousel-track2, .carousel-track3, .carousel-track4, .carousel-track_powerautomate, .carousel-track_python {
     display: flex;
     transition: transform 0.5s ease;
   }
-  .carousel-track1 img, .carousel-track2 img, .carousel-track3 img, .carousel-track4 img  {
+  .carousel-track1 img, .carousel-track2 img, .carousel-track3 img, .carousel-track4 img, .carousel-track_powerautomate img, .carousel-track_python img{
     width: 100%;
     height: 400px;
     object-fit: contain;
     flex-shrink: 0;
 }
+
