@@ -543,6 +543,10 @@ body.dark-mode .projeto-detalhado {
     color: #e1e1e1 !important;
   }
   
+  body.dark-mode .lbl {
+    color: #888 !important;
+  }
+
   body.dark-mode .fade ul li {
     color: #e1e1e1 !important;
   }
