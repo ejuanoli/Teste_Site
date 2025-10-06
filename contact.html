@@ -1,264 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Currículo - Eduardo Juan Rodrigues Cavalcante de Oliveira</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
-:root {
---primary-color: #2c3e50;
---secondary-color: #3498db;
---background-color: #ecf0f1;
---text-color: #333;
---sidebar-bg: #34495e;
---sidebar-text: #ecf0f1;
---card-bg: #ffffff;
-}
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.container {
-  display: flex;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.sidebar {
-  background-color: var(--sidebar-bg);
-  color: var(--sidebar-text);
-  padding: 30px;
-  width: 35%;
-  text-align: center;
-}
-
-.sidebar h1 {
-  font-size: 2em;
-  margin-top: 0;
-  color: var(--background-color);
-  word-wrap: break-word;
-}
-
-.contact-info {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 30px;
-  text-align: left;
-}
-
-.contact-info li {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.contact-info i {
-  margin-right: 15px;
-  font-size: 1.2em;
-  width: 20px;
-  text-align: center;
-  color: var(--secondary-color);
-}
-
-.contact-info a {
-  color: var(--sidebar-text);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-info a:hover {
-  color: var(--secondary-color);
-}
-
-.sidebar .section h2 {
-  color: var(--background-color);
-  border-bottom: 2px solid var(--secondary-color);
-  font-size: 1.3em;
-  text-align: left;
-}
-
-.sidebar .skills-list {
-  list-style-type: none;
-  padding: 0;
-  text-align: left;
-}
-
-.sidebar .skills-list li {
-  margin-bottom: 10px;
-  background-color: #4a627a;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.main-content {
-  background-color: var(--card-bg);
-  padding: 40px;
-  width: 65%;
-}
-
-.section {
-  margin-bottom: 30px;
-}
-
-.section h2 {
-  font-size: 1.6em;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.job, .education-item {
-  margin-bottom: 20px;
-  padding-left: 20px;
-  border-left: 3px solid var(--secondary-color);
-}
-
-.job h3, .education-item h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.3em;
-  color: var(--primary-color);
-}
-
-.job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 5px;
-}
-
-.job-header h3 {
-  margin: 0;
-}
-
-.job-date {
-  font-weight: normal;
-  font-style: italic;
-  color: #555;
-  font-size: 0.9em;
-}
-
-.job-title {
-  margin: 0 0 10px 0;
-  font-size: 1.1em;
-  font-style: italic;
-  color: #555;
-  font-weight: bold;
-}
-
-ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-li {
-  margin-bottom: 10px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Danilo Azevedo de Oliveira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-<div class="container">
-  <div class="sidebar">
-      <h1>EDUARDO JUAN R. C. DE OLIVEIRA</h1>
-      <ul class="contact-info">
-          <li><i class="fas fa-map-marker-alt"></i>Jundiaí, SP</li>
-          <li><i class="fas fa-phone"></i><a href="tel:+5511997590616">(11) 99759-0616</a></li>
-          <li><i class="fas fa-envelope"></i><a href="mailto:edujuan36616@gmail.com">edujuan36616@gmail.com</a></li>
-          <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/eduardo-juan-r" target="_blank">linkedin.com/in/eduardo-juan-r</a></li>
-      </ul>
+    <div class="resume-container">
+        <!-- Barra Lateral Aprimorada -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <h1 style=" font-size: 2.3rem; text-align: center;">DANILO AZEVEDO DE OLIVEIRA</h1>
+                <p class="professional-title">Analista de Sistemas em Formação | Especialista em Logística</p>
+            </div>
 
-      <div class="section">
-          <h2>Habilidades</h2>
-          <ul class="skills-list">
-              <li><strong>Análise de Dados & BI:</strong></li>
-              <ul style="list-style-type: circle; margin-left: 20px; color: var(--sidebar-text);">
-                  <li>Power BI Avançado</li>
-                  <li>Linguagem DAX</li>
-                  <li>Power Query (ETL)</li>
-                  <li>Modelagem de Dados</li>
-                  <li>SQL (Oracle)</li>
-                  <li>Excel Avançado</li>
-              </ul>
-              <li><strong>Automação de Processos:</strong></li>
-               <ul style="list-style-type: circle; margin-left: 20px; color: var(--sidebar-text);">
-                  <li>Python</li>
-                  <li>UiPath</li>
-                  <li>Power Automate</li>
-                  <li>Power Apps</li>
-              </ul>
-              <li><strong>Sistemas WMS:</strong> JDA, SAP, DLX</li>
-              <li><strong>Desenvolvimento Web:</strong> HTML, CSS, JavaScript</li>
-              <li><strong>Idiomas:</strong> Português (Nativo), Inglês (Básico)</li>
-          </ul>
-      </div>
+            <div class="sidebar-section">
+                <h2>Contato</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-calendar-alt fa-fw"></i> 02/11/2001</li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Jundiaí / SP</li>
+                    <li><i class="fas fa-phone fa-fw"></i> (11) 95438-1291</li>
+                    <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:danilo.azevedo2002@gmail.com">danilo.azevedo2002@gmail.com</a></li>
+                </ul>
+            </div>
 
-      <div class="section">
-          <h2>Cursos</h2>
-          <ul class="skills-list">
-               <li>HTML5 e CSS Aprendendo criar sites do zero na prática (Udemy)</li>
-               <li>Formação Front-end - HTML, CSS, JavaScript, React e + (Udemy)</li>
-          </ul>
-      </div>
-  </div>
+            <div class="sidebar-section">
+                <h2>Competências</h2>
+                <h3>Tecnologias</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Lógica com C</span>
+                    <span class="skill-tag">Adobe XD</span>
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Illustrator</span>
+                    <span class="skill-tag">Excel Avançado</span>
+                </div>
+                <h3>Profissionais</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Gestão de Estoque</span>
+                    <span class="skill-tag">Logística Reversa</span>
+                    <span class="skill-tag">NR11 Empilhadeira</span>
+                    <span class="skill-tag">Inventário Cíclico</span>
+                    <span class="skill-tag">Análise de Dados</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Formação</h2>
+                <div class="education-item">
+                    <h4>Análise e Desenvolvimento de Sistemas</h4>
+                    <p>UNIP (Cursando, Noturno)</p>
+                </div>
+                 <div class="education-item">
+                    <h4>Ensino Médio Completo</h4>
+                </div>
+            </div>
 
-  <div class="main-content">
-      <div class="section">
-          <h2>Resumo Profissional</h2>
-          <p>
-              Analista de Processos e Digitalização com mais de 3 anos de experiência em logística e cadeia de suprimentos. Especializado em transformar dados complexos em dashboards e relatórios acionáveis com Power BI, promovendo a tomada de decisões estratégicas. Possuo forte conhecimento em todo o ciclo de vida do BI, desde a extração e tratamento de dados com SQL e Power Query, até a modelagem de dados e criação de cálculos avançados com DAX. Busco aplicar minhas habilidades para otimizar processos, aumentar a eficiência e gerar valor para o negócio.
-          </p>
-      </div>
+            <div class="sidebar-section">
+                <h2>Idiomas</h2>
+                <div class="language-item">
+                    <span>Português</span>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 100%;"></div></div>
+                </div>
+                <div class="language-item">
+                    <span>Inglês</span>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
+                </div>
+            </div>
+        </aside>
 
-      <div class="section">
-          <h2>Experiência Profissional</h2>
-          <div class="job">
-              <div class="job-header">
-                  <h3>DHL Supply Chain</h3>
-                  <span class="job-date">Junho de 2021 – Atual</span>
-              </div>
-              <p class="job-title">Analista de Processos e Digitalização Jr. (Dezembro de 2024 – Atual)</p>
-              <ul>
-                <li>Desenvolvimento e manutenção de dashboards em Power BI para monitoramento de KPIs e geração de insights para a liderança.</li>
-                <li>Criação e otimização de queries em SQL Oracle para extração e manipulação de dados operacionais.</li>
-                <li>Automação de rotinas e processos utilizando UiPath, Power Automate, Power Apps, Python e VBA, resultando em aumento da eficiência operacional.</li>
-                <li>Gestão de projetos de digitalização, desde o mapeamento de requisitos até a implementação da solução.</li>
-                <li>Configuração do sistema WMS JDA (Blue Yonder) e desenvolvimento de soluções web simples com HTML, CSS e JavaScript.</li>
-              </ul>
-          </div>
-          <div class="job">
-               <p class="job-title">Assistente Logístico (2022 – 2024)</p>
-               <ul>
-                <li>Responsável pelas atividades de controle de inventário, incluindo contagens cíclicas e análises de divergências.</li>
-                <li>Criação de relatórios e dashboards de suporte para as operações logísticas.</li>
-               </ul>
-          </div>
-          <div class="job">
-               <p class="job-title">Auxiliar Logístico (2021 – 2022)</p> 
-               <ul>
-                <li>Execução de atividades de armazém, como recebimento, armazenagem, separação (picking), expedição e logística reversa.</li>
-               </ul>
-          </div>
-      </div>
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <section class="about-me">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Profissional com 3 anos de experiência sólida em logística e gestão de estoque, atuando em centros de distribuição de grande escala. Em transição de carreira para a área de tecnologia, atualmente cursando Análise e Desenvolvimento de Sistemas. Busco uma oportunidade para combinar minha vivência em otimização de processos e resolução de problemas com minha paixão por desenvolvimento de software, visando criar soluções eficientes e inovadoras.
+                </p>
+            </section>
 
-      <div class="section">
-          <h2>Educação</h2>
-          <div class="education-item">
-              <h3>Graduação em Análise e Desenvolvimento de Sistemas</h3>
-              <p>
-                  Universidade Paulista (UNIP)<br>
-                  <em>Previsão de Conclusão: Dezembro de 2026</em>
-              </p> 
-          </div>
-      </div>
-  </div>
-</div>
+            <section class="experience">
+                <h2>Experiência Profissional</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025 – Atualmente</div>
+                        <div class="timeline-content">
+                            <h3>Estoquista</h3>
+                            <h4>Boa Supermercados – Jundiaí, SP</h4>
+                            <ul>
+                                <li>Gestão de acuracidade do estoque através de inventários cíclicos e rotativos.</li>
+                                <li>Análise de divergências e implementação de ações para prevenção de perdas.</li>
+                                <li>Organização do fluxo de mercadorias e otimização do layout de armazenamento.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022 – 2025</div>
+                        <div class="timeline-content">
+                            <h3>Auxiliar Logístico</h3>
+                            <h4>Mercado Livre – Cajamar, SP</h4>
+                            <ul>
+                                <li>Atuação em todas as etapas do fluxo logístico (recebimento, picking, packing, expedição).</li>
+                                <li>Operação de sistemas WMS para controle e rastreamento de mercadorias em tempo real.</li>
+                                <li>Contribuição para o atingimento de KPIs de desempenho e SLAs (Service Level Agreements) da equipe.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="courses">
+                <h2>Certificações e Cursos</h2>
+                <ul>
+                    <li><i class="fas fa-certificate"></i> <strong>Python 3+ Completo (140hrs)</strong> – UDEMY (Cursando)</li>
+                    <li><i class="fas fa-certificate"></i> <strong>Lógica de Programação com C (19hrs)</strong> – UDEMY (Cursando)</li>
+                    <li><i class="fas fa-certificate"></i> <strong>Informática (200hrs)</strong> – Microcamp (Adobe XD, Pacote Office)</li>
+                    <li><i class="fas fa-certificate"></i> <strong>Excel Avançado (11.5hrs)</strong> – UDEMY</li>
+                    <li><i class="fas fa-certificate"></i> <strong>NR11 - Operação de Empilhadeira (24hrs)</strong> – SENAI</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
