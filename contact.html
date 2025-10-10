@@ -3,129 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo | Danilo Azevedo de Oliveira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style2.css">
+    <title>Currículo | Aurenio Nascimento Célis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 8.5in; /* Largura de uma folha A4/Carta */
+            margin: 40px auto;
+            padding: 40px 50px;
+            border: 1px solid #ddd;
+        }
+
+        /* Cabeçalho com nome e informações de contato */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+        
+        .contact-info a {
+            color: #111;
+            text-decoration: none;
+        }
+
+        .contact-info span {
+            margin: 0 10px;
+        }
+
+        /* Estilo para os títulos das seções */
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        /* Seção principal */
+        .main-section p {
+            margin: 0 0 15px 0;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-header h3 {
+            margin: 0;
+            font-size: 1.15em;
+            font-weight: 500;
+        }
+        
+        .job-header .date {
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .company-name {
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+        
+        /* Seção de Habilidades */
+        .skills-list {
+            padding: 0;
+            list-style: none;
+            columns: 2;
+            column-gap: 40px;
+        }
+        
+        .skills-list li {
+            margin-bottom: 8px;
+        }
+        
+        .skills-list li::before {
+            content: "•";
+            margin-right: 10px;
+            color: #333;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Barra Lateral Aprimorada -->
-        <aside class="sidebar">
-            <div class="profile-section">
-                <h1 style=" font-size: 2.3rem; text-align: center;">DANILO AZEVEDO DE OLIVEIRA</h1>
-                <p class="professional-title">Analista de Sistemas em Formação | Especialista em Logística</p>
-            </div>
 
-            <div class="sidebar-section">
-                <h2>Contato</h2>
-                <ul class="contact-list">
-                    <li><i class="fas fa-calendar-alt fa-fw"></i> 02/11/2001</li>
-                    <li><i class="fas fa-map-marker-alt fa-fw"></i> Jundiaí / SP</li>
-                    <li><i class="fas fa-phone fa-fw"></i> (11) 95438-1291</li>
-                    <li><i class="fas fa-envelope fa-fw"></i> <a href="mailto:danilo.azevedo2002@gmail.com">danilo.azevedo2002@gmail.com</a></li>
-                    <li><i class="fas fa-envelope fa-fw"></i> <a href="">linkedin.com/in/danilo-azevedo-o</a></li>
+    <div class="container">
+        <header class="header">
+            <h1>Aurenio Nascimento Célis</h1>
+            <div class="contact-info">
+                <span>Vila Albertina, Ribeirão Preto - SP</span> |
+                <span>(16) 99353-8575</span> |
+                <span>andreiarenata866@gmail.com</span>
+            </div>
+        </header>
+
+        <section class="main-section">
+            <h2 class="section-title">Objetivo Profissional</h2>
+            <p>Profissional com sólida experiência em rotinas operacionais e de manutenção. Habilidoso na organização de ambientes, controle de materiais e suporte a equipes. Busco uma nova oportunidade para aplicar minha proatividade e comprometimento, contribuindo para a eficiência e o bom funcionamento do local de trabalho.</p>
+        </section>
+
+        <section class="main-section">
+            <h2 class="section-title">Experiência Profissional</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3>Auxiliar de Limpeza</h3>
+                    <span class="date">Jul 2022 – Mai 2025</span>
+                </div>
+                <div class="company-name">Rápido d'Oeste LTDA</div>
+                <ul>
+                    <li>Responsável pela limpeza e conservação completa das áreas comuns, escritórios e banheiros.</li>
+                    <li>Realização de tratamento de pisos e higienização de superfícies.</li>
+                    <li>Controle e reposição de materiais de limpeza e higiene.</li>
+                    <li>Cumprimento rigoroso das normas de segurança e uso de EPIs.</li>
                 </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>Competências</h2>
-                <h3>Tecnologias</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Lógica com C</span>
-                    <span class="skill-tag">Adobe XD</span>
-                    <span class="skill-tag">Photoshop</span>
-                    <span class="skill-tag">Illustrator</span>
-                    <span class="skill-tag">Excel Avançado</span>
-                </div>
-                <h3>Profissionais</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Gestão de Estoque</span>
-                    <span class="skill-tag">Logística Reversa</span>
-                    <span class="skill-tag">NR11 Empilhadeira</span>
-                    <span class="skill-tag">Inventário Cíclico</span>
-                    <span class="skill-tag">Análise de Dados</span>
-                </div>
             </div>
             
-            <div class="sidebar-section">
-                <h2>Formação</h2>
-                <div class="education-item">
-                    <h4>Análise e Desenvolvimento de Sistemas</h4>
-                    <p>UNIP (Cursando, Noturno)</p>
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3>Auxiliar Geral</h3>
+                    <span class="date">2008 – 2014</span>
                 </div>
-                 <div class="education-item">
-                    <h4>Ensino Médio Completo</h4>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>Idiomas</h2>
-                <div class="language-item">
-                    <span>Português</span>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 100%;"></div></div>
-                </div>
-                <div class="language-item">
-                    <span>Inglês</span>
-                    <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Conteúdo Principal -->
-        <main class="main-content">
-            <section class="about-me">
-                <h2>Sobre Mim</h2>
-                <p>
-                    Profissional com 3 anos de experiência sólida em logística e gestão de estoque, atuando em centros de distribuição de grande escala. Em transição de carreira para a área de tecnologia, atualmente cursando Análise e Desenvolvimento de Sistemas. Busco uma oportunidade para combinar minha vivência em otimização de processos e resolução de problemas com minha paixão por desenvolvimento de software, visando criar soluções eficientes e inovadoras.
-                </p>
-            </section>
-
-            <section class="experience">
-                <h2>Experiência Profissional</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025 – Atualmente</div>
-                        <div class="timeline-content">
-                            <h3>Estoquista</h3>
-                            <h4>Boa Supermercados – Jundiaí, SP</h4>
-                            <ul>
-                                <li>Gestão de acuracidade do estoque através de inventários cíclicos e rotativos.</li>
-                                <li>Análise de divergências e implementação de ações para prevenção de perdas.</li>
-                                <li>Organização do fluxo de mercadorias e otimização do layout de armazenamento.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022 – 2025</div>
-                        <div class="timeline-content">
-                            <h3>Auxiliar Logístico</h3>
-                            <h4>Mercado Livre – Cajamar, SP</h4>
-                            <ul>
-                                <li>Atuação em todas as etapas do fluxo logístico (recebimento, picking, packing, expedição).</li>
-                                <li>Operação de sistemas WMS para controle e rastreamento de mercadorias em tempo real.</li>
-                                <li>Contribuição para o atingimento de KPIs de desempenho e SLAs (Service Level Agreements) da equipe.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="courses">
-                <h2>Certificações e Cursos</h2>
-                <ul>
-                    <li><i class="fas fa-certificate"></i> <strong>Python 3+ Completo (140hrs)</strong> – UDEMY (Cursando)</li>
-                    <li><i class="fas fa-certificate"></i> <strong>Lógica de Programação com C (19hrs)</strong> – UDEMY (Cursando)</li>
-                    <li><i class="fas fa-certificate"></i> <strong>Informática (200hrs)</strong> – Microcamp (Adobe XD, Pacote Office)</li>
-                    <li><i class="fas fa-certificate"></i> <strong>Excel Avançado (11.5hrs)</strong> – UDEMY</li>
-                    <li><i class="fas fa-certificate"></i> <strong>NR11 - Operação de Empilhadeira (24hrs)</strong> – SENAI</li>
+                <div class="company-name">Gaiolaite - Marcenaria</div>
+                 <ul>
+                    <li>Apoio em diversas atividades da marcenaria, incluindo carga e descarga de materiais.</li>
+                    <li>Organização do ambiente de trabalho, ferramentas e estoque de matéria-prima.</li>
+                    <li>Auxílio aos marceneiros em tarefas de montagem e acabamento.</li>
                 </ul>
-            </section>
-        </main>
+            </div>
+        </section>
+        
+        <section class="main-section">
+            <h2 class="section-title">Habilidades</h2>
+            <ul class="skills-list">
+                <li>Organização de Ambientes</li>
+                <li>Controle de Materiais e Suprimentos</li>
+                <li>Manutenção e Reparos Básicos</li>
+                <li>Disposição para Atividades Operacionais</li>
+                <li>Trabalho em Equipe e Colaboração</li>
+                <li>Proatividade e Iniciativa</li>
+                <li>Pontualidade e Comprometimento</li>
+            </ul>
+        </section>
+        
+        <section class="main-section">
+             <h2 class="section-title">Formação Acadêmica</h2>
+             <p><strong>Ensino Fundamental Incompleto</strong><br>
+             Cursou até a 6ª série.</p>
+        </section>
+
     </div>
-    <script src="script2.js"></script>
+
 </body>
 </html>
